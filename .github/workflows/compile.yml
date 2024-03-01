@@ -3,7 +3,7 @@ name: Compile latex to PDF
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v*.*"
 
 jobs:
   compile_latex:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: LaTeX compilation
       uses: dante-ev/latex-action@2021-A
       with:
@@ -19,7 +19,7 @@ jobs:
         working_directory: .
         compiler: latexmk
         args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
-      
+
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
