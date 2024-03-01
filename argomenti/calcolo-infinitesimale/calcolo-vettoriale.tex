@@ -1,0 +1,264 @@
+\subsection{Calcolo vettoriale}
+
+\subsubsection{Vettori}
+
+\defn{Vettore}{ Il vettore \(\ux \in \Rn \) è una n-upla \(\ux=(x_1,x_2, \ldots,x_n)\) }
+
+In genere i vettori si indicano con \(\ux \) o \(\vec{x}\) o \(\overline{x}\), per indicare che sono variabili a più valori.
+
+\subsubsection{Funzioni in più variabili}
+
+In particolare:
+
+\begin{itemize}
+    \item \(f: A \in \Rn  \rightarrow \R \)
+    \item \(g: A \in \Rn \rightarrow \R^{m}\)
+\end{itemize}
+
+Noi ci occuperemo solo di funzione reali di più variabili, ovvero funzioni da \(\Rn \to \R \)
+
+\subsubsection*{Operazioni in \(\Rn \)}
+
+\begin{itemize}
+    \item Moltiplicazione per uno scalare reale:
+
+          \[
+              \forall c \in \R, \quad \forall \ux \in \Rn
+          \]
+          \[
+              c \cdot \ux = (cx_1, \ldots ,cx_n)
+          \]
+
+    \item Somma:
+
+          \[
+              \forall \ux, \uy  \in \Rn
+          \]
+          \[
+              \ux  =(x_1, \ldots ,x_n), \quad \uy  = (y_1, \ldots ,y_n)
+          \]
+          \[
+              \ux+ \uy = (x_1+y_1, \ldots ,x_n+y_n)
+          \]
+
+\end{itemize}
+
+\pagebreak{}
+
+\subsubsection{Prodotto scalare}
+
+L'operazione \(\prods{}{} : \Rn \times \Rn \rightarrow \R \)
+
+\[
+    \forall \ux ,\uy \in \Rn
+\]
+\[
+    \prods{\ux}{\uy} := \ux \bullet \uy := \sum^{n}_{i=1} x_i y_i
+\]
+
+\subsubsection*{Esempio}
+\[
+    \ux=(1,2,0,3,5) \in \R^{5}
+\]
+\[
+    \uy=(2,5,1,7,3) \in \R^{5}
+\]
+\[
+    \prods{\ux}{\uy} = (1\cdot2)+(2\cdot5)+(0\cdot1)+(3\cdot7)+(5\cdot3) = 48
+\]
+
+\subsubsection*{Proprietà}
+
+Il prodotto scalare verifica le seguenti proprietà
+
+\begin{enumerate}
+    \item \textbf{Bilinearità} (lineare su ogni fattore):
+
+          \[
+              (\alpha \ux_1 + \beta \ux_2) \bullet \uy = \prods{(\alpha \ux_1 + \beta \ux_2)}{\uy} = \alpha \prods{\ux_1}{\uy} + \beta \prods{\ux_2}{\uy}
+          \]
+
+          \[
+              \forall \ux_1,\ux_2,\uy \in \R, \quad \forall \alpha, \beta \in \R
+          \]
+
+    \item \textbf{Simmetria} (l'ordine non conta)
+
+          \[
+              \forall \ux,\uy \in \Rn
+          \]
+          \[
+              \prods{\ux}{\uy} = \prods{\uy}{\ux}
+          \]
+
+    \item \textbf{Positività}
+
+          \[
+              \forall \ux \in  \Rn
+          \]
+          \[
+              \ux=(x_1, \ldots ,x_n)
+          \]
+          \[
+              \prods{\ux}{\ux} = \sum^{n}_{i=1} {x_i}^{2}\ge 0
+          \]
+          \[
+              \prods{\ux}{\ux} = 0 \iff \ux = \uzero = (0, \ldots ,0)\ \text{vettore nullo}
+          \]
+
+\end{enumerate}
+
+\filbreak{}
+
+\subsubsection{Norma di un vettore e proprietà associate}
+
+\defn{Norma}{
+    Il numero reale (non negativo)
+
+    \[
+        \norm\ux := \sqrt{\prods{\ux}{\ux}} := \sqrt{\sum_{i=1}^{n} {(x_i)}^2} \qquad (\ge 0)
+    \]
+
+    si chiama \textbf{lunghezza} o \textbf{norma} del vettore.
+
+    Si può trovare anche scritta come \(|\ux|\), ma questa notazione è sconsigliata in quanto collide con quella di valore assoluto e quella di determinante.
+}
+
+\proposizione{Formula di Carnot}{
+
+    \[
+        \forall \ux,\uy \in \Rn
+    \]
+    \[
+        \norm{\ux+\uy}^{2} = \norm\ux^{2} + \norm\uy^{2} + 2\prods{\ux}{\uy}
+    \]
+}
+
+\begin{proof}
+    \begin{align*}
+        \norm{\ux+\uy} ^{2}  & = \langle \ux+\uy , \ux+\uy \rangle                                                       \\
+        \text{(bilinearità)} & = \langle \ux,\ux+\uy \rangle + \langle \uy,\ux+\uy \rangle                               \\
+        \text{(bilinearità)} & = \prods{\ux}{\ux} + \prods{\ux}{\uy} + \langle \uy,\ux \rangle + \langle \uy,\uy \rangle \\
+                             & = \prods{\ux}{\ux} + 2\prods{\ux}{\uy} + \langle \uy,\uy \rangle                          \\
+                             & = \norm\ux^{2} + \norm\uy^{2} + 2 \langle\ux, \uy\rangle
+    \end{align*}
+
+\end{proof}
+
+\subsubsection*{Osservazione}
+
+\(
+\norm{\ux+\uy}^{2}= \norm\ux^{2} + \norm\uy^{2} \iff \langle \ux, \uy \rangle  =0
+\)
+
+\proposizione{Disuguaglianza di Cauchy-Schwarz}{
+    \[
+        \forall \ux,\uy \in \Rn
+    \]
+    \begin{align*}
+        \circled{1} \qquad & |\prods{\ux}{\uy}| \le \norm\ux\cdot \norm\uy    &                                                                         \\
+        \circled{2} \qquad & |\prods{\ux}{\uy}| = \norm\ux\cdot \norm\uy \iff &   & \uy = 0 \lor \ux=\lambda \uy \quad \text{ con } \lambda \in \R\ge 0 \\
+                           &                                                  &   & \text{se e solo se un vettore è multiplo scalare dell'altro}
+    \end{align*}
+}
+
+Vediamo ora le dimostrazione di queste due proprietà:
+
+\begin{proof} di \(\circled{1}\)
+
+    Se \(\uy = \uzero = (0, \ldots ,0)\) la testi è ovvia;
+
+    Sia dunque \(\Rn  \rightarrow \uy \neq 0\) e consideriamo la funzione reale di una variabile reale \(t \rightarrow \norm{\ux+t\uy}^{2}\ge 0\) polinomio di secondo grado in t
+
+    \begin{align*}
+        ||\ux + t\uy|| ^{2} & \overset{\text{Carnot}}{=} \norm\ux^{2} + ||t\uy||^{2} + 2\langle \ux,t\uy \rangle \\
+                            & = \norm\ux^{2} + \norm\uy^{2}t^{2} + 2 \prods{\ux}{\uy} t \ge 0
+    \end{align*}
+
+    è un polinomio di II grado in t dove \(\norm\uy^{2}> 0 \) essendo \(\uy \neq 0\) per ipotesi
+
+    Il nostro \(\frac{\Delta}{4}\) deve essere negativo (sennò in qualche punto il polinomio dovrebbe essere negativo ma abbiamo supposto che sia sempre positivo):
+
+    \begin{align*}
+        \frac{\Delta}{4} = {\prods{\ux}{\uy}}^{2} - \norm\ux^{2}\norm\uy^{2} & \le 0                                       \\
+        {\prods{\ux}{\uy}}^{2}                                               & \le \norm\ux^{2}\norm\uy^{2}                \\
+        \prods{\ux}{\uy}                                                     & \le \norm\ux \norm\uy \quad (= \text{tesi})
+    \end{align*}
+
+\end{proof}
+
+\filbreak{}
+
+\begin{proof} di \(\circled{2}\)
+
+    Si verifica, se si ha che
+
+    \[
+        \prods{\ux}{\uy} = \norm\ux \cdot \norm\uy
+    \]
+
+    si ha che il \(\Delta \) del trinomio di II grado è nullo e dunque \(\exists t \in \R \) per cui
+    \[\norm{\ux+t\uy}^{2}=0 \implies \ux +t\uy=0 \implies \ux=-t\uy \]
+
+    devo mostrare che \(-t \ge 0\)
+
+    \[
+        t = - \frac{\prods{\ux}{\uy}}{\norm\uy^{2}}
+    \]
+
+    si ricorda che \(\norm\uy>0\) essendo \uy{} non nullo
+
+    \[
+        -t = \frac{\norm\ux \cdot \norm\uy}{\norm\uy^{2}}\ge 0
+    \]
+
+\end{proof}
+
+\filbreak{}
+
+\subsubsection{Funzione ``lunghezza'' di un vettore}
+
+Definiamo ora la funzione \textbf{lunghezza} di un vettore.
+
+\begin{align*}
+    \text{len}(\ux): \ \Rn & \rightarrow \R_0^{+}            \\
+    \ux                    & \mapsto \norm\ux \quad (\geq 0)
+\end{align*}
+
+La funzione lunghezza è una norma, ovvero, \(\forall \ux \in \Rn , \quad \forall \lambda \in \R \):
+
+\begin{enumerate}
+    \item \(\norm\ux \in \R, \quad \norm\ux \geq 0\)
+    \item \(\norm\ux = 0 \iff \ux = 0\)
+    \item \(\norm{\lambda \ux} = |\lambda| \cdot \norm\ux \) \hfill (omogeneità)
+    \item \(\norm{\ux+\uy} \leq \norm\ux + \norm\uy \) \hfill (disuguaglianza triangolare)
+\end{enumerate}
+
+\defn{Disuguaglianza triangolare}{
+    La disuguaglianza triangolare si definisce come:
+
+    \[
+        \norm{\ux+\uy} \le \norm\ux+\norm\uy
+    \]
+
+    se \(\norm{\ux+\uy} = \norm\ux + \norm\uy \implies \uy =0 \lor \ux= \lambda \uy \qquad \text{con}\ \lambda \ge 0\):
+
+}
+
+\begin{proof}
+    Dimostriamo la disuguaglianza triangolare, consideriamo:
+
+    \begin{align*}
+        \norm{\ux+\uy}^{2} & = \prods{\ux+\uy}{\ux+\uy}                                                                             \\
+                           & = \norm\ux^{2}+\norm\uy^{2} + 2 \prods{\ux}{\uy}                                                       \\
+                           & \le \norm\ux^{2} + \norm\uy ^{2} + 2|\prods{\ux}{\uy}|                                                 \\
+                           & \le \underbrace{\norm\ux ^{2} + \norm\uy^{2} + 2(\norm\ux \cdot \norm\uy)}_{{(\norm\ux+\norm\uy)}^{2}}
+    \end{align*}
+
+    estraendo e passando alle radici si ha
+
+    \[
+        \norm{\ux+\uy} \le \norm\ux+\norm\uy
+    \]
+\end{proof}
+

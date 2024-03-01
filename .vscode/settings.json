@@ -1,0 +1,74 @@
+{
+    // ==================================
+    // Misc settings
+    // ==================================
+    // required to prevent latex-workshop from building continously
+    "files.autoSave": "off",
+    "[latex]": {
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        // remove auto suggestion, useful when writing math and using tab to move between snippets stops.
+        "editor.quickSuggestions": {
+            "other": "off",
+            "comments": "off",
+            "strings": "off"
+        }
+    },
+    // ==================================
+    // latex-workshop - auto build with latexmk and enables chktex
+    // ==================================
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.run": "onType",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk",
+                "make-output-copy"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=./build",
+                "-auxdir=./build",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "make-output-copy",
+            "command": "cp",
+            "args": [
+                "./build/appunti-analisi.pdf",
+                "./final.pdf",
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/build",
+        "%TMPFILE%",
+        "-y=defaultIndent: '%INDENT%'"
+    ],
+    // ==================================
+    // ltex - spell checking
+    // ==================================
+    "ltex.language": "it",
+    "ltex.checkFrequency": "edit",
+    "ltex.enabled": true,
+    "ltex.trace.server": "off",
+    "ltex.additionalRules.motherTongue": "it",
+    // ==================================
+}

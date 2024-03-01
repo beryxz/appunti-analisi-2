@@ -1,0 +1,230 @@
+\subsection{Integrali doppi su domini più generali}
+
+\subsubsection{Integrali doppi su domini numerabili}
+
+Sia \(D \subset \R^2 \) limitato e sia \(f\) limitata in \(D\) (\(f: D \to \R \));
+
+Sia \(R\) un rettangolo che contiene tutti i punti di \(D\). Consideriamo la seguente estensione della funzione \(f\) al dominio \(R\):
+
+\[
+    \bar{f} (x,y) = \begin{cases}
+        f(x,y) & \text{se \((x,y) \in D\)}              \\
+        0      & \text{se \((x,y) \in R \setminus D \)}
+    \end{cases}
+\]
+
+\(\bar{f} \) è uguale a \(f\) nei punti in \(D\), e vale 0 negli altri punti di \(R\). Quindi \(\bar{f}\) è in un rettangolo \(R\) ed è perciò limitata.
+
+
+\defn{}{
+    \(f\) è limitata su \(D \subset \R^2\) con D insieme limitato di \(\R^2\).
+
+    Diciamo che \(f\) è integrabile (secondo Riemann) su D, se la \(\bar{f} \) è integrabile su \(R\) (secondo Riemann) e in tal caso si scrive:
+
+    \[
+        \iint_D f(x,y) \diff{x}\diff{y} = \iint_R {\bar{f} (x,y)} \diff{x}\diff{y}
+    \]
+
+}
+
+\textbf{Osservazione}
+
+La definizione \textbf{non} dipende dalla scelta di \(R\) (dove \(R\) rettangolo che contiene D)
+
+
+\defn{Insieme numerabile (Peano-Jordan)}{
+Un sottoinsieme limitato del piano \(D \subset \R^2\) si dice \textbf{misurabile} (secondo Peano-Jordan) se la funzione \(f(x,y)=1\) è integrabile su D
+
+In tal caso poniamo:
+
+\[
+    Area(D) = \underbrace{|D|}_\text{area} = \iint {1} \diff{x}\diff{y}
+\]
+
+e dunque ogni rettangolo \(R = [a,b] \times [c,d]\) è misurabile secondo Peano-Jordan:
+
+\[
+    |R| = \int_{a}^{b} {\int_{c}^{d} {1} \diff{x} } \diff{x}  = (b-a) (d-c)
+\]
+}
+
+
+Tutti gli insiemi che conosciamo della geometria elementare (quadrati, rettangoli, poligoni, cerchi) sono misurabili e la loro misura (secondo Peano-Jordan) è l'area che conosciamo.
+
+\subsubsection*{Esempio di insieme non numerabile}
+
+\[
+    Q = [0,1] \times [0,1]
+\]
+
+quadrato con le componenti razionali:
+
+\[
+    f = \begin{cases}
+        1 & \text{se \((x,y) \in Q\) e \((x,y)\) razionali} \\
+        0 & \text{altrimenti}
+    \end{cases}
+\]
+
+non è Riemann integrabile.
+
+\subsubsection{Proprietà di integrali doppi su insiemi numerabili}
+
+Siano \(f\) e \(g\) integrabili su D (ovvero \(f,g \in \R(D)\));
+
+Sia \(c \in \R \);
+
+Allora, valgono le seguenti proprietà:
+\begin{enumerate}
+    \item Linearità
+          \begin{enumerate}
+              \item \(f+g\) è integrabile:
+
+                    \[
+                        \iint_D {(f+g)} \diff{x}\diff{y}  = \iint_D f \diff{x}\diff{y} + \iint_D g \diff{x}\diff{y}
+                    \]
+              \item \(c\cdot f\) è integrabile:
+
+                    \[
+                        \iint_D {c f} \diff{x}\diff{y} = c \iint_D f \diff{x}\diff{y}
+                    \]
+
+              \item Combinazione delle proprietà precedenti:
+
+                    \[
+                        \iint_D {[\alpha f + \beta g ]} \diff{x}\diff{y} = \alpha \iint_D f \diff{x}\diff{y} + \beta \iint_D g \diff{x}\diff{y}
+                    \]
+          \end{enumerate}
+
+    \item Monotonia
+          \begin{enumerate}
+              \item Se \(f \le g\) allora:
+
+                    \[
+                        \iint_D f \diff{x}\diff{y} \le  \iint_D g \diff{x}\diff{y}
+                    \]
+              \item \(|f| \in \R(D)\) e si ha \(\left|\iint_D f \diff{x}\diff{y} \right| \le \iint_D f \diff{x}\diff{y}  \)
+
+                    In particolare se \(D\) è misurabile e se \(M_1= \underset{D}{\sup} | f(x,y)|\):
+
+                    \[
+                        \left|\iint_D f(x,y) \diff{x}\diff{y}\right| \le M_1(D)
+                    \]
+          \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+\subsubsection{Regioni semplici del piano}
+
+Le regioni semplici del piano sono insiemi misurabili secondo Peano-Jordan. Su queste regioni possiamo usare le formule di riduzione.
+
+\subsubsection*{Regione y-semplice}
+
+Una regione \(D_1 \subset \R^2\) si dice \textbf{y-semplice} (o normale rispetto all'asse x) se è compresa tra i grafici di due funzioni della variabile x.
+
+\[
+    D_1= \{(x,y) \in \R^2 \giventhat a \le x \le b,\ g_1(x) \le y \le g_2(x)\}
+\]
+
+dove \(g_1,g_2\) sono continue in \([a,b]\) e \(g_1(x) \le g_2(x)\).
+
+\(D_1\) è l'insieme di segmenti verticali se \(x \in [a,b]\)
+
+\[
+    (D_1)x = \{y \in \R \giventhat g_1(x) \le y \le g_2(x)\} = \begin{cases}
+        [g_1(x),g_2(x)] & \text{se \(x \in [a,b]\)} \\
+        0               & \text{altrimenti}
+    \end{cases}
+\]
+
+\subsubsection*{Regione x-semplice}
+
+\(D_2\) è \textbf{x-semplice} (normale rispetto all'asse y)
+
+Vediamo un esempio:
+
+\[
+    D_2= \{(x,y) \in \R^2 \giventhat c \le y \le d,\ h_1(y) \le x \le h_2(y)\}
+\]
+
+dove \(h_1,h_2\) sono continue \([c,d]\) e \(h_1(y) \le h_2(y)\).
+
+\(D_2\) è l'insieme di segmenti orizzontali:
+
+\[
+    (D_2) y = \{x \in \R \giventhat h_1(y) \le x \le h_2(y)\} = \begin{cases}
+        h_1(y),h_2(y) & \text{se \(y \in [c,d]\)} \\
+        0             & \text{altrimenti}
+    \end{cases}
+\]
+
+\teorema{Formule di riduzione}{
+    Ogni funzione continua su un insieme semplice \(D \subset \R^2\) è integrabile su tale insieme e valgono le seguenti formule di riduzione:
+
+    \begin{enumerate}
+        \item Se \(D\) è y-semplice allora:
+
+              \[
+                  \iint_D f(x,y) \diff{x}\diff{y} = \int_{a}^{b} \int_{g_1(x)}^{g_2(x)} f(x,y) \diff{y}\diff{x}
+              \]
+        \item Se \(D\) è x-semplice allora:
+
+              \[
+                  \iint_D f(x,y) \diff{x}\diff{y} = \int_{c}^{d} \int_{h_1(y)}^{h_2(y)} f(x,y) \diff{x}\diff{y}
+              \]
+    \end{enumerate}
+
+}
+
+\subsubsection{Proprietà di additività rispetto ai domini di integrazione}
+
+Supponiamo che \(D_1,D_2,\ldots,D_k \in \R^2\) sono semplici e che non abbiamo due a due punti in comune oltre a una parte di frontiera allora ogni funzione continua in \(D = D_1 \cup \ldots \cup D_k\) è integrabile e:
+
+\[
+    \iint_D f(x,y) \diff{x}\diff{y} = \iint_{D_1} f(x,y) \diff{x}\diff{y} + \cdots + \iint_{D_k} f(x,y) \diff{x}\diff{y}
+\]
+
+\pagebreak
+\subsubsection{Esempio di esercizio}
+
+Calcolare il seguente integrale doppio:
+
+\[
+    \int_{0}^{1} {\int_{x}^{1} {e ^{y^{2}}} \diff{y}\diff{x}}
+\]
+
+L'area di integrazione è possibile vederla in due modi:
+\begin{itemize}
+    \item Insieme y-semplice:
+
+          \[
+              D = \{(x,y) \in \R^2 \giventhat 0 \le x \le 1,\ x \le y \le 1\}
+          \]
+    \item Insieme x-semplice:
+
+          \[
+              D = \{(x,y) \in \R^2 \giventhat 0 \le y \le 1,\ 0 \le x \le y\}
+          \]
+\end{itemize}
+
+Essendo \(f(x,y)\) continua su entrambi, posso usare le formule di riduzione, tenendo conto di questo duplice modo di vedere il dominio. Questo doppio modo ci torna utile, per derivare prima rispetto alla \(x\), e poi rispetto alla \(y\) invece che viceversa:
+\[
+    \iint_D e ^{y^{2}} \diff{y}\diff{x} = \int_{0}^{1} \left(\int_{x}^{1} e ^{y^{2}} \diff{y} \right) \diff{x} = \int_{0}^{1} \left(\int_{0}^{y} e ^{y^{2}} \diff{x} \right) \diff{y} = \int_{0}^{1} e ^{y^{2}}\left(\int_{0}^{y} 1\diff{x} \right) \diff{y}  =
+\]
+
+\[
+    = \int_{0}^{1} e ^{y^{2}} (y-0) \diff{y} = \int_{0}^{1} y e ^{y^{2}} \diff{y} = \Eval{\left[ \frac{1}{2} e ^{y^{2}} \right]}{0}{1} = \frac{1}{2} (e -1) = \frac{e-1}{2}
+\]
+
+Alternativamente, potevamo risolvere l'integrale senza fare il cambio:
+
+dato che \(\int_{0}^{1} \left(\int_{x}^{1} e ^{y^{2}} \diff{y} \right) \diff{x} \) è una funzione continua e dunque ammette primitiva \(F(y)\), otteniamo:
+
+\begin{align*}
+    \int_{0}^{1} {\left(\int_{x}^{1} e ^{y^{2}} \diff{y} \right)} \diff{x} & = \int_{0}^{1} \EvalCustom{[F(y)]}{x}{1}{\Big} \diff{x} = \int_{0}^{1} \left(F(1) - F(x) \right) \diff{x} \\
+                                                                           & = \int_{0}^{1} F(1) \diff{x} - \int_{0}^{1} F(x) \diff{x}                                                 \\
+                                                                           & = F(1) - \int_{0}^{1} 1 \cdot F(x) \diff{x}                                                               \\
+                                                                           & = F(1) - \EvalCustom{\left[ xF(x) \right]}{0}{1}{\Big} + \int_{0}^{1} x F'(x) \diff{x}                    \\
+                                                                           & = \cancel{F(1)} \cancel{- F(1)} + 0 + \int_{0}^{1} xF'(x) \diff{x}                                        \\
+                                                                           & = \underbrace{\int_{0}^{1} x e^{x^{2}} \diff{x} }_\text{risultato come sopra} = \frac{e-1}{2}
+\end{align*}

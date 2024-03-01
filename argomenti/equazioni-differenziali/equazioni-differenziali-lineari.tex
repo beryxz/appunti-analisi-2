@@ -1,0 +1,55 @@
+\subsection{Equazioni differenziali lineari}
+
+\subsubsection{Forma lineare}
+
+Una EDO di ordine \(n\) si dice \textbf{lineare} se è nella forma
+\[
+    a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+ \cdots + a_2(x)y''+a_1(x)y'+a_0(x)y=f(x)
+\]
+
+Dove, \(x \in I\)\ \ e\ \  \(a_0(x),\ldots,a_n(x),\,f(x)\) sono funzioni \underline{assegnate} e \underline{continue} sull'intervallo I.
+
+Ad esempio:
+\[
+    xy''+5y = \sin(x)
+\]
+
+\subsubsection{Forma omogenea}
+
+Quando abbiamo \(0\) come \(f(x)\) allora l'equazione si dice \textbf{omogenea}.
+\[
+    a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+ \cdots + a_2(x)y''+a_1(x)y'+a_0(x)y=0
+\]
+
+Inoltre, generalmente le EDO lineari si prendono o si trasformano per averle con \(a_{n}(x) = 1\).
+
+\subsubsection{Origine della linearità}
+
+Il termine \textbf{lineare} viene dal fatto che se consideriamo il primo membro di questo tipo di equazioni differenziali come legge di un applicazione, questa applicazione rispetta tutte le condizioni per essere definita lineare.
+
+Indicando dunque con \(L(y(x))\) il primo membro dell'equazione differenziale,
+\[
+    L(y(x)) := a_n (x) y^{(n)} (x) + \cdots + a_1(x)y'(x) + a_0(x)y(x)
+\]
+possiamo notare che l'operatore \(L_y\), definito come:
+\begin{align*}
+     & L_y: C^{n}(I) \rightarrow C^0(I) \\
+     & L_y: y(x) \mapsto L(y(x))
+\end{align*}
+risulta essere un operatore lineare tra questi spazi di funzioni. Infatti, nell'ipotesi di continuità dei coefficienti, \(y(x) \in C^n(I) \implies L(y(x)) \in C^0(I)\);
+
+Inoltre, se \(y_1, y_2 \in C^n(I)\) e \(\lambda_1, \lambda_2 \in \R \), si ha:
+\[
+    L(\lambda_1 y_1 + \lambda_2 y_2) = \lambda_1 L(y_1) + \lambda_2 L(y_2)
+\]
+
+\begin{proof}
+    Siano:
+    \begin{align*}
+        y^{(3)} + xy'' + x^2y = \sin(x) \\
+        L(\varphi(x)) = \varphi^{(3)}(x) + x\varphi''(x) + x^2\varphi(x)
+    \end{align*}
+    \begin{align*}
+        L(\alpha\varphi_1(x) + \beta\varphi_2(x)) & = \cdots \\
+    \end{align*}
+\end{proof}

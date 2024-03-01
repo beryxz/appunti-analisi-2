@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+
+
+\input{template/preamble}
+
+\newcommand{\myDegree}{Corso di Laurea in Informatica}
+\newcommand{\myFaculty}{
+	Scuola di Scienze Matematiche, Fisiche e Naturali (L{-}31)}
+\newcommand{\myTime}{Anno Accademico{:} 2023{-}2024}
+\newcommand{\myVersion}{1.4}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+      \hfill
+      \vspace{2cm}
+
+      \begingroup
+      \large
+      \includegraphics[scale=0.15]{images/unifi-logo}
+
+      \myFaculty{}
+
+      \myDegree{}
+      \endgroup
+
+      \vspace{5cm}
+
+      \begingroup
+      \LARGE
+      \color{red} Analisi II
+      \endgroup
+      \medskip
+
+      \myTime{}
+
+      \vfill
+
+      \begingroup
+      \hfill Versione: \myVersion{}
+      \endgroup
+
+   \end{center}
+\end{titlepage}
+\newpage
+
+\tableofcontents
+\newpage
+
+\subfile{argomenti/equazioni-differenziali}
+\newpage
+
+\subfile{argomenti/calcolo-infinitesimale}
+\newpage
+
+\subfile{argomenti/calcolo-differenziale}
+\newpage
+
+\subfile{argomenti/calcolo-integrale}
+\newpage
+
+\end{document}

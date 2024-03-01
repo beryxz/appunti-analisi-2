@@ -1,0 +1,185 @@
+\subsection{Integrali doppi in coordinate polari}
+
+\subsubsection{Introduzione al cambiamento di variabili degli integrali doppi}
+
+In analisi I, abbiamo utilizzato il \textbf{metodo della sostituzione}:
+
+\(x\) e \(t\) allora \(x=\varphi(t)\), dove \(\varphi \) è \(C^{1}\) e invertibile:
+
+\[
+    \int_{a}^{b} {f(x)} \diff{x} = \int_{\varphi^{-1}(a)}^{\varphi^{-1}(b)} {f(\varphi(t))\varphi'(t)} \diff{t}
+\]
+
+dove \(\diff{x} = \varphi'(t) \diff{t}\)
+
+Per gli integrali in più variabili facciamo lo stesso procedimento.
+
+Senza però scendere nel dettaglio per il caso generale, vediamo subito come si applica per fare il cambio di variabili in coordinate polari.
+
+\pagebreak
+\subsubsection{Cambiamento di variabili in coordinate polari}
+
+Consideriamo l'applicazione (vettore): \(F: \R^2 \to \R^2\) così definita:
+\begin{align*}
+    (\rho, \theta) \to (\underbrace{x(\rho, \theta)}_\text{\(F_1(\rho, \theta)\)}, \underbrace{y(\rho, \theta)}_\text{\(F_2(\rho,\theta)\)})
+     &  &
+    F: \begin{cases}
+           x=\rho \cos \theta \\
+           y = \rho \sin \theta
+       \end{cases}
+\end{align*}
+
+Consideriamo la matrice Jacobiana associata a \(F(2\times 2 )\)
+
+\[
+    JF(\rho,\theta) = \begin{bmatrix}
+        \nabla F_1(\rho,\theta) \\[2mm]
+        \nabla F_2(\rho,\theta)
+    \end{bmatrix} = \begin{bmatrix}
+        \frac{\partial F_1}{\partial \rho}(\rho,\theta) & \frac{\partial F_1}{\partial \theta}(\rho,\theta) \\[2mm]
+        \frac{\partial F_2}{\partial \rho}(\rho,\theta) & \frac{\partial F_2}{\partial \theta}(\rho,\theta)
+    \end{bmatrix} = \begin{bmatrix}
+        \cos \theta & -\rho \sin \theta \\
+        \sin \theta & \rho \cos \theta
+    \end{bmatrix}
+\]
+
+calcoliamone il determinante:
+
+\[
+    \det(JF(\rho,\theta)) = \rho \cos^{2}\theta + \rho\sin^{2}\theta = \rho \cdot (1) = \rho
+\]
+
+Quindi \(\rho=0 \iff (x,y) = (0,0)\)
+
+La funzione \(F\) non è iniettiva (non c'è corrispondenza 1 a 1) per la periodicità delle funzioni trigonometriche:
+
+\[
+    F(\rho, \theta + 2\pi) = F(\rho,\theta) = (\rho \cos (\theta+ 2\pi), \rho \sin (\theta + 2\pi)) + \text{ valori associati}
+\]
+
+Restringiamo la funzione \(F\) all'insieme \(A \subset \R^2\) aperto in cui:
+
+\[
+    A = (0, +\infty) \times (0, 2\pi) \text{ oppure } A=(0, +\infty) \times (-\pi, \pi)
+\]
+
+quindi l'applicazione \(F: A \subseteq \R^2 \to \R \) è biettiva perché manda aperti in aperti.
+
+\teorema{Cambiamento di variabili in coordinate polari}{
+Consideriamo l'applicazione verticale \(F(\rho,\theta) = \left(F_1(\rho,\theta), F_2(\rho,\theta)\right)\) in cui \(F: A \to \R^2\) in cui \(A = (0,+\infty) \times (0,2\pi)\).
+
+Sia \(S \subset (0,+\infty) \times (0,2\pi)\) un aperto misurabile nel piano \((\rho,\theta)\) con \(\bar{S} \subset (0,\infty) \cdot (0,2\pi)\) e sia \(T=F(\bar{S})\)
+
+Allora per ogni funzione \(f\) integrabile su \(T\), continua e limitata, vale la seguente formula:
+
+\[
+    \iint_{T=F(S)} f(x,y) \diff{x}\diff{y}  = \iint_{S=F^{-1}(T)} f( \rho \cos \theta, \rho \sin \theta) \cdot \rho \diff{\rho}\diff{\theta}
+\]
+
+Più in generale:
+
+\[
+    \iint_{T=F(S)} f(x,y) \diff{x}\diff{y}  = \iint_{S=F^{-1}(T)} f( F_1(\rho, \theta) , F_2(\rho, \theta)) \cdot \det(JF(\rho,\theta)) \diff{\rho}\diff{\theta}
+\]
+}
+
+\pagebreak
+\subsubsection{Esempi}
+
+\subsubsection*{Esempio 1}
+
+\[
+    \iint_{u^{2}+v^{2} \le 5} v^{2} \diff{u}\diff{v}
+\]
+
+\[
+    D= \{(u,v) \in \R^2 \giventhat u^{2}+v^{2} \le 5\}
+\]
+
+In questo caso ha senso trasformare l'integrale in coordinate polari perché la forma di \(A\) è un cerchio. In casi come questo conviene usare le coordinate polari per semplificare:
+
+\[
+    \bar{D} = \{(\rho,\theta) \giventhat 0 \le \rho \le \sqrt{5}, 0 \le \theta \le 2\pi \}
+\]
+
+\begin{align*}
+    \iint_{u^{2}+v^{2} \le S} {v ^{2}} \diff{u}\diff{v} & = \int_{0}^{\sqrt{5}} \int_{0}^{2\pi} \rho^{2} \sin^{2} (\theta) \cdot \rho \diff{\theta}\diff{\rho}                   \\
+                                                        & = \int_{0}^{\sqrt{5}} \int_{0}^{2\pi} \rho^{3} \sin^{2} (\theta) \diff{\theta}\diff{\rho}                              \\
+                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \left( \int_{0}^{2\pi} \sin ^{2} \theta \diff{\theta} \right) \diff{\rho}               \\
+                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \left( \int_{0}^{2\pi} \frac{1- \cos 2 \theta}{2} \diff{\theta} \right) \diff{\rho}     \\
+                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \Eval{\left[ \frac{1}{2} \theta - \frac{\sin 2 \theta}{4}\right]}{0}{2\pi}  \diff{\rho} \\
+                                                        & = \pi \int_{0}^{\sqrt{5}} \rho^{3} \cdot 1 \diff{\rho}                                                                 \\
+                                                        & = \pi \left[\Eval{ \frac{\rho^{4}}{4} }{0}{\sqrt{5}}\right] = \frac{25}{4}\pi
+\end{align*}
+
+\pagebreak
+\subsubsection*{Esempio 2}
+
+\[
+    \iint_A {x^{2}+y^{2}} \diff{x}\diff{y}
+\]
+
+\[
+    A = \{(x,y) \in \R^2 \giventhat x^{2} + y^{2} \le 4\}
+\]
+
+Vediamo il metodo lungo (complicato che non va bene):
+
+\[
+    A = \{(x,y) \in \R \giventhat -2 \le x \le 2, - \sqrt{4-x^{2}} \le  y \le  \sqrt{4 -x^{2}}\} \quad\text{(dominio y-semplice)}
+\]
+
+\[
+    \iint_A {x^{2}+y^{2}} \diff{x}\diff{y} = \int_{-2}^{2} \int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} {\left(x^{2} + y^{2}\right)} \diff{y}\diff{x}  = \int_{-2}^{2} { \Eval{\left[ x^{2} \cdot y + \frac{y^{3}}{3} \right]}{-\sqrt{4-x^{2}}}{\sqrt{4-x^{2}}}  \diff{x}}
+\]
+
+Vediamo ora il metodo più facile, ovvero passando in coordinate polari:
+
+\[
+    \bar{A}  = \{(\rho,\theta) \giventhat 0 \le \rho \le 2, 0 \le \theta \le 2\pi \}
+\]
+
+con \(\bar{A}\) abbiamo tutti i punti che erano in \(A\), ovvero i punti dentro una circonferenza di raggio 2 con centro l'origine. Quindi per le formule di integrazione per sostituzione:
+
+\[
+    \iint_A x^{2}+y^{2} \diff{x}\diff{y} = \int_{0}^{2\pi} \int_{0}^{2} \rho^{2}\cdot\rho \diff{\rho}\diff{\theta} = \int_{0}^{2\pi} \left[ \Eval{\frac{\rho^4}{4}}{0}{2} \right] \diff{\theta} = 4 \Big[\EvalCustom{\theta}{0}{2\pi}{\Big}\Big] = 8\pi
+\]
+
+\pagebreak
+\subsubsection*{Esempio 3}
+
+Calcolare i seguenti due integrali, definiti sullo stesso insieme \(A\):
+\[
+    \iint_A x \diff{x}\diff{y} \quad \iint_A y \diff{x}\diff{y}
+\]
+
+\[
+    A = \{ (x,y) \in \R^2 \giventhat x^{2}+y^{2} \le 1, x \ge 0 \}
+\]
+
+Iniziamo con \(\iint_A y \diff{x}\diff{y}\):
+
+dato che \(f(x,y) = y\) e \(f(x,-y) = -y\), possiamo osservare che integrando il risultato sarà sempre 0:
+
+\[
+    \iint_A y \diff{x}\diff{y} = 0
+\]
+
+Se questo non risulta immediato, basta passare in coordinate polari e verificare che è \(=0\).
+
+Passiamo ora all'altro \(\iint_A x \diff{x}\diff{y}\):
+
+In questo caso non abbiamo lo stessa situazione di prima in quanto nel dominio \(A\) le \(x\) sono ristrette alle sole \(x \ge 0\). Calcoliamo dunque questo integrale passando in coordinate polari:
+
+\[
+    \bar{A} = \left\{ (\rho,\theta) \giventhat 0 \le \theta \le 1, - \frac{\pi}{2} \le \theta \le \frac{\pi}{2} \right\}
+\]
+
+\begin{align*}
+    \iint_A x \diff{x}\diff{y} & = \int_{0}^{1} \int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} \rho \cos \theta \rho \diff{\rho}  \diff{\theta}             \\
+                               & = \int_{0}^{1} \rho^{2} \left(\int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} \cos \theta \diff{\theta} \right) \diff{\rho} \\
+                               & = \int_{0}^{1} \rho^{2}\Big[\EvalCustom{\sin \theta}{ - \pi/2}{ \pi/2}{\Big} \Big]                                  \\
+                               & = \int_{0}^{1} \rho^{2}\cdot2 \diff{\rho}                                                                           \\
+                               & = 2 \cdot \Eval{\left[ \frac{\rho^{3}}{3} \right]}{0}{1} = \frac{2}{3}
+\end{align*}

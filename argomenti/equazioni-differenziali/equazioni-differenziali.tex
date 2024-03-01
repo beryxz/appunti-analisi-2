@@ -1,0 +1,98 @@
+\subsection{Introduzione alle equazioni differenziali}
+
+Le equazioni differenziali sono equazioni in cui l'incognita è la funzione \(y = f(x)\) e i termini sono le derivate della funzione stessa.
+
+Osservazioni:
+\begin{itemize}
+    \item Equazioni differenziali \(\neq{}\) Equazioni algebriche
+    \item Queste equazioni sono utili per esempio per modellare i fenomeni della realtà in fisica
+    \item Servono per l'appunto quando ci serve la funzione incognita \(u(x)\) avendo solo informazioni sul suo comportamento, ovvero le sue derivate che possono ad esempio rappresentare velocità e accelerazione istantanee.
+\end{itemize}
+
+\subsubsection{Tipi di equazioni differenziali}
+
+\begin{itemize}
+    \item \textbf{EDO}: Equazioni differenziali ordinarie\newline
+          funzione incognita di una sola variabile reale. E.g.:\  \(x(t)\)
+    \item \textbf{EDP}: Equazioni differenziali alle derivate parziali\newline
+          Equazioni con derivate parziali di funzioni di due o più variabili reali
+\end{itemize}
+
+Noi vedremo solo alcuni tipi particolari di equazioni differenziali ordinarie (EDO).
+
+\subsubsection{Ordine di un'equazione differenziale}
+
+L'\textbf{ordine} (o grado) è dato dal massimo ordine di derivazione in cui compare la funzione incognita.
+
+Ad esempio, la seguente EDO è di terzo ordine:
+\[
+    y^{(3)}+2y''+5y = e^x
+\]
+
+Noi vedremo quelle del primo e secondo ordine.
+
+\pagebreak
+\subsubsection{Forme delle equazioni differenziali}
+
+\defn{Forma implicita}{
+Una equazione di ordine \(n\) è una equazione del tipo:
+\[
+    F(x,y(x),y'(x),\ldots,y^{(n-1)}(x),y^{(n)}(x))=0
+\]
+\[
+    F: U \subseteq \R^{n+2} \rightarrow \R
+\]
+\begin{itemize}
+    \item \(y\) è la funzione incognita che dipende da \(x\).
+    \item \(F\) è la funzione assegnata che ha valori reali e dipende da (n+2) variabili \(x,y(x),y'(x),\ldots \).
+\end{itemize}
+}
+
+\defn{Forma esplicita (o normale)}{
+Una equazione di ordine \(n\) in forma normale è una equazione del tipo:
+\[
+    y^{(n)}(x) = F(x,y(x),y'(x),\ldots,y^{(n-1)}(x))
+\]
+Ovvero se è esplicita rispetto alla derivata di ordine massimo \(y^{(n)}\).
+}
+
+\pagebreak
+\subsubsection{Soluzioni di un'equazione differenziale}
+
+Risolvere un'equazione differenziale vuol dire trovare tutte le sue soluzioni, o perlomeno studiarne il suo comportamento.
+
+Una soluzione è quindi una funzione \(\varphi=\varphi(t)\) definita su un intervallo \(I \subseteq \R \) e differenziabile \(n\) volte su \(I\) t.c.\  \(\forall x \in I\) è soddisfatta la relazione dell'equazione differenziale.
+
+\defn{Soluzione integrale (curva)}{
+    La soluzione di una EDO di ordine \(n\) sull'intervallo \(I\)
+    \begin{equation}\label{eq:soluzione}
+        F(x,y(x),y'(x),\ldots,y^{(n)}(x)) = 0
+    \end{equation}
+    \[
+        x \in I \subseteq \R
+    \]
+
+    è la funzione \(\varphi{}\) definita almeno in \(I\) e derivabile fino all'ordine \(n\) per cui valga (\ref{eq:soluzione}), ovvero:
+    \[
+        F(x,\varphi(x),\varphi ' (x), \ldots, \varphi^{(n)}(x) ) = 0\ \ \ \forall x \in I
+    \]
+}
+
+\defn{Integrale Generale}{
+L'insieme di tutte le soluzioni di (\ref{eq:soluzione}) in \(I\) si chiama integrale \textbf{generale} di (\ref{eq:soluzione}) in \(I\).
+
+Quello che otteniamo è una formula di 1+ parametri che ci permette di identificare tutte le soluzioni. E.g.:
+\[
+    y'=2x-1 \quad\text{ha la soluzione generale}\quad y=x^{2}+c
+\]
+}
+
+\defn{Soluzione particolare}{
+È una soluzione unica presa dalla famiglia di soluzione della EDO (\ref{eq:soluzione}), in cui il parametro \(c\) assume un valore costante specifico. E.g.:
+
+\[
+    y'=2x-1 \quad\text{ha soluzione particolare}\quad y=x^{2}+1
+\]
+
+Il grafico di ogni soluzione è detto \textbf{curva integrale}.
+}

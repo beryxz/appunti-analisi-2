@@ -1,0 +1,12 @@
+{"rule":"ER_01_001","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q con A definito \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Sia \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/equazioni-differenziali\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/calcolo-infinitesimale\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/calcolo-differenziale\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/calcolo-integrale\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\QOra, partendo dall'equazione iniziale: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q moltiplico per \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q con \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q integro rispetto a x in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q teo.\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qfond.\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\QSoluzione particolare della EDO = ȳ(x).\\E$"}
+{"rule":"ST_03_001","sentence":"^\\QQuindi, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q se ogni suo intorno sferico contiene sia punti interni che punti esterni ad \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ST_03_001","sentence":"^\\QPunto esterno \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q si dice esterno ad \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) se \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q ed esiste almeno un suo intorno sferico completamente disgiunto da \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"ST_03_001","sentence":"^\\QPunto interno Un punto di \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q si dice interno ad \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, con \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, se \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q e se esiste almeno un suo intorno sferico interamente contenuto in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, ovvero:\\E$"}
+{"rule":"ST_03_001","sentence":"^\\QBuono, a noi non da noia che sta tra \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q ed \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, ci importa solo che il limite esiste e non tende all'infinito.\\E$"}

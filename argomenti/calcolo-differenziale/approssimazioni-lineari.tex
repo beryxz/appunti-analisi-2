@@ -1,0 +1,181 @@
+\subsection{Approssimazioni lineari}
+
+\subsubsection{Introduzione all'approssimazione tramite Taylor}
+
+Sia \(A \subseteq \Rn \) con \(A\) aperto;
+
+Sia \(f: A \subseteq \Rn \rightarrow \R \), di classe \(C^{k}\) per qualche \(k \in \N \);
+
+Siano \(\ux \) e \(\ux +\uh \) due punti in \(A\) tali che il segmento \([\ux, \ux +\uh ] \subset \Rn \) sia tutto contenuto in \(A\).
+
+Definiamo la funzione \(x(t) : \R \to \Rn \), che associa \(t \mapsto \ux+t\uh \) definita \(\forall t \in [0,1]\).
+
+Possiamo quindi scrivere gli elementi del segmento come:
+\[
+    [\ux , \ux +\uh ] = \{x(t) ~\forall t \in [0,1]\} \subset \Rn
+\]
+
+Definiamo inoltre la funzione \(F(t) : [0,1] \to \R \), che associa \(t \mapsto f(x(t)) = f(\ux+t\uh)\)
+
+Se \(f \in C^{1}\), allora anche \(F \in C^1\), quindi esiste:
+
+\[
+    F'(t) = [f(x(t))]' = \prods{\nabla f(x(t))}{\frac{\diff }{\diff t}x(t)} = \prods{\nabla f(\ux+t\uh)}{\uh} = \sum^{n}_{i=1} \left[ \frac{\partial f}{\partial x_i} (\ux + t\uh ) \right] h_i
+\]
+
+Se inoltre, \(f \in C^{2}\), allora esiste anche:
+
+\[
+    F''(t) = \left( F'(t) \right)' = \sum^{n}_{j=1} \frac{\partial}{\partial x_j} \left[ \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(\ux + t\uh ) h_i \right] h_j = \sum^{n}_{i,j=1} \left[ \frac{\partial^{2} f}{\partial x_i \partial x_j} (\ux +  t\uh ) \right] h_i h_j
+\]
+
+Questo è un polinomio quadratico.
+
+\pagebreak
+\subsubsection{Polinomio di Taylor con resto di Lagrange}
+
+Ridefiniamo quanto detto nell'introduzione:
+\begin{itemize}
+    \item Sia \(A \subseteq \Rn \) con \(A\) aperto;
+
+    \item Sia \(f: A \subseteq \Rn \rightarrow \R \), di classe \(C^{k}\) per qualche \(k \in \N \);
+
+    \item Siano \(\ux \) e \(\ux +\uh \) due punti in \(A\) tali che il segmento \([\ux, \ux +\uh ] \subset \Rn \) sia tutto contenuto in \(A\).
+
+    \item Definiamo la funzione \(x(t) : \R \to \Rn \), che associa \(t \mapsto \ux+t\uh \) definita \(\forall t \in [0,1]\). Con questa, il segmento è possibile scriverlo come:
+          \[
+              [\ux , \ux +\uh ] = \{x(t) ~\forall t \in [0,1]\} \subset \Rn
+          \]
+
+    \item Definiamo inoltre la funzione \(F(t) : [0,1] \to \R \), che associa \(t \mapsto f(x(t)) = f(\ux+t\uh)\)
+\end{itemize}
+
+Osserviamo che \(F(0) = f(\ux)\) e che \(F(1) = f(\ux+\uh)\).
+
+\proposizione{Formula di Taylor con resto di Lagrange}{
+    Essendo \(F\) una funzione in una variabile, applico Taylor in una variabile fino all'ordine \((k-1)\), usando il resto di Lagrange (rappresentato dentro il box).
+
+    Quindi, centrando il polinomio di Taylor in \(0\), esiste \(\theta \in (0,1)\) tale che vale:
+    \begin{align*}
+        F(1) & = F(0) + F'(0)(1-0) + \frac{F''(0)}{2}{(1-0)}^{2} + \cdots + \frac{F^{(k-1)}(0)}{(k-1)!}{(1-0)}^{k-1} + \boxed{\frac{F^{(k)}(\theta)}{k!}{(1-0)}^{k}} \\
+             & = F(0) + F'(0) + \frac{F''(0)}{2} + \cdots + \frac{F^{(k-1)}(0)}{(k-1)!} + \boxed{\frac{F^{k}(\theta)}{k!}}
+    \end{align*}
+}
+
+Vediamo dunque di dimostrare quanto appena detto per i primi ordini:
+
+\filbreak{}
+\subsubsection*{Per k=1}
+
+Con \(k=1\) ritroviamo una versione in più variabili del teorema di Lagrange.
+
+\teorema{Formula di Taylor di ordine 1 con resto in forma di Lagrange}{
+    Date tutte le definizione iniziali;
+    Se \(f \in C^1\), allora esiste \(\theta \in (0,1)\) tale che:
+    \begin{align*}
+        f(\ux+\uh) & = f(\ux) + f_x(\theta)\cdot\uh                                                                    &                         \\
+                   & = f(\ux) + \underbrace{\prods{\nabla f(\ux+ \theta \uh)}{\uh}}_{\text{resto calcolato nel punto}} & \text{(forma compatta)} \\
+                   & = f(\ux) + \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(\ux+\theta\uh) \cdot h_i                & \text{(forma estesa)}
+    \end{align*}
+}
+\begin{proof}
+    Applichiamo Lagrange a \(F\) nell'intervallo \((0,1)\); \(\exists \theta \in (0,1)\) tale che:
+
+    \[
+        F'(\theta) = \frac{F(1) - F(0)}{1-0} \implies F(1) = F(0) + F'(\theta)
+    \]
+
+    Ricordando che \(F'(t) = \prods{\nabla f(\ux+t\uh)}{\uh}\), e che \(F(0) = f(\ux)\), e che \(F(1) = f(\ux+\uh)\); sostituendo, ritroviamo la tesi:
+
+    \[
+        f(\ux+\uh) = f(\ux) + \prods{\nabla f(\ux+ \theta \uh)}{\uh}
+    \]
+
+\end{proof}
+
+\subsubsection*{Per k=2}
+
+\teorema{Formula di Taylor di ordine 1 con resto in forma di Lagrange}{
+    Date tutte le definizione iniziali;
+    Se \(f \in C^2\), allora esiste \(\theta \in (0,1)\) tale che:
+    \begin{align*}
+        f(\ux+\uh) & = f(\ux) + \sum^{n}_{i=1} \left[ \frac{\partial f}{\partial x_i}(\ux) \cdot h_i \right] + \frac{1}{2}\sum^{n}_{i,j=1} \left[ \frac{\partial^{2} f}{\partial x_i \partial x_j}(\ux+\theta\uh) \cdot h_i h_j \right] \\
+                   & = f(\ux) + \prods{\nabla f(\ux)}{\uh} + \frac{1}{2}\prods{Hf(\ux+\theta\uh) \cdot \uh}{\uh}
+    \end{align*}
+}
+\begin{proof}
+    Come per il caso precedente, la tesi viene da Taylor per \(k=2\):
+
+    \[
+        F(1) = F(0) + F'(0) + \frac{F''(\theta)}{2}
+    \]
+
+\end{proof}
+
+\pagebreak
+\subsubsection{Polinomio di Taylor con resto di Peano}
+
+\defn{Resto di Peano in \(\Rn \)}{
+    Date tutte le definizione iniziali;
+    Se \(f \in C^2\), allora:
+
+    \[
+        f(\ux+\uh) = f(\ux) + \langle \nabla f(\ux),\uh \rangle + \frac{1}{2} \langle Hf(\ux) \cdot \uh, \uh \rangle + o(\norm{\uh}^2)
+    \]
+}
+
+\defn{Resto di Peano in \(\R^2\)}{
+    Date tutte le definizione iniziali;
+
+    Siano \(\ux_0 =(x_0,y_0)\), \(\uh  = (h,k)\);
+
+    Sia \(f \in C^2(A)\) tale che esista \(Hf(x,y) ~\forall (x,y) \in A\), dove quindi \(Hf(x,y)\) è simmetrica.
+
+    Se tutto questo, allora:
+    \begin{align*}
+        f(x_0 + h, y_0 + k) = & \ f(x_0,y_0)                                                                                                       \\
+                              & + f_x(x_0,y_0) \cdot h + f_y(x_0,y_0) \cdot k                                                                      \\
+                              & + \frac{1}{2} \left[ f_{xx}(x_0,y_0) \cdot h^{2} + 2f_{xy}(x_0,y_0) \cdot hk + f_{yy}(x_0,y_0) \cdot k^{2} \right] \\
+                              & + o(h^{2}+k^{2})
+    \end{align*}
+}
+Il pezzo tra parentesi quadre è il risultato del prodotto tra matrici e vettori:
+\begin{align*}
+    \begin{bmatrix}
+        f_{xx} & f_{xy} \\
+        f_{xy} & f_{yy}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        h \\
+        k
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        h & k
+    \end{bmatrix}
+     & =
+    \begin{bmatrix}
+        f_{xx} \cdot h + f_{xy} \cdot k \\
+        f_{xy} \cdot h + f_{yy} \cdot k
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        h & k
+    \end{bmatrix}                                                                       \\
+     & = (f_{xx} \cdot h + f_{xy} \cdot k)(h+k) + (f_{xy} \cdot h + f_{yy} \cdot k)(h+k) \\
+\end{align*}
+Quindi, \(\boxed{P_2(\ux, \ux_0)}\) è il polinomio omogeneo in due variabili, di grado 2, che meglio approssima la funzione \(f\) vicino a \(\ux_0\). Ovvero, per la definizione di o piccolo:
+\[
+    \lim_{\ux \to \ux_0} \frac{f(x,y) - P_2(x,y)}{\underbrace{{(x-x_0)}^2 + {(y-y_0)}^2}_{\norm{\ux-\ux_0}^2}} = 0
+\]
+In \(\ux_0 = (x_0,y_0)\) possiamo quindi approssimare la funzione come:
+
+\[
+    f(x,y) = P_2((x,y), (x_0, y_0)) + o({(x-x_0)}^{2} + {(y-y_0)}^{2})
+\]
+con:
+\begin{align*}
+    P_2(\ux, \ux_0) = & \ f(x_0,y_0) + f_x(x_0,y_0) (x-x_0) + f_y(x_0,y_0) (y-y_0)                                                                      \\
+                      & + \frac{1}{2} \left[ [f_{xx}(x_0,y_0)]{(x-x_0)}^{2} + 2[f_{xy}(x_0,y_0)](x-x_0)(y-y_0) + [f_{yy}(x_0,y_0)]{(y-y_0)}^{2} \right]
+\end{align*}

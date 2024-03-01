@@ -1,0 +1,8 @@
+build/
+/*.log
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+!.vscode/ltex.*.txt
+/*.pdf

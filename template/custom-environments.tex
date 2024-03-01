@@ -1,0 +1,146 @@
+% LTeX: enabled=false
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem, Corollari ecc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+%%% upto here
+\newcounter{theo}[section]
+\newenvironment{theo}[1][]{%
+\stepcounter{theo}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline= (current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut{} Teorema~\thetheo};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline= (current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut{} Teorema~\thetheo:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+\newcounter{lemm}[section]
+\newenvironment{lemm}[1][]{%
+\stepcounter{lemm}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline= (current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut{} Lemma~\thelemm};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline= (current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut{} Lemma~\thelemm:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+
+\newcounter{corollario}[section]
+\newenvironment{corollario}[1][]{%
+\stepcounter{corollario}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline= (current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut{} Corollario~\thecorollario};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline= (current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut{} Corollario~\thecorollario:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+\newcounter{definizione}[section]
+\newenvironment{definizione}[1][]{%
+\stepcounter{definizione}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline= (current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut{} Definizione~\thedefinizione};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline= (current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut{} Definizione:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+\newcounter{propo}[section]
+\newenvironment{propo}[1][]{%
+\stepcounter{propo}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline= (current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut{} Proposizione~\thepropo};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline= (current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut{} Proposizione~\thepropo~- #1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+\newcounter{ese}[section]
+\newenvironment{ese}[1][]{%
+\stepcounter{ese}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline= (current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut{} Esempio~\theese};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline= (current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut{} Esempio~\theese~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}

@@ -1,0 +1,39 @@
+% LTeX: enabled=false
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+\newcommand*\EvalCustom[4]{#1#4|_{#2}^{#3}}
+\newcommand{\teorema}[2]{\vbox{\begin{theo}[#1]{}{}#2\end{theo}}}
+\newcommand{\cor}[2]{\vbox{\begin{corollario}[#1]{}{}#2\end{corollario}}}
+\newcommand{\lemma}[2]{\vbox{\begin{lem}[#1]{}{}#2\end{lem}}}
+\newcommand{\proposizione}[2]{\vbox{\begin{propo}[#1]{}{}#2\end{propo}}}
+% \newcommand{\mprop}[2]{\begin{Prop}{#1}{}#2\end{Prop}}
+% \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
+% \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}
+% \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
+% \newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
+\newcommand{\defn}[2]{\vbox{\begin{definizione}[#1]{}{}#2\end{definizione}}}
+\newcommand{\esempio}[2]{\vbox{\begin{ese}[#1]{}{}#2\end{ese}}}
+% \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
+% \newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
+% \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
+% \newcommand{\nt}[1]{\begin{note}#1\end{note}}
+
+\newcommand*{\ux}[0]{\underline{x}}
+\newcommand*{\uy}[0]{\underline{y}}
+\newcommand*{\uh}[0]{\underline{h}}
+\newcommand*{\uzero}[0]{\underline{0}}
+\newcommand*{\N}[0]{\mathbb{N}}
+\newcommand*{\C}[0]{\mathbb{C}}
+\newcommand*{\R}[0]{\mathbb{R}}
+\newcommand*{\Rn}[0]{\R^{n}}
+\newcommand*{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand*{\prods}[2]{\langle#1,#2\rangle}
+% \newcommand{\diff}{\mathop{}\!d}
+\newcommand*{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand*{\frontiera}[1]{\mathrm{d}#1}
+\newcommand*{\giventhat}[1][\big]{\;#1|\;}
+\newcommand*{\graf}[1]{\text{graf}\left(#1\right)}
+\newcommand*{\im}[1]{\text{Im}\left(#1\right)}
+
+\newcommand*\circled[1]{\tikz[baseline= (char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}

@@ -1,0 +1,131 @@
+\subsection{Curve in \texorpdfstring{\(\Rn \)}{Rn}}
+
+\subsubsection{Definizione di Curva in Rn}
+
+Una curva è \textbf{un'applicazione continua} su un intervallo e così definita:
+\begin{align*}
+    \varphi: [a,b] \subset \R & \rightarrow \Rn                                                        \\
+    t                         & \mapsto \varphi(t) = (\varphi_1(t),\varphi_2(t), \ldots ,\varphi_n(t))
+\end{align*}
+Le \textbf{equazioni parametriche} della curva sono:
+
+\begin{equation*}
+    \varphi:
+    \begin{cases}
+        \begin{aligned}
+            x_1(t)      & = \varphi_1(t) \\
+            x_2(t)      & = \varphi_2(t) \\
+            \vdots\quad & = \quad\vdots  \\
+            x_n(t)      & = \varphi_n(t)
+        \end{aligned}
+    \end{cases}
+\end{equation*}
+
+L'immagine della curva \(\varphi(I)\) è chiamata \textbf{sostegno della curva}:
+\[
+    \varphi(I) = \{\uy \in \Rn \giventhat \uy = \varphi(t) ~\forall t \in I\}
+\]
+
+\subsubsection{Curve piane (o cartesiane)}
+
+In \(\R^2\) la curva si chiama \textbf{Curva Piana o Cartesiana}
+
+Se poniamo:
+\begin{align*}
+     & \varphi: [a,b]\rightarrow \R^{2} \qquad \varphi: \begin{cases}
+                                                            x = t \\
+                                                            y = f(t)
+                                                        \end{cases} \quad \forall t \in [a,b] \\[3mm]
+     & t \mapsto \varphi(t) = (\varphi_1(t), \varphi_2(t)) = (t,f(t))
+\end{align*}
+avremmo che il sostegno della curva piana è il grafico di \(f\):
+\[
+    \graf{f} = \left\{(x,y) \in \R^2 \giventhat y=f(x) ~\forall x \in [a,b]\right\} = \left\{(x,f(x))\right\} \subset \R^2
+\]
+
+\subsubsection*{Esempi di curve cartesiane}
+
+\(y=x+2 \quad \) per \(x \in [0,3]\):
+
+Sostengo della curva: \( \{(x,x+2) \giventhat x \in [0,3]\} \)
+
+\begin{equation*}
+    \text{Equazioni parametriche}:
+    \begin{cases}
+        x = t \\
+        y = t + 2
+    \end{cases}
+    \quad t \in [0,3]
+\end{equation*}
+
+\filbreak{}
+\subsubsection{Curve regolari}
+
+\defn{Arco di curva regolare}{
+    Una curva si definisce \textbf{regolare} se:
+    \begin{itemize}
+        \item l'applicazione \(\varphi \) è di classe \(C^{1}\)
+
+              ovvero, le derivate prime sono continue: \(\varphi_i : I \to \R \) è \(C^1(I)\)
+        \item \(\varphi'(t) \neq 0 \quad\forall t \in (a,b)\)
+
+              In particolare \(\varphi'(t) \neq 0\) significa che il vettore:
+              \[
+                  (\varphi_1'(t), \ldots ,\varphi_n'(t)) = \varphi'(t)
+              \]
+              non ha mai tutte le componenti contemporaneamente nulle.
+              Quindi \(\norm{\varphi'(t)} > 0\)
+    \end{itemize}
+}
+
+Si noti che \(\varphi'(t_0)\) è effettivamente un vettore. Inoltre, se \(\varphi(t)\) è regolare allora il vettore \(\varphi'(t_0)\) si chiama vettore tangente alla curva in \(\varphi(t_0) \in \Rn \)
+
+NB{:} non tutte le curve sono regolari. Ad esempio, la curva definita da: \(\varphi(t) = (\cos 3t, \sin 3t)\), nonostante sia infinitamente derivabile, non è sempre non nulla. Infatti, per \(t=0\), \(\varphi'(t)=(0,0)\).
+
+\subsubsection*{Esempio}
+
+Nel caso di una curva piana cartesiana:
+\begin{equation*}
+    \varphi(t):
+    \begin{cases}
+        x = t \\
+        y = f(t)
+    \end{cases}
+\end{equation*}
+con \(f: \R \to \R \) una funzione tale che \(f \in C^1([a,b])\);
+
+Fissato \(t_0 \in \R \), abbiamo che: \(\varphi'(t_0) = (1,f'(t_0))\).
+
+Per cui la retta tangente al sostegno di \(\varphi \) risulta essere la retta tangente al grafico di \(f\) in \(t_0\).
+
+\filbreak{}
+
+\subsubsection*{Esempio di due curve con stesso sostegno}
+
+Consideriamo le due applicazioni a valori vettoriali:
+
+\[
+    \underbrace{\varphi:[0,2\pi] \rightarrow \R^{2}}_{\varphi(t) = (\varphi_1(t),\varphi_2(t))}
+\]
+
+\[
+    \underbrace{\psi: [0,4\pi] \rightarrow  \R^{2}}_{\psi(t) = (\psi_1(t),\psi_2(t))}
+\]
+
+
+\begin{equation*}
+    \begin{cases}
+        \varphi_1(t) = \cos t \\
+        \varphi_2(t) = \sin t
+    \end{cases}
+\end{equation*}
+
+
+\begin{equation*}
+    \begin{cases}
+        \psi_1(t) = \cos t \\
+        \psi_2(t) = \sin t
+    \end{cases}
+\end{equation*}
+
+Queste sono due curve piane che hanno lo stesso sostegno. Il sostegno di entrambe è dato dai punti del piano che stanno sulla circonferenza di centro \(\uzero \) e raggio \(1\), ma le due rimangono curve diverse.

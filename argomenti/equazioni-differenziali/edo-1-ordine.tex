@@ -1,0 +1,47 @@
+\subsection{Equazioni differenziali del I ordine}
+
+\subsubsection{Forma e soluzioni}
+
+Le EDO di I ordine lineari sono nella forma:
+
+\[
+    F(x,y(x),y'(x))=0
+\]
+
+\begin{itemize}
+    \item \(x\) incognita
+    \item \(y = f(x)\) funzione incognita
+    \item \(y'=f'(x)\) derivata prima \(\rightarrow \) ciò che sappiamo
+\end{itemize}
+
+L'obiettivo è trovare una funzione \(f(x)\) che derivata eguagli la sua derivata prima \(f'(x)\), data solo la sua derivata prima.
+
+\defn{Forma normale}{
+    Una EDO nella seguente forma, si dice in forma normale:
+    \[
+        y'(x) = f(x,y(x))
+    \]
+}
+
+\defn{Integrale generale}{
+    L'insieme di tutte le soluzioni dell'equazione su un intervallo \([a,b]\) dipende da \(x\) e \(c\) e si scrive:
+    \[
+        \varphi(x,c) = \int f(x) \diff x = y(x) + c \qquad c \in \R
+    \]
+
+    Questo è l'integrale generale su \([a,b]\) della EDO di I ordine; rappresenta una famiglia di funzioni che dipendono dalla variabile della funzione e da un parametro.
+    \[
+        x \mapsto \varphi(x,c)
+    \]
+    dove il parametro \(c \in \R \) indica tutte le primitive possibili
+}
+
+\defn{Soluzione particolare}{
+    Se alla EDO imponiamo una condizione supplementare detta \underline{condizione iniziale}, allora, tra tutte le soluzioni ne selezioniamo una singola chiamata \textbf{soluzione particolare}.
+    Questa soluzione particolare è l'unica che verifica la condizione iniziale.
+
+    Un esempio di condizione iniziale:
+    \[
+        y(x_0) = y_0 \in \R
+    \]
+}
