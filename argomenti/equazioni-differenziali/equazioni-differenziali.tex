@@ -5,8 +5,8 @@ Le equazioni differenziali sono equazioni in cui l'incognita è la funzione \(y 
 Osservazioni:
 \begin{itemize}
     \item Equazioni differenziali \(\neq{}\) Equazioni algebriche
-    \item Queste equazioni sono utili per esempio per modellare i fenomeni della realtà in fisica
-    \item Servono per l'appunto quando ci serve la funzione incognita \(u(x)\) avendo solo informazioni sul suo comportamento, ovvero le sue derivate che possono ad esempio rappresentare velocità e accelerazione istantanee.
+    \item Queste equazioni sono utili ad esempio per modellare i fenomeni della realtà in fisica
+    \item Servono quando ci serve la funzione incognita \(y(x)\) avendo solo informazioni sul suo comportamento, ovvero le sue derivate che possono ad esempio rappresentare velocità e accelerazione istantanee.
 \end{itemize}
 
 \subsubsection{Tipi di equazioni differenziali}
@@ -35,7 +35,7 @@ Noi vedremo quelle del primo e secondo ordine.
 \subsubsection{Forme delle equazioni differenziali}
 
 \defn{Forma implicita}{
-Una equazione di ordine \(n\) è una equazione del tipo:
+Un'equazione di ordine \(n\) è un'equazione del tipo:
 \[
     F(x,y(x),y'(x),\ldots,y^{(n-1)}(x),y^{(n)}(x))=0
 \]
@@ -44,12 +44,12 @@ Una equazione di ordine \(n\) è una equazione del tipo:
 \]
 \begin{itemize}
     \item \(y\) è la funzione incognita che dipende da \(x\).
-    \item \(F\) è la funzione assegnata che ha valori reali e dipende da (n+2) variabili \(x,y(x),y'(x),\ldots \).
+    \item \(F\) è la funzione assegnata che ha valori reali e dipende dalle \(n+2\) variabili: \[x,y(x),y'(x),\ldots,y^{(n)}(x) \]
 \end{itemize}
 }
 
 \defn{Forma esplicita (o normale)}{
-Una equazione di ordine \(n\) in forma normale è una equazione del tipo:
+Un'equazione di ordine \(n\) in forma normale è un'equazione del tipo:
 \[
     y^{(n)}(x) = F(x,y(x),y'(x),\ldots,y^{(n-1)}(x))
 \]
@@ -83,7 +83,7 @@ L'insieme di tutte le soluzioni di (\ref{eq:soluzione}) in \(I\) si chiama integ
 
 Quello che otteniamo è una formula di 1+ parametri che ci permette di identificare tutte le soluzioni. E.g.:
 \[
-    y'=2x-1 \quad\text{ha la soluzione generale}\quad y=x^{2}+c
+    y'=2x \quad\text{ha la soluzione generale}\quad y=x^{2}+c
 \]
 }
 
@@ -91,7 +91,7 @@ Quello che otteniamo è una formula di 1+ parametri che ci permette di identific
 È una soluzione unica presa dalla famiglia di soluzione della EDO (\ref{eq:soluzione}), in cui il parametro \(c\) assume un valore costante specifico. E.g.:
 
 \[
-    y'=2x-1 \quad\text{ha soluzione particolare}\quad y=x^{2}+1
+    y'=2x \quad\text{ha soluzione particolare}\quad y=x^{2}+1
 \]
 
 Il grafico di ogni soluzione è detto \textbf{curva integrale}.

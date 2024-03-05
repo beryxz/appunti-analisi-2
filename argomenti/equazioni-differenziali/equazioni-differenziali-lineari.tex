@@ -2,12 +2,12 @@
 
 \subsubsection{Forma lineare}
 
-Una EDO di ordine \(n\) si dice \textbf{lineare} se è nella forma
+Una EDO di ordine \(n\) si dice \textbf{lineare} se è nella forma:
 \[
     a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+ \cdots + a_2(x)y''+a_1(x)y'+a_0(x)y=f(x)
 \]
 
-Dove, \(x \in I\)\ \ e\ \  \(a_0(x),\ldots,a_n(x),\,f(x)\) sono funzioni \underline{assegnate} e \underline{continue} sull'intervallo I.
+Dove, \(x \in I\ \text{ e }\ a_0(x),\ldots,a_n(x),f(x)\) sono funzioni \underline{assegnate} e \underline{continue} sull'intervallo I.
 
 Ad esempio:
 \[
@@ -50,6 +50,9 @@ Inoltre, se \(y_1, y_2 \in C^n(I)\) e \(\lambda_1, \lambda_2 \in \R \), si ha:
         L(\varphi(x)) = \varphi^{(3)}(x) + x\varphi''(x) + x^2\varphi(x)
     \end{align*}
     \begin{align*}
-        L(\alpha\varphi_1(x) + \beta\varphi_2(x)) & = \cdots \\
+        L(\alpha\varphi_1(x) + \beta\varphi_2(x)) & = {(\alpha\varphi_1(x) + \beta\varphi_2(x))}^{(3)} + x{(\alpha\varphi_1(x) + \beta\varphi_2(x))}'' + x^2(\alpha\varphi_1(x) + \beta\varphi_2(x))                       \\
+                                                  & = \alpha \left[ {\varphi_1}^{(3)}(x) + x {\varphi_1}''(x) + x^2\varphi_1(x) \right] + \beta \left[ {\varphi_2}^{(3)}(x) + x {\varphi_2}''(x) + x^2\varphi_2(x) \right] \\
+                                                  & = \alpha \cdot L(\varphi_1(x)) + \beta \cdot L(\varphi_2(x))                                                                                                           \\
+                                                  & \implies \text{è lineare}
     \end{align*}
 \end{proof}

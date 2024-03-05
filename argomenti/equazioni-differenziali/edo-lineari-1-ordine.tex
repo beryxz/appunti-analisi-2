@@ -15,9 +15,9 @@ Consideriamo ora l'EDO in forma normale (1) e la sua omogenea associata (2):
 
 dove \(x \in [a,b]\) e \(a(x), f(x)\) sono funzioni continue in \([a,b]\).
 
-Attenzione, con il termine omogenea associata si intende un equazione separata che ha \(0\) come \(f(x)\); è sbagliato dire che \(f(x) = 0\).
+\underline{Attenzione}, con il termine omogenea associata si intende un equazione separata che ha \(0\) come \(f(x)\); è sbagliato dire che \(f(x) = 0\).
 
-Infatti, data una equazione in forma normale insieme alla sua omogenea associata, vogliamo studiare com'è possibile relazionarle per trovare l'insieme di tutte le soluzioni di (1).
+Data un'equazione in forma normale insieme alla sua omogenea associata, vogliamo studiare com'è possibile relazionarle per trovare l'insieme di tutte le soluzioni di (1).
 
 \teorema{}{
 L'integrale generale di (1) in \([a,b]\) è dato dalla somma dell'integrale generale dell'omogenea associata (2) con un integrale particolare di (1)
@@ -34,8 +34,8 @@ Questo teorema vale per tutte le EDO lineari di ordine \(n\).
 
     Dunque per ipotesi si ha che:
     \begin{align*}
-         & y'(x)+a(x)y(x) = f(x)\ \ \ \forall x \in [a,b]              \\
-         & \bar y'(x) + a(x) \bar y(x) = f(x)\ \ \ \forall x \in [a,b]
+         & y'(x)+a(x)y(x) = f(x) \quad \forall x \in [a,b]              \\
+         & \bar y'(x) + a(x) \bar y(x) = f(x) \quad \forall x \in [a,b]
     \end{align*}
 
     Entrambe soddisfano la (1). Le sottraggo membro a membro:
@@ -50,13 +50,14 @@ Questo teorema vale per tutte le EDO lineari di ordine \(n\).
         [y(x)-\bar y(x)]' + a(x)[y(x) - \bar y(x)] = 0
     \]
 
-    Dunque, la funzione \(y(x) - \bar y(x) = z(x)\) è soluzione di (2)
+    Dunque, la funzione \(y(x) - \bar y(x) = z(x)\) è soluzione di (2).
+
     Quindi:
     \[
         y(x) = \bar y(x) + z(x)
     \]
 
-    Viceversa, se \(z(x)\) è una qualsiasi soluzione di (2) e \(\bar y(x)\) è una soluzione particolare di (1)
+    Viceversa, se \(z(x)\) è una soluzione qualsiasi di (2) e \(\bar y(x)\) è una soluzione particolare di (1)
     voglio mostrare che la loro somma è soluzione di (1).
 
     Quindi, abbiamo:
@@ -106,7 +107,7 @@ possiamo dire che:
     L(u-v) = Lu-Lv = f- f=0
 \]
 
-Se indichiamo con \(V_0\) l'insieme di tutte le soluzioni dell'equazione omogenea associata (\(Lw=0\) su \(I=[a,b]\) e \(V_0\) è l'insieme delle \(w \in C^n(I)\)) e con \(\bar u(t)\) una soluzione nota di (1)
+Se indichiamo con \(\bar{u}(t)\) una soluzione nota di (1), e con \(V_0\) l'insieme di tutte le soluzioni dell'equazione omogenea associata, ovvero \(Lw=0\) su \(I=[a,b]\) e \(V_0\) è l'insieme delle \(w \in C^n(I)\):
 
 \[
     u(x) = \bar u(x) +w(x)
@@ -114,26 +115,27 @@ Se indichiamo con \(V_0\) l'insieme di tutte le soluzioni dell'equazione omogene
 
 L'uguaglianza sopra, al variare di \(w(x)\) in \(V_0\) ci dà tutte le soluzioni del problema di partenza.
 
-(Il problema quindi, diventa solo di studiare il problema omogeneo)
+Il problema si riduce al solo studio del problema omogeneo.
 
 \subsubsection{Integrale generale dell'omogenea associata = z(x)}
 
 Vediamo come si determina l'insieme di tutte le soluzioni di (2), ovvero l'integrale generale di:
+
 \[
-    y'(x)+a(x)y(x) = 0\ \ \ x \in [a,b] \qquad \circled{2}
+    y'(x)+a(x)y(x) = 0 \qquad x \in [a,b]
 \]
 
-Sia \(A(x)\) una \textbf{primitiva} di \(a(x)\) su \(I = [a,b]\).
+Sia \(A(x)\) una \textbf{primitiva} di \(a(x)\) sempre su \([a,b]\).
 
-Sappiamo che (2) è continua su I, quindi è anche derivabile su I
-
+Sappiamo che (2) è continua su \([a,b]\), quindi è anche derivabile su \([a,b]\):
+\medskip
 \begin{align*}
     A'(x) & = a(x)              & \forall x \in [a,b] \\
     A(x)  & = \int a(x) \diff x & \forall x \in [a,b]
 \end{align*}
 
 Moltiplichiamo i due membri della (2) per la quantità sempre positiva \(e^{A(x)}\):
-
+\medskip
 \begin{align*}
     e^{A(x)} y'(x) + e ^{A(x)}a(x) y(x) & = 0\ \ \ \forall x \in [a,b] \\
     \bigl(e^{A(x)} y(x)\bigr)'          & = 0
@@ -146,13 +148,11 @@ Questo, per la caratterizzazione delle funzioni costanti, ci dice che:
 \]
 
 porto dall'altra parte:
-
 \[
     y(x) = c e ^{-A(x)}
 \]
 
 espandendo \(A(x)\):
-
 \[
     y(x) = ce^{- \int a(x) \diff x}
 \]
@@ -161,10 +161,10 @@ Abbiamo quindi la struttura delle soluzioni, ovvero, l'integrale generale di (2)
 \[
     y(x) = c z_0(x)
 \]
+
 dove \(z_0(x)\) è una soluzione particolare di (2) e \(c\) è il parametro reale che ci permette di ottenere tutte le soluzioni.
 
 Mostriamo che \(e ^{-A(x)}\) è effettivamente soluzione di (2). Ovvero, controlliamo che \(f'(x) = y'(x)\):
-
 \begin{spreadlines}{3mm}
     \begin{align*}
         y'(x) + a(x)y(x) = 0             \\
@@ -173,6 +173,7 @@ Mostriamo che \(e ^{-A(x)}\) è effettivamente soluzione di (2). Ovvero, control
     \end{align*}
 \end{spreadlines}
 
+\pagebreak
 \subsubsection{Soluzione particolare della EDO = ȳ(x)}
 
 Cerco l'integrale particolare a occhio oppure usando il \textbf{metodo di variazione della costante}
@@ -200,6 +201,7 @@ e quindi otteniamo l'integrale particolare:
     \bar y(x) = e ^{-A(x)} \int e^{A(x)} f(x) \diff x
 \]
 
+\pagebreak
 \subsubsection{Formula dell'Integrale Generale}
 
 Se metto tutto insieme, \textbf{l'integrale generale} diventa:
@@ -233,9 +235,9 @@ dove:
 \end{align*}
 Quindi:
 \begin{align*}
-    y(x) & = c e ^{5x} + e ^{5x} \int e ^{-5x} e^x \diff x \\
-         & = c e ^{5x} + e ^{5x} \int e ^{-4x} \diff x     \\
-         & = c e ^{5x} + e ^{5x} (- \frac{1}{4} e ^{-4x})  \\
+    y(x) & = c e ^{5x} + e ^{5x} \int e ^{-5x} e^x \diff x             \\
+         & = c e ^{5x} + e ^{5x} \int e ^{-4x} \diff x                 \\
+         & = c e ^{5x} + e ^{5x} \left( - \frac{1}{4} e ^{-4x} \right) \\
          & = c e ^{5x} - \frac{1}{4} e ^{x}
 \end{align*}
 
@@ -258,7 +260,7 @@ Da una EDO di I ordine \underline{lineare}, se imponiamo una \underline{condizio
 
     si definisce problema di Cauchy ed ha un'unica soluzione.
 
-    Se \(A(x_0) = 0\), allora la soluzione sarà della forma:
+    Se \(\textcolor{Red}{A(x_0) = 0}\), allora la soluzione sarà della forma:
 
     \[
         y(x) = y_{0} e^{-\int_{x_0}^{x} a(t) \diff{t}} + e^{-\int_{x_0}^{x} a(t) \diff{t}} \int_{x_0}^{x} f(s) e^{\int_{x_0}^{s} a(t) \diff{t}} \diff s
@@ -304,12 +306,12 @@ Per trovare una soluzione partiamo dall'integrale generale della EDO, che era di
 
 Determinare la soluzione del problema di Cauchy:
 
-\begin{equation}
+\begin{equation*}
     \begin{cases}
         y'(x) = 5y(x) + e^{x} \\
         y(0) = 0
     \end{cases}
-\end{equation}
+\end{equation*}
 
 Con \(x_0 = 0\)
 
@@ -317,11 +319,11 @@ Forma normale: \(y'(x) -5y(x) = e^x \quad \implies \quad a(x) = -5\,,\ f(x) = e^
 
 \[A(x) = \int_{{0}}^{{x}} a(t) \diff t = - \int_{{0}}^{{x}} 5 \diff t = -5x\]
 
-Usiamo dunque la formula generale:
+Dato che \(A(x_0) = A(0) = 0\), possiamo dunque usare la formula generale:
 \begin{align*}
     y(x) & =0e^{5x} + e^{5x}\int_{{0}}^{{x}} e^{s} e^{-5s} \diff s                    \\
          & = e^{5x}\int_{{0}}^{{x}} e^{-4s} \diff s                                   \\
-         & = e^{5x} \left( -\frac{1}{4} e^{-4s} \right) \Bigg|_{0}^{x}                \\
+         & = e^{5x} \left( -\frac{1}{4} e^{-4s}\ \bigg|_{0}^{x} \right)               \\
          & = e^{5x} \left( -\frac{1}{4} e^{-4x} - \left( -\frac{1}{4} \right) \right) \\
          & = - \frac{1}{4} e^{x}+ \frac{1}{4} e^{5x}
 \end{align*}
@@ -330,7 +332,7 @@ Usiamo dunque la formula generale:
 
 \subsubsection*{Esempio 2}
 
-Determinare l'integrale generale della EDO:\,
+Determinare l'integrale generale della EDO:
 
 \[
     y'+\frac{1}{\sqrt{x}} y=1
@@ -393,8 +395,7 @@ Adesso soddisfo la richiesta iniziale (quali sono le soluzioni che vanno all'inf
 
 questo vale per \(\forall c \in \R \)
 
-\filbreak{}
-
+\pagebreak
 \subsubsection*{Esempio 3}
 
 Risolvere il seguente problema di Cauchy
@@ -419,70 +420,16 @@ per via dell'intervallo il valore assoluto viene preso col meno:
 \]
 
 quindi l'integrale generale:
-
 \begin{align*}
-    y(x) & = 2 e ^{-2\ln(-x)}+ e^{-2\ln(-x)} \int_{{-1}}^{{x}} e ^{2\ln(-t)} \frac{1}{t^{2}} \diff t                             \\
-         & = 2 e ^{\ln \frac{1}{x ^{2}} }+ e ^{\ln \frac{1}{x ^{2}} }\int_{{-1}}^{{x}} e ^{\ln {t ^{2}}} \frac{1}{t^{2}} \diff t \\
-         & = \frac{2}{x ^{2}} + \frac{1}{x ^{2}} \int_{{-1}}^{{x}} 1 \diff t                                                        \\
-         & = \frac{2}{x ^{2}} + \frac{1}{x ^{2}} [t]\bigg|_{-1}^{x}                                                                 \\
-         & = \frac{2 }{x ^{2}} + \frac{1}{x ^{2}} (x+1)
+    y(x) & = 2e^{-2\ln(-x)}+ e^{-2\ln(-x)} \int_{{-1}}^{{x}} e^{2\ln(-t)} \frac{1}{t^{2}} \diff t                    \\
+         & = 2e^{\ln({(-x)}^{-2})} + e^{\ln({(-x)}^{-2})} \int_{{-1}}^{{x}} e^{\ln {(-t)}^2} \frac{1}{t^{2}} \diff t \\
+         & = 2e^{\ln(x^{-2})} + e^{\ln(x^{-2})} \int_{{-1}}^{{x}} e^{\ln(t^2)} \frac{1}{t^{2}} \diff t               \\
+         & = 2\frac{1}{x^{2}} + \frac{1}{x^{2}} \int_{{-1}}^{{x}} \cancel{t^2} \frac{1}{\cancel{t^2}} \diff t        \\
+         & = \frac{2}{x^{2}} + \frac{1}{x^{2}} \left[ t ~\Big|_{-1}^{x} \right]                                      \\
+         & = \frac{2}{x^{2}} + \frac{1}{x^{2}} (x+1) = \frac{3+x}{x^2}
 \end{align*}
 
-
-\subsubsection*{Esercizio per casa}
-
-\begin{equation*}
-    \begin{cases}
-        y'(x) = xy(x)+2x \\
-        y(0) = 1
-    \end{cases}
-\end{equation*}
-
-\textbf{Soluzione}
-
-Raccolgo:
-
-\[
-    y'(x)=x(y+2)
-\]
-
-Trovo le soluzioni stazionarie:
-
-\[
-    y+2=0
-\]
-
-\[
-    y=-2
-\]
-
-Trovo le altre:
-
-\[
-    \int \frac{1}{y+2} \diff y = \int x \diff x
-\]
-
-\[
-    y+2 = c e ^{ \frac{x^{2}}{2}}+c
-\]
-
-Impongo le condizioni di Cauchy e trovo c sostituendo:
-
-\[
-    y=3e ^{ \frac{x^{2}}{2}}-2
-\]
-
-Quindi la soluzione completa è:
-
-\begin{equation*}
-    \begin{cases}
-        y=-2 \\
-        y=3e ^{ \frac{x^{2}}{2}}-2
-    \end{cases}
-\end{equation*}
-
-\filbreak{}
-
+\pagebreak
 \subsubsection{Equazioni a variabili separabili}
 
 Una EDO di I ordine si dice a variabili separabili se è della forma:
@@ -495,7 +442,7 @@ Dove le funzioni \(f\) e \(g\) sono continue nei loro domini di definizione
 
 La parte che dipende da y (\(g(y)\)) viene moltiplicata a quella che dipende da x (\(f(x)\)).
 
-E.g.: Le EDO di I ordine lineari omogenee, \(y'(x)+a(x)y(x)=0\) sono equazioni a variabili separabili.
+E.g.: Le EDO di I ordine lineari omogenee, \(y'(x)+a(x)y(x)=0\), sono equazioni a variabili separabili.
 
 \defn{Soluzioni singolari}{
     Le \underline{soluzioni singolari} sono le soluzioni in cui \(g(y)=0\), ovvero le \(\bar{y}\) dove \(\bar{y}\) è radice di \(g(y)\).
@@ -509,10 +456,10 @@ E.g.: Le EDO di I ordine lineari omogenee, \(y'(x)+a(x)y(x)=0\) sono equazioni a
     dove \(F\) e \(G\) sono due primitive di \(f,g\) con \(G\) invertibile.
 }
 
-Per capire come risolverle, dimostriamo che le soluzioni non singolari, se ci sono, sono nella forma descritta.
+Per capire come risolverle, dimostriamo che le soluzioni non singolari, se ci sono, sono nella forma descritta:
 
 \begin{enumerate}
-    \item Si determinano gli eventuali \(\bar y\) reali t.c.\  \(g(\bar y) = 0\). Le \(y(x)= \bar y\) sono soluzioni singolari del problema
+    \item Si determinano gli eventuali \(\bar y\) reali tali che \(g(\bar y) = 0\). Le \(y(x) = \bar y\) sono soluzioni singolari del problema.
 
     \item Si considerano le rimanenti \(y \neq \bar y\), e si procede separando le variabili, ovvero dividendo per \(g(y)\). Divisione che possiamo fare in quanto \(g(y) \ne 0\).
 \end{enumerate}
@@ -604,8 +551,8 @@ Uso i fratti semplici per risolvere il primo membro:
 Quindi:
 \begin{align*}
     \int \frac{1}{1-y} \diff y - \int \frac{1}{2-y} \diff y & = \int x \diff x      \\
-    -\ln{|1-y|} + \ln{|2-y|}                              & = \frac{x ^{2}}{2} +c \\
-    \ln{\left| \frac{2-y}{1-y} \right|}                    & = \frac{x ^{2}}{2} +c
+    -\ln{|1-y|} + \ln{|2-y|}                                & = \frac{x ^{2}}{2} +c \\
+    \ln{\left| \frac{2-y}{1-y} \right|}                     & = \frac{x ^{2}}{2} +c
 \end{align*}
 
 Adesso devo esplicitare per \(y\) quindi passo agli esponenziali:
@@ -624,18 +571,18 @@ Tolgo il valore assoluto:
 
 Esplicitiamo la \(y(x)\) (per semplicità pongo \(c_2 = c\)):
 \begin{align*}
-    \frac{2-y}{1-y}                                 & = c e ^{\frac{x ^{2}}{2} }                                   \\
-    2-y                                             & = ce^{\frac{x ^{2}}{2} } (1-y)                               \\
-    2-y                                             & = ce^{\frac{x ^{2}}{2} } - (ce ^{\frac{x ^{2}}{2} })y        \\
-    -y + (ce ^{\frac{x ^{2}}{2} })y                 & = ce^{\frac{x ^{2}}{2} }-2                                   \\
-    y \left( -1 + (ce ^{\frac{x ^{2}}{2} }) \right) & = ce^{\frac{x ^{2}}{2} }-2                                   \\
-    y                                               & = \frac{ce^{\frac{x ^{2}}{2} }-2}{ce ^{\frac{x ^{2}}{2} }-1} \\
+    \frac{2-y}{1-y}                                              & = ce^{\frac{x ^{2}}{2} }                                           \\
+    2-y                                                          & = ce^{\frac{x ^{2}}{2} } (1-y)                                     \\
+    2-y                                                          & = ce^{\frac{x ^{2}}{2} } - \left( ce ^{\frac{x ^{2}}{2} } \right)y \\
+    -y + \left( ce ^{\frac{x ^{2}}{2} } \right)y                 & = ce^{\frac{x ^{2}}{2} }-2                                         \\
+    y \left[ -1 + \left( ce ^{\frac{x ^{2}}{2} } \right) \right] & = ce^{\frac{x ^{2}}{2} }-2                                         \\
+    y                                                            & = \frac{ce^{\frac{x ^{2}}{2} }-2}{ce ^{\frac{x ^{2}}{2} }-1}       \\
 \end{align*}
 E quindi le soluzioni sono:
 
 \begin{equation*}
     \begin{cases}
-        y = \frac{c e ^{\frac{x ^{2}}{2} }-2}{c e ^{\frac{x ^{2}}{2} }-1} \\
+        y = \frac{ce^{\frac{x ^{2}}{2} }-2}{ce^{\frac{x ^{2}}{2} }-1} \\
         y = 1
     \end{cases}
 \end{equation*}
@@ -643,10 +590,9 @@ E quindi le soluzioni sono:
 NB:\  \(y=2\) non è stata riscritta in quanto è già inclusa nell'integrale generale (caso di \(c = 0\)).
 
 \filbreak{}
-
 \subsubsection*{Parte 2: Problema di Cauchy}
 
-Imponiamo una condizione iniziale al problema precedente e risolviamolo, precisando il più ambio intervallo su cui è definita la soluzione del problema:
+Imponiamo una condizione iniziale al problema precedente e risolviamolo, precisando il più ampio intervallo su cui è definita la soluzione del problema:
 
 \begin{equation*}
     \begin{cases}
@@ -676,8 +622,8 @@ Troviamo ora il più ampio intervallo in cui è definita.
 La soluzione è definita sul più ampio intervallo contenente \(x_0 = 0\) per cui l'espressione ha senso. Nel nostro caso, questo si verifica quando il denominatore \(\neq 0\).
 
 \begin{align*}
-    e ^{\frac{x ^{2}}{2} } - 2 & \neq 0                  \\
-    e ^{\frac{x ^{2}}{2} }     & \neq 2                  \\
+    e ^{\frac{x ^{2}}{2} } - 2 & \neq 0                 \\
+    e ^{\frac{x ^{2}}{2} }     & \neq 2                 \\
     x ^{2}                     & \neq 2 \ln2            \\
     x                          & \neq \pm \sqrt{2 \ln2}
 \end{align*}
@@ -685,7 +631,7 @@ La soluzione è definita sul più ampio intervallo contenente \(x_0 = 0\) per cu
 Quindi, l'intervallo massimale che contiene zero (\(x=0\)) e che rispetta tutte le condizioni è:
 
 \[
-    0 \in (-\sqrt{2\ln2},\sqrt{2\ln2})
+    0 \in \left( -\sqrt{2\ln2},\sqrt{2\ln2} \right)
 \]
 
 Osserviamo che la soluzione:
@@ -801,27 +747,10 @@ Ovvero:
     c_1y_1(x) +c_2y_2(x) = 0 \iff c_1=c_2=0
 \]
 
+\pagebreak
 \subsubsection{Esercizi}
 
-\subsubsection*{Esercizio 1}
-
-\[
-    y(x) = ce ^{x^{2}-x}+e ^{x^{2}-x}\int xe^{x} \diff x = c e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
-\]
-
-Ponendo le condizioni di Cauchy:
-
-\[
-    y(0)=2
-\]
-
-La soluzione è:
-
-\[
-    2 e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
-\]
-
-\subsubsection*{Esercizio 2}
+\subsubsection*{Esercizio 1 {-} EDO a variabili separabili}
 
 \[
     y'=\sqrt[3]{x}y^{2}
@@ -878,3 +807,57 @@ Il più ampio intervallo è:
 \[
     0 \in \left(-\infty, \frac{2}{3}^{ \frac{3}{4}}\right)
 \]
+
+\pagebreak
+\subsubsection*{Esercizio 2 {-} Cauchy con EDO a variabili separabili}
+
+\begin{equation*}
+    \begin{cases}
+        y'(x) = xy(x)+2x \\
+        y(0) = 1
+    \end{cases}
+\end{equation*}
+
+Raccolgo:
+
+\[
+    y'(x)=x(y+2)
+\]
+
+Trovo le soluzioni stazionarie:
+
+\[
+    y+2=0
+\]
+\[
+    y=-2
+\]
+
+Impongo \(y \ne -2\) e trovo le altre soluzioni:
+
+\[
+    \int \frac{1}{y+2} \diff y = \int x \diff x
+\]
+\begin{align*}
+    G(x) = \ln |y+2| \\
+    F(x) = \frac{x^2}{2}
+\end{align*}
+Ricordando che \(y(x) = G^{-1}(F(x) + c)\):
+\begin{align*}
+    y + 2 & = e^{\left( \frac{x^2}{2} + c \right)} \\
+    y + 2 & = e^{\frac{x^{2}}{2}} \cdot e^c        \\
+    y     & = ce^{\frac{x^{2}}{2}} - 2             \\
+\end{align*}
+Impongo le condizioni iniziali per trovare \(c\):
+\[
+    1 = c e^0 - 2 \implies c = 3
+\]
+
+Quindi le soluzioni sono:
+
+\begin{equation*}
+    \begin{cases}
+        y = -2 \\
+        y = 3e^{\left( \frac{x^{2}}{2} \right)} - 2
+    \end{cases}
+\end{equation*}
