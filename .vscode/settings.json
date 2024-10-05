@@ -56,7 +56,7 @@
             "env": {}
         },
     ],
-    "latex-workshop.latexindent.args": [
+    "latex-workshop.formatting.latexindent.args": [
         "-c",
         "%DIR%/build",
         "%TMPFILE%",
