@@ -756,9 +756,12 @@ Ovvero:
 
 \subsubsection*{Esercizio 1 {-} EDO a variabili separabili}
 
-\[
-    y'=\sqrt[3]{x}y^{2}
-\]
+\begin{equation*}
+    \begin{cases}
+        y'=\sqrt[3]{x}y^{2} \\
+        y(0) = 2
+    \end{cases}
+\end{equation*}
 
 Una soluzione è:
 
@@ -766,7 +769,7 @@ Una soluzione è:
     y=0
 \]
 
-Le altre le trovo facendo l'integrale di:
+Le altre le trovo integrando per parti:
 
 \[
     \int \frac{1}{y^{2}} \diff y = \int \sqrt[3]{x} \diff x
@@ -775,10 +778,10 @@ Le altre le trovo facendo l'integrale di:
 quindi \(y(x)\):
 
 \[
-    y(x)  = \frac{4}{3 \sqrt[3]{x^{4}}+c}
+    y(x)  = - \frac{4}{3 x^{4/3} +c}
 \]
 
-impongo le condizioni e trovo c:
+impongo le condizioni iniziali per trovare \(c\):
 
 \[
     y(0) = \frac{-4}{0+c} = 2
@@ -791,19 +794,19 @@ impongo le condizioni e trovo c:
 dunque la soluzione è:
 
 \[
-    y(x) = -\frac{4}{3 \sqrt[3]{x^{4}} - 2}
+    y(x) = -\frac{4}{3 x^{4/3} - 2}
 \]
 
 il denominatore deve essere \(\neq 0\):
 
 \[
-    3 \sqrt[3]{x^{4}} - 2 \neq 0
+    3 x^{4/3} - 2 \neq 0
 \]
 
 quindi:
 
 \[
-    x \neq (\frac{2}{3}^{ \frac{3}{4}})
+    x \neq \frac{2}{3}^{ \frac{3}{4}}
 \]
 
 Il più ampio intervallo è:
