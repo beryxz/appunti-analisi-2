@@ -422,14 +422,14 @@ per via dell'intervallo il valore assoluto viene preso col meno:
 quindi l'integrale generale:
 \begin{spreadlines}{2mm}
     \begin{align*}
-        y(x) & = 2e^{-2\ln(-x)}+ e^{-2\ln(-x)} \int_{{-1}}^{{x}} e^{2\ln(-t)} \frac{1}{2} \diff t                   \\
-            & = 2e^{\ln({(-x)}^{-2})} + e^{\ln({(-x)}^{-2})} \int_{{-1}}^{{x}} e^{\ln {(-t)}^2} \frac{1}{2} \diff t \\
-            & = 2e^{\ln(x^{-2})} + e^{\ln(x^{-2})} \int_{{-1}}^{{x}} e^{\ln(t^2)} \frac{1}{2} \diff t               \\
-            & = 2\frac{1}{x^{2}} + \frac{1}{x^{2}} \cdot \frac{1}{2}\int_{{-1}}^{{x}} t^{2} \diff t                 \\
-            & = \frac{2}{x^{2}} + \frac{1}{2x^{2}} \left[ \frac{t^3}{3} ~\Big|_{-1}^{x} \right]                     \\
-            & = \frac{2}{x^{2}} + \frac{1}{2x^{2}} \left(\frac{x^3}{3}+\frac{1}{3}\right)                           \\
-            & = \frac{2}{x^{2}} + \frac{x^3 + 1}{6x^2}                                                              \\
-            & = \frac{x^3 + 13}{6x^2}
+        y(x) & = 2e^{-2\ln(-x)}+ e^{-2\ln(-x)} \int_{{-1}}^{{x}} e^{2\ln(-t)} \frac{1}{2} \diff t                    \\
+             & = 2e^{\ln({(-x)}^{-2})} + e^{\ln({(-x)}^{-2})} \int_{{-1}}^{{x}} e^{\ln {(-t)}^2} \frac{1}{2} \diff t \\
+             & = 2e^{\ln(x^{-2})} + e^{\ln(x^{-2})} \int_{{-1}}^{{x}} e^{\ln(t^2)} \frac{1}{2} \diff t               \\
+             & = 2\frac{1}{x^{2}} + \frac{1}{x^{2}} \cdot \frac{1}{2}\int_{{-1}}^{{x}} t^{2} \diff t                 \\
+             & = \frac{2}{x^{2}} + \frac{1}{2x^{2}} \left[ \frac{t^3}{3} ~\Big|_{-1}^{x} \right]                     \\
+             & = \frac{2}{x^{2}} + \frac{1}{2x^{2}} \left(\frac{x^3}{3}+\frac{1}{3}\right)                           \\
+             & = \frac{2}{x^{2}} + \frac{x^3 + 1}{6x^2}                                                              \\
+             & = \frac{x^3 + 13}{6x^2}
     \end{align*}
 \end{spreadlines}
 
@@ -831,14 +831,12 @@ Raccolgo:
     y'(x)=x(y+2)
 \]
 
-Trovo le soluzioni stazionarie:
+Trovo le soluzioni singolari:
 
-\[
-    y+2=0
-\]
-\[
-    y=-2
-\]
+\begin{align*}
+    y+2 & =0  \\
+    y   & =-2
+\end{align*}
 
 Impongo \(y \ne -2\) e trovo le altre soluzioni:
 
@@ -846,8 +844,8 @@ Impongo \(y \ne -2\) e trovo le altre soluzioni:
     \int \frac{1}{y+2} \diff y = \int x \diff x
 \]
 \begin{align*}
-    G(x) = \ln |y+2| \\
-    F(x) = \frac{x^2}{2}
+    G(y(x)) & = \ln |y+2|     \\
+    F(x)    & = \frac{x^2}{2}
 \end{align*}
 Ricordando che \(y(x) = G^{-1}(F(x) + c)\):
 \begin{align*}
