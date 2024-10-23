@@ -1,13 +1,16 @@
 # Appunti Analisi II
 
+> Università degli Studi di Firenze - AA. 2023-2025
+
 ## Info
 
-Appunti del corso di Analisi II.
+All'interno della sezione `Releases` sono presenti i PDF generati automaticamente dai contenuti di questa repo.
 
-Università degli Studi di Firenze
+⎯⎯⮞ [Vai all'ultima versione](https://github.com/beryxz/appunti-analisi-2/releases/latest) ⮜⎯⎯
 
-AA. 2023/2024
+<br>
+<br>
 
-## Note
+---
 
-Base degli appunti presa da: https://github.com/guglielmobartelloni/appunti-analisi-2
+_Base degli appunti presa [qui](https://github.com/guglielmobartelloni/appunti-analisi-2)_
