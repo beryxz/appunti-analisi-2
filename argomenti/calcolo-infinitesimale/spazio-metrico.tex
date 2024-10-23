@@ -142,6 +142,8 @@ Si ha la seguente definizione
 
 \subsubsection*{Esempio con distanza Euclidea e Taxicab}
 
+Ricordando che con \(d\) si indica la distanza Euclidea e che con \(d_1\) si indica la distanza Taxicab; si ha la seguente situazione:
+
 \[
     (\R^{2},d) \rightarrow d(\ux,\uy) = \sqrt{\sum^{r}_{i=1} {(x_i-y_i)}^2}
 \]
@@ -150,17 +152,26 @@ Si ha la seguente definizione
     (\R^{2},d_1) \rightarrow d_1(\ux,\uy) = |x_1-y_1| + |x_2-y_2|
 \]
 
-se \(x_0=0\) e \(r=1\), questo è un cerchio:
+\vspace{6mm}
+Definito un centro, \(x_0=0\), e un raggio, \(r=1\), con la distanza Euclidea si ha:
 
 \[
     B(\uzero,1) = \{\ux \in \R^2 \giventhat d(\ux,\uzero) <1\} = \{\ux \in \R^2 \giventhat \sqrt{{x_1}^2+{y_1}^2}<1\}
 \]
 
-e questo è un rombo (parallelogramma):
+\begin{center}
+    \includegraphics[width=0.32\textwidth]{distanza-euclidea-esempio.png}
+\end{center}
+
+mentre con la distanza Taxicab si ha:
 
 \[
     B(\uzero,1) = \{\ux \in \R^2 \giventhat d_1(\ux,\uzero) <1\} = \{\ux \in \R^2 \giventhat \underbrace{|x_1-0|}_{x_1} + \underbrace{|y_1-0|}_{y_1}<1\}
 \]
+
+\begin{center}
+    \includegraphics[width=0.32\textwidth]{distanza-taxicab-esempio.png}
+\end{center}
 
 \pagebreak
 
@@ -270,6 +281,18 @@ Attraverso gli intorni sferici possiamo ridefinire il concetto di convergenza di
 
 \(A_1= \{ (x,y) \in \R^2 \giventhat x \neq y^2\} \)
 
+\vspace{2mm}\hspace{6mm}
+\includegraphics[width=0.33\textwidth]{insiemi-aperti-esempio-1.png}
+\vspace{8mm}
+
 \(A_2= \{ (x,y) \in \R^2 \giventhat x^2+ y^2 < 25\} \)
 
+\vspace{2mm}\hspace{6mm}
+\includegraphics[width=0.33\textwidth]{insiemi-aperti-esempio-2.png}
+\vspace{8mm}
+
 \(A_3= \{ (x,y) \in \R^2 \giventhat x^2+ 2y +1 \le 0\} \)
+
+\vspace{2mm}\hspace{6mm}
+\includegraphics[width=0.33\textwidth]{insiemi-aperti-esempio-3.png}
+\vspace{8mm}
