@@ -92,10 +92,12 @@ e procedo a calcolare la derivata prima della funzione composta \(h(t) = f(\gamm
      & \nabla f(x,y) = (1,1)                                                                                        \\
      & \nabla f(\gamma(t)) = (1,1)                                                                                  \\[3mm]
      & h'(t) = \prods{\nabla f(\gamma(t))}{\gamma'(t)} = \prods{(1,1)}{(-2\sin(t), 2\cos(t))} = -2\sin(t) +2\cos(t) \\
-     & h'(t) = 0 \implies -2\sin(t) +2\cos(t) = 0 \implies \cos(t) = \sin(t) \implies t = \pi/4 + k\pi              \\[3mm]
-     & t \in I = [0,2\pi] \implies t \in \{ \pi/4, 5\pi/4 \}
+     & h'(t) = 0 \implies -2\sin(t) +2\cos(t) = 0 \implies \cos(t) = \sin(t) \implies t = \pi/4 + k\pi
 \end{align*}
-Abbiamo quindi due valori di \(t\), candidati per a essere dei minimi/massimi. Sostituiamo e traiamo le conclusioni:
+Considerando il dominio di \(t\), ovvero \(t \in [0,2\pi]\), abbiamo due candidati a essere dei minimi/massimi.
+Questi sono \(t \in \{ \pi/4, 5\pi/4 \} \) per rispettivamente \(k=0\), \(k=1\).
+
+Sostituiamo e traiamo le conclusioni:
 \begin{align*}
      & f(\gamma(\pi/4)) = f(2\cos(\pi/4), 2\sin(\pi/4)) = f(\sqrt{2}, \sqrt{2}) = 2\sqrt{2}       & \text{(massimo)} \\
      & f(\gamma(5\pi/4)) = f(2\cos(5\pi/4), 2\sin(5\pi/4)) = f(-\sqrt{2}, -\sqrt{2}) = -2\sqrt{2} & \text{(minimo)}
@@ -274,7 +276,7 @@ Passiamo ora all'equazione vettoriale:
 \smallskip
 \begin{equation*}
     \begin{split}
-        & \implies
+         & \implies
         \begin{cases}
             y -2 \lambda x= 0  \\
             x -2 \lambda y = 0 \\
@@ -292,7 +294,7 @@ Passiamo ora all'equazione vettoriale:
             x^{2}-y^{2}= 0        \\
             x^{2}+ y^{2}= 1
         \end{cases} \\
-        & \implies
+         & \implies
         \begin{cases}
             \lambda= \frac{y}{2x} \\
             y= \pm x              \\

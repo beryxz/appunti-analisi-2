@@ -625,8 +625,10 @@ F'(t) = \prods{\nabla f(\gamma(t))}{\gamma'(t)} = \sum^{n}_{i=1} \frac{\partial 
 \filbreak{}
 \subsubsection*{Esercizio}
 
+Derivare la seguente funzione composta \( f(\gamma(t))\) con:
+
 \[
-    f(x,y)= x e ^{y}
+    f(x,y)= xe^{y}
 \]
 \[
     \gamma(t) = (x(t), y(t)) = (\cos (t) , \sin (t))
@@ -636,27 +638,21 @@ F'(t) = \prods{\nabla f(\gamma(t))}{\gamma'(t)} = \sum^{n}_{i=1} \frac{\partial 
     F(t) = (f \circ \gamma) (t) = f(\gamma(t)) = \cos (t) e ^{\sin (t)}
 \]
 
-Le derivate parziali sono:
+le derivate parziali sono:
 
 \[
-    \frac{\partial f}{\partial x} = e ^{y}
+    \nabla f(x,y) = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) = (e^{y}, xe^{y})
 \]
-
-\[
-    \frac{\partial f}{\partial y} = x e ^{y}
-\]
-
-\[
-    F'(t) = \langle \nabla f(\gamma(t)), \gamma'(t) \rangle
-\]
-
-dove:
 
 \[
     \nabla f(\gamma(t)) = (e ^{\sin (t)}, \cos (t) e ^{\sin (t)})
 \]
 
-e:
+da cui:
+
+\[
+    F'(t) = \langle \nabla f(\gamma(t)), \gamma'(t) \rangle
+\]
 
 \[
     \gamma'(t) = (-\sin (t), \cos (t))
@@ -665,7 +661,7 @@ e:
 quindi:
 
 \[
-    F'(t) = e ^{\sin(t)} (- \sin (t)) + \cos (t) e ^{\sin (t)}\cos (t)
+    F'(t) = \left[ e ^{\sin(t)} (- \sin (t)) \right] + \left[ \cos (t) e ^{\sin (t)}\cos (t) \right] = e^{\sin(t)} \left( \cos^{2}(t) -\sin(t) \right)
 \]
 
 \pagebreak
