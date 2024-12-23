@@ -58,35 +58,38 @@ Anche se noi useremo solo la distanza euclidea come metrica, esistono altri tipi
 
 \subsubsection{Successioni convergenti in \texorpdfstring{\(\Rn{}\)}{Rn}}
 
-\defn{Successione}{
-    Consideriamo la successione:
+\defn{Successione in \(\Rn \)}{
+    Una successione a valori in \(\Rn \) è una successione del tipo:
     \[
         {\{{\ux}_n\}}_{\N} \subset \Rn
     \]
-    come un elenco ordinato di numeri i cui elementi sono elementi di \(\Rn \).
+    Ogni elemento di questa successione è un insieme ordinato di \(n\) numeri reali:
     \[
-        {\ux}_n = (\ux_n^1, \ux_n^2,  \ldots , \ux_n^n)\ \in \Rn
+        {\ux}_n = (x_n^1, x_n^2, \ldots, x_n^n)\ \in \Rn
     \]
+    La notazione abbreviata della successione è: \( \{{\ux}_n\} \)
+}
 
-    si dice che converge a \(\ux \in \Rn \) se:
+\defn{Convergenza di una successione in \(\Rn \)}{
+    Si dice che una successione \( \{{\ux}_n\} \) converge a \(\ux = (x_1, x_2, \ldots, x_n) \in \Rn \) se:
 
     \[
         \lim_{n \to +\infty} d({\ux}_n,\ux) = 0
     \]
 
-    cioè:
+    ovvero:
     \begin{align*}
         \forall \varepsilon >0,\ \exists \bar{N} \in \N
         \giventhat[\Big]
         d(\ux_n, \ux ) < \varepsilon ~\forall n \ge \bar{N}
     \end{align*}
-}
 
-Questo significa che:
-\[
-    d(\ux_n, \ux ) = \norm{\ux_n - \ux} = \sqrt{{(\ux_n^1-\ux^1)}^2 + \cdots + {(\ux_n^n-\ux^n)}^2}
-\]
-tende a 0 per \(n \to +\infty \iff \) tutti gli \((\ux_{n}^{i} - \ux^{i}) =0\).
+    questo significa che:
+    \[
+        d(\ux_n, \ux ) = \norm{\ux_n - \ux} = \sqrt{{(x_n^1-x_1)}^2 + \cdots + {(x_n^n-x_n)}^2}
+    \]
+    tende a 0 per \(n \to +\infty \iff (x_{n}^{i} - x_{i}) = 0 \quad \forall i = 1 \cdots n \)
+}
 
 \proposizione{}{ Sia \( \{\ux_n\} \subset \Rn \) una successione in \(\Rn \). Si ha:
 
