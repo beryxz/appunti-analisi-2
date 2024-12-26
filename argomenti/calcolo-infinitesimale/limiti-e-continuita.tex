@@ -39,6 +39,8 @@ dove \(\ux=(x,y)\) e \(\norm{\ux} = d(\ux,\uzero) = \sqrt{x^{2}+y^{2}}\)
 
 \filbreak{}
 
+Le seguenti definizioni di limite sono equivalenti.
+
 \defn{Limite di funzioni in più variabili con gli intorni}{
     Consideriamo ora le funzioni in più variabili
     \[f: A \subset \Rn \rightarrow \R \]
@@ -57,7 +59,7 @@ dove \(\ux=(x,y)\) e \(\norm{\ux} = d(\ux,\uzero) = \sqrt{x^{2}+y^{2}}\)
 \defn{Limite di funzioni in più variabili con epsilon-delta}{
     Consideriamo sempre le funzioni in più variabili
     \[f: A \subset \Rn \rightarrow \R \]
-    Sia \(\ux_0 \in \Rn \) un punto di accumulazione per \(A\). Con \(l \in \R \), si scrive:
+    Sia \(\ux_0 \in \Rn \) un punto di accumulazione per \(A\). Si scrive:
 
     \[
         \lim_{ \ux  \to \ux_0 } f(\ux ) = l
@@ -65,22 +67,32 @@ dove \(\ux=(x,y)\) e \(\norm{\ux} = d(\ux,\uzero) = \sqrt{x^{2}+y^{2}}\)
 
     e si dice che \(f(\ux)\) tende a \(l\) per \(\ux \) che tende a \(\ux_0\)
 
-    se \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
+    \begin{itemize}
+        \item Caso \(l \in \R \):
 
-    tale che \(d( f(\ux), l) < \varepsilon \quad \forall \ux \in \left( A \setminus \{\ux_0\} \right) \cap B(\ux_0, \delta)\)
+        se \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
 
-    \bigskip
+        tale che \(d( f(\ux), l) < \varepsilon \quad \forall \ux \in \left( A \setminus \{\ux_0\} \right) \cap B(\ux_0, \delta)\)
 
-    Ricordando che \(d( f(\ux), l) = \norm{f(\ux) - l}\), quest'ultima condizione può anche essere scritta come:
+        \bigskip
 
-    \ldots
+        Ricordando che \(d( f(\ux), l) = \norm{f(\ux) - l}\), quest'ultima condizione può anche essere scritta come:
 
-    se \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
+        \ldots
 
-    tale che \(\norm{f(\ux) - l} < \varepsilon \quad \forall \ux \in A \setminus \{\ux_0\} \giventhat 0 < \norm{\ux - \ux_0} < \delta \)
+        se \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
+
+        tale che \(\norm{f(\ux) - l} < \varepsilon \quad \forall \ux \in A \setminus \{\ux_0\} \giventhat 0 < \norm{\ux - \ux_0} < \delta \)
+
+        \item Caso \(l = +\infty \):
+
+        se \(\forall M>0 ~\exists \delta >0\)
+
+        tale che \(f(\ux) > M \quad \forall \ux \in A \setminus \{\ux_0\} \giventhat 0 < \norm{\ux - \ux_0} < \delta \)
+
+    \end{itemize}
+
 }
-
-Queste definizioni di limite sono equivalenti. La differenza principale sta nel dominio di \(l\).
 
 \filbreak{}
 
