@@ -39,34 +39,48 @@ dove \(\ux=(x,y)\) e \(\norm{\ux} = d(\ux,\uzero) = \sqrt{x^{2}+y^{2}}\)
 
 \filbreak{}
 
-\defn{Limite di funzioni in più variabili}{
+\defn{Limite di funzioni in più variabili con gli intorni}{
     Consideriamo ora le funzioni in più variabili
     \[f: A \subset \Rn \rightarrow \R \]
-    Sia \(\ux_0 \in \Rn \) un punto di accumulazione per \(A\). Si scrive:
+    Sia \(\ux_0 \in \Rn \) un punto di accumulazione per \(A\). Con \(l \in \R \cup \{ \pm \infty \} \), si scrive:
 
     \[
         \lim_{ \ux  \to \ux_0 } f(\ux ) = l
     \]
 
-    \begin{itemize}
-        \item Se \(l \in \R \cup \{ \pm \infty \} \):
+    e si dice che \(f(\ux)\) tende a \(l\) per \(\ux \) che tende a \(\ux_0\)
 
-              si dice che \(f(\ux)\) tende a \(l\) per \(\ux \) che tende a \(\ux_0\)
+    se \(\forall \) intorno \(U \subset \R \) di \(l\) esiste un intorno sferico di \(\ux_0\), \(I(\ux_0,r)\) con \(r>0\),
 
-              se \(\forall \) intorno \(U \subset \R \) di \(l\) esiste un intorno sferico di \(\ux_0\), \(I(\ux_0,r)\) con \(r>0\),
-
-              tale che \(f(\ux) \in U ~\forall \ux \in I(\ux_0,r) \cap \,(A \setminus \{\ux_0\})\)
-        \item Se \(\ux,\ux_{0} \in \R^2\), \(l \in \R \):
-
-              \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
-
-              tale che \(d( f(x,y), f(x_{0},y_{0}) ) = \big|f(x,y) - f(x_{0},y_{0})\big| < \varepsilon \)
-
-              \(\forall (x,y) \in \left( A \setminus \{(x_{0},y_{0})\} \right) \cap B((x_{0}, y_{0}), \delta)\)
-
-              ovvero \(\forall (x,y) \in A \giventhat 0 < \norm{(x,y) - (x_0,y_0)} < \delta \)
-    \end{itemize}
+    tale che \(f(\ux) \in U ~\forall \ux \in I(\ux_0,r) \cap \,(A \setminus \{\ux_0\})\)
 }
+\defn{Limite di funzioni in più variabili con epsilon-delta}{
+    Consideriamo sempre le funzioni in più variabili
+    \[f: A \subset \Rn \rightarrow \R \]
+    Sia \(\ux_0 \in \Rn \) un punto di accumulazione per \(A\). Con \(l \in \R \), si scrive:
+
+    \[
+        \lim_{ \ux  \to \ux_0 } f(\ux ) = l
+    \]
+
+    e si dice che \(f(\ux)\) tende a \(l\) per \(\ux \) che tende a \(\ux_0\)
+
+    se \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
+
+    tale che \(d( f(\ux), l) < \varepsilon \quad \forall \ux \in \left( A \setminus \{\ux_0\} \right) \cap B(\ux_0, \delta)\)
+
+    \bigskip
+
+    Ricordando che \(d( f(\ux), l) = \norm{f(\ux) - l}\), quest'ultima condizione può anche essere scritta come:
+
+    \ldots
+
+    se \(\forall \varepsilon>0 ~\exists \delta = \delta(\varepsilon) >0\)
+
+    tale che \(\norm{f(\ux) - l} < \varepsilon \quad \forall \ux \in A \setminus \{\ux_0\} \giventhat 0 < \norm{\ux - \ux_0} < \delta \)
+}
+
+Queste definizioni di limite sono equivalenti. La differenza principale sta nel dominio di \(l\).
 
 \filbreak{}
 
