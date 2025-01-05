@@ -104,12 +104,12 @@ In questo caso ha senso trasformare l'integrale in coordinate polari perché la 
 \]
 
 \begin{align*}
-    \iint_{u^{2}+v^{2} \le S} {v ^{2}} \diff{u}\diff{v} & = \int_{0}^{\sqrt{5}} \int_{0}^{2\pi} \rho^{2} \sin^{2} (\theta) \cdot \rho \diff{\theta}\diff{\rho}                   \\
-                                                        & = \int_{0}^{\sqrt{5}} \int_{0}^{2\pi} \rho^{3} \sin^{2} (\theta) \diff{\theta}\diff{\rho}                              \\
-                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \left( \int_{0}^{2\pi} \sin ^{2} \theta \diff{\theta} \right) \diff{\rho}               \\
-                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \left( \int_{0}^{2\pi} \frac{1- \cos 2 \theta}{2} \diff{\theta} \right) \diff{\rho}     \\
-                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \Eval{\left[ \frac{1}{2} \theta - \frac{\sin 2 \theta}{4}\right]}{0}{2\pi}  \diff{\rho} \\
-                                                        & = \pi \int_{0}^{\sqrt{5}} \rho^{3} \cdot 1 \diff{\rho}                                                                 \\
+    \iint_{u^{2}+v^{2} \le S} {v ^{2}} \diff{u}\diff{v} & = \int_{0}^{\sqrt{5}} \int_{0}^{2\pi} \rho^{2} \sin^{2} (\theta) \cdot \rho \diff{\theta}\diff{\rho}                  \\
+                                                        & = \int_{0}^{\sqrt{5}} \int_{0}^{2\pi} \rho^{3} \sin^{2} (\theta) \diff{\theta}\diff{\rho}                             \\
+                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \left( \int_{0}^{2\pi} \sin ^{2} \theta \diff{\theta} \right) \diff{\rho}              \\
+                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \left( \int_{0}^{2\pi} \frac{1- \cos 2 \theta}{2} \diff{\theta} \right) \diff{\rho}    \\
+                                                        & = \int_{0}^{\sqrt{5}} \rho^{3} \Eval{\left[ \frac{1}{2} \theta - \frac{\sin 2 \theta}{4}\right]}{0}{2\pi} \diff{\rho} \\
+                                                        & = \pi \int_{0}^{\sqrt{5}} \rho^{3} \cdot 1 \diff{\rho}                                                                \\
                                                         & = \pi \left[\Eval{ \frac{\rho^{4}}{4} }{0}{\sqrt{5}}\right] = \frac{25}{4}\pi
 \end{align*}
 
@@ -127,11 +127,11 @@ In questo caso ha senso trasformare l'integrale in coordinate polari perché la 
 Vediamo il metodo lungo (complicato che non va bene):
 
 \[
-    A = \{(x,y) \in \R \giventhat -2 \le x \le 2, - \sqrt{4-x^{2}} \le  y \le  \sqrt{4 -x^{2}}\} \quad\text{(dominio y-semplice)}
+    A = \{(x,y) \in \R \giventhat -2 \le x \le 2, - \sqrt{4-x^{2}} \le  y \le \sqrt{4 -x^{2}}\} \quad\text{(dominio y-semplice)}
 \]
 
 \[
-    \iint_A {x^{2}+y^{2}} \diff{x}\diff{y} = \int_{-2}^{2} \int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} {\left(x^{2} + y^{2}\right)} \diff{y}\diff{x}  = \int_{-2}^{2} { \Eval{\left[ x^{2} \cdot y + \frac{y^{3}}{3} \right]}{-\sqrt{4-x^{2}}}{\sqrt{4-x^{2}}}  \diff{x}}
+    \iint_A {x^{2}+y^{2}} \diff{x}\diff{y} = \int_{-2}^{2} \int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} {\left(x^{2} + y^{2}\right)} \diff{y}\diff{x}  = \int_{-2}^{2} { \Eval{\left[ x^{2} \cdot y + \frac{y^{3}}{3} \right]}{-\sqrt{4-x^{2}}}{\sqrt{4-x^{2}}} \diff{x}}
 \]
 
 Vediamo ora il metodo più facile, ovvero passando in coordinate polari:
@@ -177,7 +177,7 @@ In questo caso non abbiamo lo stessa situazione di prima in quanto nel dominio \
 \]
 
 \begin{align*}
-    \iint_A x \diff{x}\diff{y} & = \int_{0}^{1} \int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} \rho \cos \theta \rho \diff{\rho}  \diff{\theta}             \\
+    \iint_A x \diff{x}\diff{y} & = \int_{0}^{1} \int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} \rho \cos \theta \rho \diff{\rho} \diff{\theta}              \\
                                & = \int_{0}^{1} \rho^{2} \left(\int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} \cos \theta \diff{\theta} \right) \diff{\rho} \\
                                & = \int_{0}^{1} \rho^{2}\Big[\EvalCustom{\sin \theta}{ - \pi/2}{ \pi/2}{\Big} \Big]                                  \\
                                & = \int_{0}^{1} \rho^{2}\cdot2 \diff{\rho}                                                                           \\

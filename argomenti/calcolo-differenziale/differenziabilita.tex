@@ -48,7 +48,7 @@ Per risolvere questo problema, quello che ci servirà sarà il concetto di \text
 \filbreak{}
 \subsubsection{Definizione di differenziabilità}
 
-Avendo una funzione \(f:A\subseteq \Rn  \rightarrow \R \) con \(A\) aperto
+Avendo una funzione \(f:A\subseteq \Rn \rightarrow \R \) con \(A\) aperto
 
 f è derivabile in \(\ux =(x_1, \ldots ,x_n) \in A\) equivale a dire che esiste il vettore gradiente:
 
@@ -62,7 +62,7 @@ Il concetto di differenziabilità è più forte rispetto al concetto di derivabi
 Infatti, si dice che \(f\) è differenziabile in \(\ux \in A \) se \(f\) è derivabile in \(\ux \) e inoltre vale la seguente relazione:
 
 \[
-    \lim_{ \uh \to 0 } \frac{f( \ux + \uh ) - f( \ux ) - \langle  \nabla f(\ux ), \uh \rangle}{\norm{\uh}} =0
+    \lim_{ \uh \to 0 } \frac{f( \ux + \uh ) - f( \ux ) - \langle \nabla f(\ux ), \uh \rangle}{\norm{\uh}} =0
 \]
 
 dove \(\uh \in \Rn \); e inoltre ricordo che:
@@ -72,19 +72,19 @@ dove \(\uh \in \Rn \); e inoltre ricordo che:
 \]
 
 \[
-    \langle  \nabla f(\ux ), \uh \rangle = \frac{\partial f}{\partial x_1}(\ux )\cdot h_1+ \frac{\partial f}{\partial x_2}(\ux ) \cdot h_2+ \cdots  + \frac{\partial f}{\partial x_n}(\ux ) \cdot h_n
+    \langle \nabla f(\ux ), \uh \rangle = \frac{\partial f}{\partial x_1}(\ux )\cdot h_1+ \frac{\partial f}{\partial x_2}(\ux ) \cdot h_2+ \cdots  + \frac{\partial f}{\partial x_n}(\ux ) \cdot h_n
 \]
 
 Se \(f\) è differenziabile in ogni punto di \(A\) si dice che \(f\) è differenziabile in \(A\)
 }
 
-Da notare che il prodotto scalare \(\langle \nabla f(\ux ), \uh  \rangle \) rappresenta l'incremento che io faccio verso ogni direzione per poter ``vedere'' che cosa succede quando mi sposto un ``pochino'' in ogni direzione.
+Da notare che il prodotto scalare \(\langle \nabla f(\ux ), \uh \rangle \) rappresenta l'incremento che io faccio verso ogni direzione per poter ``vedere'' che cosa succede quando mi sposto un ``pochino'' in ogni direzione.
 
 \defn{Differenziale}{
-    Definisco come \(L : \Rn  \rightarrow \R \) l'applicazione che ad \(\uh \) associa il prodotto scalare:
+    Definisco come \(L : \Rn \rightarrow \R \) l'applicazione che ad \(\uh \) associa il prodotto scalare:
 
     \[
-        \uh \mapsto \langle  \nabla f(\ux ) , \uh \rangle
+        \uh \mapsto \langle \nabla f(\ux ) , \uh \rangle
     \]
 
     Questa applicazione si chiama \textbf{differenziale} di \(f\) in \(\ux \) e si indica con \(\diff f(\ux)\)
@@ -92,7 +92,7 @@ Da notare che il prodotto scalare \(\langle \nabla f(\ux ), \uh  \rangle \) rapp
     Questa è un'\textbf{applicazione lineare} da \(\Rn \) in \(\R \) della variabile \(\uh \)
 
     \[
-        \diff f(\ux ) (\uh ) = \langle \nabla f(\ux ) , \uh  \rangle
+        \diff f(\ux ) (\uh ) = \langle \nabla f(\ux ) , \uh \rangle
     \]
 }
 
@@ -115,7 +115,7 @@ Se \(L: \Rn \rightarrow \R \) è lineare allora esiste \(\underline{l} \in \Rn \
 Dunque, \(f: A \subseteq \Rn \rightarrow \R \) è differenziabile in \(\ux \in A\) se è derivabile in \(\ux \) e se:
 
 \[
-    f(\ux + \uh ) \xrightarrow[\uh \to 0]{} f(\ux ) + \langle \nabla f(\ux ), \uh  \rangle + o(\norm{\uh})
+    f(\ux + \uh ) \xrightarrow[\uh \to 0]{} f(\ux ) + \langle \nabla f(\ux ), \uh \rangle + o(\norm{\uh})
 \]
 
 \subsubsection{Significato geometrico del differenziale}
@@ -310,7 +310,7 @@ Data la funzione:
 \subsubsection{Teoremi sulla differenziabilità e continuità}
 
 \teorema{}{
-    Sia \(f: A \subset \Rn \to \R \); Sia inoltre \(\ux_0 \in A\);
+    Sia \(f: A \subseteq \Rn \to \R \); Sia inoltre \(\ux_0 \in A\);
 
     \(f\) è differenziabile in \(\ux_0 \implies f\) è continua in \(\ux_0 \)
 }
@@ -346,7 +346,7 @@ Data la funzione:
 
 \pagebreak
 \teorema{Teorema del differenziale totale}{
-    Sia la funzione \(f: A \subseteq \Rn  \rightarrow \R \) derivabile in \(A\) con \(A\) aperto.
+    Sia la funzione \(f: A \subseteq \Rn \rightarrow \R \) derivabile in \(A\) con \(A\) aperto.
 
     Se le derivate parziali \(f_{x_1}, \ldots, f_{x_n}\) sono continue in \(\ux_0 \in A\) allora \(f\) è differenziabile in \(\ux_0 \)
 }
@@ -405,7 +405,7 @@ Data la funzione:
 \end{proof}
 
 \defn{Continuità di funzioni in più variabili}{
-    Quindi una funzione \(f: A \subset \Rn  \rightarrow \R \) continua in \(A\), si dice di classe \(C^{0}\) e si scrive \(f \in C^{0}(A)\)
+    Quindi una funzione \(f: A \subseteq \Rn \rightarrow \R \) continua in \(A\), si dice di classe \(C^{0}\) e si scrive \(f \in C^{0}(A)\)
 
     Se la funzione è derivabile in \(A\) e se le derivate parziali sono continue in \(A\) si dice che è di classe \(C^{1}\) su \(A\) e si scrive \(f \in C^{1}(A)\).
 
@@ -464,7 +464,7 @@ Se \(f\) è differenziabile in \(\ux_0\):
 \begin{itemize}
     \item \(f\) è continua in \(\ux_0\)
     \item \(f\) ha tutte le derivate direzionali in \(\ux_0\) (secondo tutte le direzioni \(\vec{v} \)) e si ha:
-          \[\frac{\partial f}{\partial \vec{v}}(\ux_0) = D_{ \vec{v} } f(\ux_0) = L(\vec{v} ) \quad\forall \vec{v} \in \Rn  \]
+          \[\frac{\partial f}{\partial \vec{v}}(\ux_0) = D_{ \vec{v} } f(\ux_0) = L(\vec{v} ) \quad\forall \vec{v} \in \Rn \]
 
           In particolare, \(\vec{v} \mapsto \frac{\partial f}{\partial \vec{v}}(\ux_0)\) è un'applicazione lineare e \textbf{il differenziale, se esiste, è unico}.
     \item
@@ -523,7 +523,7 @@ Quindi, il versore che indica la direzione di massima pendenza è:
     Se \(f(x,y)\) è differenziabile in \(P=(x,y)\) allora \(f\) ammette derivate direzionali in \((x,y)\) per ogni direzione. Inoltre per ogni versore \(\vec{v}= (a,b)\), vale:
 
     \[
-        D_{\vec{v} }f(x,y) = \langle \nabla f(x,y), \vec{v}  \rangle = \frac{\partial f}{\partial x}(x,y)\cdot a + \frac{\partial f}{\partial y}(x,y) \cdot b
+        D_{\vec{v} }f(x,y) = \langle \nabla f(x,y), \vec{v} \rangle = \frac{\partial f}{\partial x}(x,y)\cdot a + \frac{\partial f}{\partial y}(x,y) \cdot b
     \]
 
 }
@@ -667,7 +667,7 @@ quindi:
 \pagebreak
 \subsubsection{Derivate successive alla prima}
 
-Sia \(f: A \subseteq \Rn  \rightarrow \R \), con \(A\) aperto e \(f\) derivabile su \(A\)
+Sia \(f: A \subseteq \Rn \rightarrow \R \), con \(A\) aperto e \(f\) derivabile su \(A\)
 
 Siano inoltre ben definite le derivate \(\frac{\partial f}{\partial x_i}(x,y) ~\forall i=1,\ldots,n\)
 
@@ -775,7 +775,7 @@ La matrice Hessiana di \(f(x,y)\) è dunque:
 \subsubsection{Teorema di Schwarz}
 
 \teorema{Schwarz}{
-    Sia \(f: A \subseteq \Rn  \rightarrow \R \), \(A\) aperto
+    Sia \(f: A \subseteq \Rn \rightarrow \R \), \(A\) aperto
 
     Sia, inoltre, \(f\) derivabile due volte su \(A\) in \(\ux_0\), con \(\ux_0 \in A\).
 
@@ -939,7 +939,7 @@ Se le \(f_{xy}\) e \(f_{yx}\) sono continue in \((x_0,y_0)\), allora \(f_{xy}(x_
     Questo funziona per ogni rettangolo che pongo infatti:
 
     \[
-        \int_c^d \int_a^b f_{yx} \diff{x}\diff{y} =  \int_c^d \int_a^b f_{xy} \diff{x}\diff{y}
+        \int_c^d \int_a^b f_{yx} \diff{x}\diff{y} = \int_c^d \int_a^b f_{xy} \diff{x}\diff{y}
     \]
 
     Quindi la loro differenza deve essere 0:
@@ -989,7 +989,7 @@ Vediamo lo svolgimento per punti:
 
     \item Ora, verifichiamo che anche le derivate parziali \(f_x(x,y)\) e \(f_y(x,y)\) siano continue in \((0,0)\):
           \begin{align*}
-               & f_x(0,0) = \lim_{ h \to 0 } \frac{f(0+h,0) - f(0,0)}{h} = \lim_{ h \to 0 } \left( \frac{h^{3}\cdot0 - h\cdot 0}{h^{2}+0} - 0 \right) \cdot  \frac{1}{h} = \lim_{ h \to 0 } \frac{0}{h} = 0 \\[2mm]
+               & f_x(0,0) = \lim_{ h \to 0 } \frac{f(0+h,0) - f(0,0)}{h} = \lim_{ h \to 0 } \left( \frac{h^{3}\cdot0 - h\cdot 0}{h^{2}+0} - 0 \right) \cdot \frac{1}{h} = \lim_{ h \to 0 } \frac{0}{h} = 0 \\[2mm]
                & f_y(0,0) = \lim_{ h \to 0 } \frac{f(0,0+h) - f(0,0)}{h} = \cdots = 0
           \end{align*}
 

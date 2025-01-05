@@ -11,7 +11,7 @@ In genere i vettori si indicano con \(\ux \) o \(\vec{x}\) o \(\overline{x}\), p
 In particolare:
 
 \begin{itemize}
-    \item \(f: A \in \Rn  \rightarrow \R \)
+    \item \(f: A \in \Rn \rightarrow \R \)
     \item \(g: A \in \Rn \rightarrow \R^{m}\)
 \end{itemize}
 
@@ -32,7 +32,7 @@ Noi ci occuperemo solo di funzione reali di più variabili, ovvero funzioni da \
     \item Somma:
 
           \[
-              \forall \ux, \uy  \in \Rn
+              \forall \ux, \uy \in \Rn
           \]
           \[
               \ux  =(x_1, \ldots ,x_n), \quad \uy  = (y_1, \ldots ,y_n)
@@ -94,7 +94,7 @@ Il prodotto scalare verifica le seguenti proprietà
     \item \textbf{Positività}
 
           \[
-              \forall \ux \in  \Rn
+              \forall \ux \in \Rn
           \]
           \[
               \ux=(x_1, \ldots ,x_n)
@@ -168,7 +168,7 @@ Vediamo ora le dimostrazioni di queste due proprietà:
 
     Se \(\uy = \uzero = (0, \ldots ,0)\) la tesi è ovvia;
 
-    Sia dunque \(\Rn  \rightarrow \uy \neq 0\) e consideriamo la funzione reale di una variabile reale \(t \rightarrow \norm{\ux+t\uy}^{2}\ge 0\) polinomio di secondo grado in t
+    Sia dunque \(\Rn \rightarrow \uy \neq 0\) e consideriamo la funzione reale di una variabile reale \(t \rightarrow \norm{\ux+t\uy}^{2}\ge 0\) polinomio di secondo grado in t
 
     \begin{align*}
         ||\ux + t\uy|| ^{2} & \overset{\text{Carnot}}{=} \norm\ux^{2} + ||t\uy||^{2} + 2\langle \ux,t\uy \rangle \\
@@ -193,7 +193,7 @@ Vediamo ora le dimostrazioni di queste due proprietà:
 
     Se \(\uy = \uzero = (0, \ldots ,0)\) la testi è ovvia;
 
-    Sia dunque \(\Rn  \rightarrow \uy \neq 0\) e consideriamo la funzione reale di una variabile reale \(t \rightarrow \norm{\ux+t\uy}^{2}\ge 0\) polinomio di secondo grado in t.
+    Sia dunque \(\Rn \rightarrow \uy \neq 0\) e consideriamo la funzione reale di una variabile reale \(t \rightarrow \norm{\ux+t\uy}^{2}\ge 0\) polinomio di secondo grado in t.
     La funzione ha \(\frac{\Delta}{4} = {\prods{\ux}{\uy}}^{2} - \norm\ux^{2}\norm\uy^{2}\)
 
     \medskip
@@ -204,11 +204,11 @@ Vediamo ora le dimostrazioni di queste due proprietà:
     \[\norm{\ux+t\uy}^{2}=0 \implies \ux +t\uy=0 \implies \ux=-t\uy \]
     per cui ci basta mostrare che \(-t \ge 0\)
     \begin{align*}
-        |\prods{\ux}{\uy}| & = \norm\ux \cdot \norm\uy \\
-        |\prods{\ux}{\uy}| & = \norm{-t\uy} \cdot \norm\uy \\
-        |\prods{\ux}{\uy}| & = -t\norm{\uy} \cdot \norm\uy \\
-        |\prods{\ux}{\uy}| & = -t\norm\uy^{2} \\[2mm]
-        \frac{|\prods{\ux}{\uy}|}{\norm\uy^{2}} & = -t \\[2mm]
+        |\prods{\ux}{\uy}|                           & = \norm\ux \cdot \norm\uy     \\
+        |\prods{\ux}{\uy}|                           & = \norm{-t\uy} \cdot \norm\uy \\
+        |\prods{\ux}{\uy}|                           & = -t\norm{\uy} \cdot \norm\uy \\
+        |\prods{\ux}{\uy}|                           & = -t\norm\uy^{2}              \\[2mm]
+        \frac{|\prods{\ux}{\uy}|}{\norm\uy^{2}}      & = -t                          \\[2mm]
         \frac{\norm\ux \cdot \norm\uy}{\norm\uy^{2}} & = -t
     \end{align*}
 
