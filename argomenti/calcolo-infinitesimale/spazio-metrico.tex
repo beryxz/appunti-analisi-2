@@ -16,10 +16,10 @@ Si definisce distanza euclidea tra \(\ux \) e \(\uy \) il numero reale non negat
 La distanza euclidea verifica le proprietà della distanza:
 
 \begin{enumerate}
-    \item  \(d(\ux,\uy) \ge 0, \quad d(\ux,\uy) \in \R \)
-    \item  \(d(\ux,\uy) = 0 \iff \ux =\uy \)
-    \item  \(d(\ux,\uy) = d(\uy,\ux)\) \hfill (simmetria)
-    \item  \(d(\ux,\uy) \le d(\ux,\underline{z}) + d(\underline{z},\uy),\ \ \forall \, \ux,\uy,\underline{z} \in \Rn  \) \hfill (disuguaglianza triangolare)
+    \item \(d(\ux,\uy) \ge 0, \quad d(\ux,\uy) \in \R \)
+    \item \(d(\ux,\uy) = 0 \iff \ux =\uy \)
+    \item \(d(\ux,\uy) = d(\uy,\ux)\) \hfill (simmetria)
+    \item \(d(\ux,\uy) \le d(\ux,\underline{z}) + d(\underline{z},\uy),\ \ \forall \, \ux,\uy,\underline{z} \in \Rn \) \hfill (disuguaglianza triangolare)
 \end{enumerate}
 
 \subsubsection{Definizione di spazio metrico}
@@ -71,24 +71,24 @@ Anche se noi useremo solo la distanza euclidea come metrica, esistono altri tipi
 }
 
 \defn{Convergenza di una successione in \(\Rn \)}{
-    Si dice che una successione \( \{{\ux}_n\} \) converge a \(\ux = (x_1, x_2, \ldots, x_n) \in \Rn \) se:
+Si dice che una successione \( \{{\ux}_n\} \) converge a \(\ux = (x_1, x_2, \ldots, x_n) \in \Rn \) se:
 
-    \[
-        \lim_{n \to +\infty} d({\ux}_n,\ux) = 0
-    \]
+\[
+    \lim_{n \to +\infty} d({\ux}_n,\ux) = 0
+\]
 
-    ovvero:
-    \begin{align*}
-        \forall \varepsilon >0,\ \exists \bar{N} \in \N
-        \giventhat[\Big]
-        d(\ux_n, \ux ) < \varepsilon ~\forall n \ge \bar{N}
-    \end{align*}
+ovvero:
+\begin{align*}
+    \forall \varepsilon >0,\ \exists \bar{N} \in \N
+    \giventhat[\Big]
+    d(\ux_n, \ux ) < \varepsilon ~\forall n \ge \bar{N}
+\end{align*}
 
-    questo significa che:
-    \[
-        d(\ux_n, \ux ) = \norm{\ux_n - \ux} = \sqrt{{(x_n^1-x_1)}^2 + \cdots + {(x_n^n-x_n)}^2}
-    \]
-    tende a 0 per \(n \to +\infty \iff (x_{n}^{i} - x_{i}) = 0 \quad \forall i = 1 \cdots n \)
+questo significa che:
+\[
+    d(\ux_n, \ux ) = \norm{\ux_n - \ux} = \sqrt{{(x_n^1-x_1)}^2 + \cdots + {(x_n^n-x_n)}^2}
+\]
+tende a 0 per \(n \to +\infty \iff (x_{n}^{i} - x_{i}) = 0 \quad \forall i = 1 \cdots n \)
 }
 
 \proposizione{}{ Sia \( \{\ux_n\} \subset \Rn \) una successione in \(\Rn \). Si ha:

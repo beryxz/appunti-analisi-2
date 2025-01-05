@@ -36,7 +36,7 @@ Per passare da coordinare cartesiane a polari, basta usare la seguente relazione
 \subsubsection{Limiti e coordinate polari}
 
 \teorema{}{
-    Sia \(f: D \subseteq \R^{2} \rightarrow  \R \) e sia \(P_0=(x_0,y_0) \in D\) allora:
+    Sia \(f: D \subseteq \R^{2} \rightarrow \R \) e sia \(P_0=(x_0,y_0) \in D\) allora:
 
     \[
         \lim_{ (x,y) \to (x_0,y_0) } f(x,y) = l \ \iff \lim_{ \rho \to 0^{+} } f(x_0 + \rho\cos\theta ,\  y_0 + \rho\sin\theta ) = l
@@ -133,7 +133,7 @@ Calcolare, se esiste, il seguente limite:
 Trasformiamo in coordinate polari:
 
 \[
-    \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta  \rho\sin\theta }{\sqrt{\rho^{2}}} = \lim_{ \rho \to 0^{+} } \frac{\rho^{2}\cos\theta \sin\theta }{\rho} = \lim_{ \rho \to 0^{+} } \rho\cos\theta\sin\theta = 0
+    \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \rho\sin\theta }{\sqrt{\rho^{2}}} = \lim_{ \rho \to 0^{+} } \frac{\rho^{2}\cos\theta \sin\theta }{\rho} = \lim_{ \rho \to 0^{+} } \rho\cos\theta\sin\theta = 0
 \]
 
 Dimostriamo che il candidato a essere limite, \(l=0\), esiste usando il criterio del confronto. Troviamo una \(g(\rho)\):
@@ -168,7 +168,7 @@ consideriamo la funzione lungo l'asse x quindi con \(y=0\):
 vedo per la bisettrice (\(y=x\)):
 
 \[
-    \lim_{ \begin{smallmatrix}(x,y) \to (0,0) \\ y=x\end{smallmatrix} } \frac{\arctan\left({(x+y)}^{2}\right)}{x^{2}} =  \lim_{ x \to 0 } \frac{\arctan\left({(x+x)}^{2}\right)}{x^{2}} =  \lim_{ x \to 0 } \frac{\arctan\left({4x}^{2}\right)}{x^{2}} = 4
+    \lim_{ \begin{smallmatrix}(x,y) \to (0,0) \\ y=x\end{smallmatrix} } \frac{\arctan\left({(x+y)}^{2}\right)}{x^{2}} = \lim_{ x \to 0 } \frac{\arctan\left({(x+x)}^{2}\right)}{x^{2}} = \lim_{ x \to 0 } \frac{\arctan\left({4x}^{2}\right)}{x^{2}} = 4
 \]
 
 quindi il limite non esiste.
@@ -223,9 +223,9 @@ ricordo che \(\ln(1 + x) \sim x \text{ per } x\to0\);
 passiamo in coordinate polari e dunque il limite diventa:
 
 \begin{align*}
-    \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \cdot\ln\left(1+\rho^{3}\cos^{3}\theta \right)}{\rho\sin\theta \cdot\left(\rho^{2}\cos^{2}\theta  + \rho^{2}\sin^{2}\theta \right)} & = \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \cdot\ln(1+\rho^{3}\cos^{3}\theta )}{\rho\sin\theta \cdot (\rho^{2}) } \\
-                                                                                                                                                                                      & = \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \cdot \rho^{3}\cos^{3}\theta}{\rho^{3}\sin\theta }                      \\
-                                                                                                                                                                                      & = \lim_{ \rho \to 0^{+} } \frac{\rho^{4}\cos^{4}\theta }{\rho^{3}\sin\theta } = \lim_{ \rho \to 0^{+} } \rho M(\theta)
+    \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \cdot\ln\left(1+\rho^{3}\cos^{3}\theta \right)}{\rho\sin\theta \cdot\left(\rho^{2}\cos^{2}\theta  + \rho^{2}\sin^{2}\theta \right)} & = \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \cdot\ln(1+\rho^{3}\cos^{3}\theta )}{\rho\sin\theta \cdot (\rho^{2}) }  \\
+                                                                                                                                                                                     & = \lim_{ \rho \to 0^{+} } \frac{\rho\cos\theta \cdot \rho^{3}\cos^{3}\theta}{\rho^{3}\sin\theta }                      \\
+                                                                                                                                                                                     & = \lim_{ \rho \to 0^{+} } \frac{\rho^{4}\cos^{4}\theta }{\rho^{3}\sin\theta } = \lim_{ \rho \to 0^{+} } \rho M(\theta)
 \end{align*}
 
 dove \(M(\theta) = \frac{\cos^{4}\theta }{\sin\theta }\) si nota che per ogni \(\theta \neq \pm \pi \) il limite è zero.
@@ -290,7 +290,7 @@ Dato che \(\rho^x \xrightarrow[\rho \to 0^+]{} 0\) se \(x > 0\), analizziamo i v
 \begin{itemize}
     \item Se \(3-2\alpha > 0\) ovvero \(\bm{0<\alpha < \frac{3}{2}}\):
 
-          poiché \(\left\vert \cos^{2}\theta  \sin\theta  \right\vert \le 1\), attraverso il confronto diretto possiamo dire che:
+          poiché \(\left\vert \cos^{2}\theta \sin\theta \right\vert \le 1\), attraverso il confronto diretto possiamo dire che:
 
           \[
               0 \le \left\vert\rho^{3-2\alpha}\cos^{2}\theta \sin\theta\right\vert = \rho^{3-2\alpha}\left\vert\cos^{2}\theta \sin\theta\right\vert \le \rho^{3-2\alpha} \to 0
@@ -305,14 +305,14 @@ Dato che \(\rho^x \xrightarrow[\rho \to 0^+]{} 0\) se \(x > 0\), analizziamo i v
           dipende da \(\theta \) quindi il limite non esiste.
     \item Se \(\bm{\alpha > \frac{3}{2}}\):
 
-    \[
-        \alpha > \frac{3}{2} \implies \rho^{3-2\alpha} = \frac{1}{\rho^{2\alpha-3}}
-    \]
-    \[
-        \implies \lim_{ \rho \to 0^{+} } \rho^{3-2\alpha} \cos^{2}\theta \sin\theta = \lim_{ \rho \to 0^{+} } \frac{\cos^{2}\theta \sin\theta}{\rho^{2\alpha-3}} = \pm \infty \ \text{ a seconda di } \theta
-    \]
+          \[
+              \alpha > \frac{3}{2} \implies \rho^{3-2\alpha} = \frac{1}{\rho^{2\alpha-3}}
+          \]
+          \[
+              \implies \lim_{ \rho \to 0^{+} } \rho^{3-2\alpha} \cos^{2}\theta \sin\theta = \lim_{ \rho \to 0^{+} } \frac{\cos^{2}\theta \sin\theta}{\rho^{2\alpha-3}} = \pm \infty \ \text{ a seconda di } \theta
+          \]
 
-    Quindi il limite non esiste anche in questo caso. Da notare che se \(\sin\theta \) o \(\cos\theta \) fossero \(=0\), sarebbe più complesso, ma il limite comunque non esisterebbe.
+          Quindi il limite non esiste anche in questo caso. Da notare che se \(\sin\theta \) o \(\cos\theta \) fossero \(=0\), sarebbe più complesso, ma il limite comunque non esisterebbe.
 
 \end{itemize}
 
@@ -344,10 +344,10 @@ Analizziamo l'intersezione tra questi due piani e la circonferenza:
 
 verifichiamo se il sistema ha soluzione:
 \begin{align*}
-    & \begin{cases}
-        x-y=0 \\
-        {(x-1)}^{2} + {(y-3)}^{2} = 4
-    \end{cases}\implies
+     & \begin{cases}
+           x-y=0 \\
+           {(x-1)}^{2} + {(y-3)}^{2} = 4
+       \end{cases}\implies
     \begin{cases}
         x=y \\
         y^{2}-2y+1+y^{2}-6y+9=4
@@ -355,11 +355,11 @@ verifichiamo se il sistema ha soluzione:
     \begin{cases}
         x=y \\
         2y^{2}-8y + 6 = 0
-    \end{cases}\\ \\
-    & \implies \begin{cases}
-        x=y \\
-        y^{2}-4y+3=0
-    \end{cases} \implies
+    \end{cases}                 \\ \\
+     & \implies \begin{cases}
+                    x=y \\
+                    y^{2}-4y+3=0
+                \end{cases} \implies
     \begin{cases}
         x=y \\
         (y-3)(y-1) = 0
@@ -380,7 +380,7 @@ Studiamo la continuità della seguente funzione, \(f: \R^2 \to \R \), nel suo do
 
 \[
     f(x,y) = \begin{cases*}
-        0 & se \((x,y) = (1,1)\) \\
+        0                                                                      & se \((x,y) = (1,1)\)   \\
         \displaystyle{\frac{e^{(x-1)+(y-1)} -1}{\sqrt{{(x-1)}^2 + {(y-1)}^2}}} & se \((x,y) \ne (1,1)\)
     \end{cases*}
 \]
