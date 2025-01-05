@@ -103,12 +103,16 @@ Allora, valgono le seguenti proprietà:
                     \[
                         \iint_D f \diff{x}\diff{y} \le  \iint_D g \diff{x}\diff{y}
                     \]
-              \item \(|f| \in \R(D)\) e si ha \(\left|\iint_D f \diff{x}\diff{y} \right| \le \iint_D f \diff{x}\diff{y}  \)
-
-                    In particolare se \(D\) è misurabile e se \(M_1= \underset{D}{\sup} | f(x,y)|\):
+              \item Se \(|f| \in \R(D)\) allora:
 
                     \[
-                        \left|\iint_D f(x,y) \diff{x}\diff{y}\right| \le M_1(D)
+                        \left|\iint_D f \diff{x}\diff{y} \right| \le \iint_D |f| \diff{x}\diff{y}
+                    \]
+
+                    Inoltre, se \(D\) è misurabile, allora:
+
+                    \[
+                        \left|\iint_D f(x,y) \diff{x}\diff{y}\right| \le \underset{D}{\sup} \left| f(x,y) \right|
                     \]
           \end{enumerate}
 \end{enumerate}
