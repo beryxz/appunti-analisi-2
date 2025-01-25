@@ -1,0 +1,1106 @@
+\subsection{Equazioni differenziali lineari del II ordine a coefficienti costanti}
+
+Vediamo ora di studiare il caso specifico delle sole equazioni differenziali lineari del II ordine i cui coefficienti sono numeri reali costanti.
+
+\defn{Forma normale}{
+    \[
+        ay''(x) + by'(x) + cy(x) = f(x) \qquad \circled{1}
+    \]
+
+    con \(a \ne 0,\ \ x \in I,\ \ f \in C^0(I),\ \ a,b,c \in \R \)
+}
+
+\defn{Omogenea associata}{
+    \[
+        ay''(x) + by'(x) + cy(x) = 0 \qquad \circled{2}
+    \]
+}
+
+\subsubsection{Integrale generale dell'omogenea associata}
+
+Per risolvere questo tipo di EDO, si parte l'integrale generale dell'omogenea associata, dal quale identifichiamo due soluzioni \(y_1(x), y_2(x)\).
+
+Quindi, considerata l'EDO (2), abbiamo due casi in base ai coefficienti \(b,c\):
+
+\begin{itemize}
+    \item
+          \(b=c=0\)
+
+          La (2) diventa:
+          \[
+              ay''(x) = 0 \implies y''(x) = 0 \quad \forall x \in I
+          \]
+
+          quindi:
+
+          \[
+              y'(x) = c \quad c \in \R
+          \]
+
+          \[
+              y(x) = c_1x+c_0 \quad c_1,c_0 \in \R
+          \]
+    \item
+          \(b,c\) non contemporaneamente nulli
+
+          Se invece \(b\) e \(c\) non sono contemporaneamente nulli, devo considerare la seguente equazione algebrica di secondo grado in \(\C \):
+
+          \[
+              p(\lambda) = a \lambda^{2}+b \lambda + c =0
+          \]
+
+          Questa equazione si chiama \underline{equazione caratteristica} di (2) e l'integrale generale di (2) lo otteniamo studiando proprio le soluzioni di questa equazione.
+\end{itemize}
+
+\subsubsection*{Equazione caratteristica}
+
+\[
+    p(\lambda) = a \lambda^{2}+b \lambda + c =0
+\]
+
+Per il Teorema fondamentale dell'algebra questa equazione ha sempre due soluzioni in \(\C \) ma non sempre le ha in \(\R \).
+
+\proposizione{}{
+    \[
+        y(x) = e^{\lambda x}\ \text{è soluzione di (2)} \iff p(\lambda)=0
+    \]
+
+    ovvero, se e soltanto se, \(\lambda \) è radice dell'equazione caratteristica associata a (2)
+}
+\begin{proof}
+    Indico con \(Ly\) l'equazione \(Ly= ay''+by'+cy\)
+
+    Dimostro che \(y\) è soluzione di (2) \(\iff \) \(Ly=0\)
+
+    Se considero \(y(x) = e ^{\lambda x}\)
+
+    Devo dimostrare che:
+
+    \[
+        L(e ^{\lambda x}) = 0 \iff  p(\lambda) = 0
+    \]
+
+    Sostituisco \(e ^{\lambda x}\) a \(x\):
+
+    \begin{align*}
+        L(e ^{\lambda x}) & = a( e^{\lambda x})'' + b( e ^{\lambda x})' + c(e ^{\lambda x})              \\
+                          & = a \lambda ^{2} e ^{\lambda x} + b \lambda e ^{\lambda x} + c e^{\lambda x} \\
+                          & = e ^{\lambda x}(a \lambda ^{2}+ b \lambda+ c)
+    \end{align*}
+    dunque
+    \[
+        L( e ^{\lambda x}) = 0 \iff a \lambda ^{2}+ b \lambda +c = 0
+    \]
+
+\end{proof}
+
+\pagebreak
+\subsubsection*{Radici del polinomio caratteristico}
+
+Adesso che ho dimostrato l'esistenza delle radici, devo trovarle.
+
+Di solito le soluzioni di secondo grado si scrivono
+
+\[
+    \lambda_{1,2} = \frac{-b \pm \sqrt{b ^{2}-4 ac}}{2a}
+\]
+
+Le soluzioni \(\lambda_1\) e \(\lambda_2\) sono soluzioni di (2), quindi sono \(e ^{\lambda_1x}\) e \(e ^{\lambda_2x}\).
+
+Distinguiamo tre casi per le soluzioni:
+
+\begin{enumerate}
+    \item due soluzioni reali e distinte (\(\Delta >0\)) \(\implies \lambda_1, \lambda_2\)
+    \item due soluzioni reali e coincidenti (\(\Delta = 0\)) \(\implies \lambda_1, \lambda_2\)
+    \item due soluzioni complesse coniugate (\( \Delta <0\)) \(\implies \alpha+i\beta, \alpha-i\beta \)
+\end{enumerate}
+
+\begin{align*}
+    \text{i.} \quad   & y_1(x) = e ^{\lambda_1x}               &  & y_2(x) = e ^{\lambda_2x}               &  & \text{con}\  \lambda_1, \lambda_2 \in \R \quad \text{t.c.} \quad \lambda_1 \neq \lambda_2 \\
+    \text{ii.} \quad  & y_1(x) = e ^{\lambda x}                &  & y_2(x) = xe ^{\lambda x}               &  & \text{con}\  \lambda =\lambda_1=\lambda_2 = - \frac{b}{2a} \in \R                         \\
+    \text{iii.} \quad & y_1(x) = e ^{\alpha x} \cos{(\beta x)} &  & y_2(x) = e ^{\alpha x} \sin{(\beta x)}                                                                                                \\
+\end{align*}
+
+\teorema{}{L'integrale generale dell'equazione omogenea \(a y''+by'+c=0\) è dato da:
+
+    \[
+        c_1 y_1(x) + c_2 y_2(x)
+    \]
+
+    al variare di \(c_1,c_2 \in \R \) dove \(y_1(x)\) e \(y_2(x)\) sono definite come sopra
+}
+
+\pagebreak
+\subsubsection*{Caso \(\Delta > 0\)}
+
+\begin{proof}
+    \circled{1} \(b^{2}-4ac >0\) con \(\lambda_1,\lambda_2\) soluzioni dell'equazioni di \(p(\lambda)=0\)
+
+    scrivo la Wronskiana di \(y_1,y_2\):
+    \[
+        \begin{bmatrix}
+
+            e ^{\lambda_1 x}          & e ^{\lambda_2 x}          \\
+            \lambda_1e ^{\lambda_1 x} & \lambda_2e ^{\lambda_2 x} \\
+        \end{bmatrix}
+    \]
+    che è diverso da zero quindi le soluzioni sono linearmente indipendenti
+
+    sia ora \(y(x)\) una soluzione di (2):
+
+    \[
+        y(x) = e ^{\lambda_1 x}u(x)
+    \]
+
+    io devo determinare \(u(x)\) per poi dimostrare che \(y(x) = c_1e ^{\lambda_1 x}+c_2 e^{\lambda_2 x}\)
+
+    Poiché \(y(x) = e ^{\lambda_1 x}u(x)\) è soluzione di (2) si ha derivando e sostituendo:
+
+    \begin{align*}
+        \textcolor{Red}{a\left( e^{\lambda_{1}x}u(x) \right)''} + \textcolor{Cyan}{b\left( e^{\lambda_{1}x}u(x) \right)'} + \textcolor{Magenta}{ce^{\lambda_{1}x}u(x)}                                                                                                                                 & =0  \\
+        \textcolor{Red}{a\left( \lambda_{1}e^{\lambda_{1}x}u(x)+ e^{\lambda_{1}x}u'(x) \right)'} + \textcolor{Cyan}{b\left( \lambda_1e^{\lambda_{1}x}u(x) + e^{\lambda_{1}x}u'(x) \right)} + \textcolor{Magenta}{ce^{\lambda_{1}x}u(x)}                                                                & =0  \\
+        \textcolor{Red}{a\left( \lambda_{1}e^{\lambda_{1}x}u(x)+ e^{\lambda_{1}x}u'(x) \right)'} + e^{\lambda_{1}x} \left[ \textcolor{Cyan}{b\left( \lambda_{1}u(x) + u'(x) \right)} + \textcolor{Magenta}{cu(x)} \right]                                                                              & =0  \\
+        \textcolor{Red}{a\left( {\lambda_{1}}^{2}e^{\lambda_{1}x}u(x) + \lambda_{1}e^{\lambda_{1}x}u'(x) + \lambda_{1}e^{\lambda_{1}x}u'(x) + e^{\lambda_{1}x}u''(x) \right)} + e^{\lambda_{1}x} \left[ \textcolor{Cyan}{b\left( \lambda_{1}u(x) + u'(x) \right)} + \textcolor{Magenta}{cu(x)} \right] & =0  \\
+        e^{\lambda_{1}x} \left[ \textcolor{Red}{a\left( {\lambda_{1}}^{2}u(x) + 2\lambda_{1}u'(x) + u''(x) \right)} + \textcolor{Cyan}{b\left( \lambda_1u(x) + u'(x) \right)} + \textcolor{Magenta}{cu(x)} \right]                                                                                     & = 0 \\
+        e^{\lambda_{1}x} \left[ au''(x) + (2a\lambda_{1} + b)u'(x) + \underbrace{\left(a{\lambda_{1}}^{2} + b\lambda_{1} + c\right)}_\text{impongo che sia =0}u(x) \right]                                                                                                                             & = 0
+    \end{align*}
+
+    estraggo solo l'ultima parentesi e impongo che sia uguale a zero perché il resto è già zero
+
+    \[
+        au''(x) + (2a \lambda_1 + b) u'(x) = 0
+    \]
+
+    divido per a:
+
+    \[
+        u''(x) +\left( 2 \lambda_1 + \frac{b}{a} \right) u'(x) = 0
+    \]
+
+    \pagebreak
+    sapendo che:
+
+    \[
+        a \lambda^{2} + b \lambda + c =0
+    \]
+
+    \[
+        \lambda^{2} + \frac{b}{a} \lambda + \frac{c}{a} =0
+    \]
+
+    \[
+        \lambda_1 + \lambda_2 = -\frac{b}{a}
+    \]
+
+    \[
+        \lambda_1 \lambda_2 = \frac{c}{a}
+    \]
+
+    \[
+        u''(x) + (2 \lambda_1 - \lambda_1 - \lambda_2)u'(x) = 0
+    \]
+
+    il meno per comodità:
+
+    \[
+        u''(x) - (\lambda_1 - \lambda_2)u'(x) = 0
+    \]
+
+    se adesso chiamo \(u'(x)=v(x)\) e \(v''(x) = u'(x)\) l'equazione diventa:
+
+    \[
+        v' -kv = 0
+    \]
+
+    risolvendo
+
+    \[
+        v(x) = ce ^{kx}
+    \]
+
+    \[
+        v(x) = c e^{(\lambda_2 - \lambda_1)x}
+    \]
+
+    sostituendo:
+
+    \[
+        u'(x) = c e ^{(\lambda_2- \lambda_1)x}
+    \]
+
+    integrando:
+
+    \[
+        u(x)  = c_1 e ^{(\lambda_2 - \lambda_1)x}+c_2
+    \]
+
+    la nostra \(y(x)\) diventa:
+
+    \[
+        y(x) = e ^{\lambda_1 x}u(x) = e ^{\lambda_1 x}( c_1 e ^{(\lambda_2 - \lambda_1)x}+c_2) = c_1 e ^{\lambda_2 x}+ c_2 e ^{\lambda_1 x}
+    \]
+\end{proof}
+
+\pagebreak
+\subsubsection*{Caso \(\Delta = 0\)}
+
+\begin{proof}
+    Adesso voglio per il caso \circled{2}
+
+    \[
+        \lambda_1 = \lambda_2 = \lambda = -\frac{b}{2a} \in \R
+    \]
+
+    \[
+        p(\lambda) =0 \iff e ^{\lambda x}\ \ \text{è soluzione di (2)}
+    \]
+
+    sia quindi \(y(x)\) una soluzione di (2) che scriviamo come:
+
+    \[
+        y(x) = e ^{\lambda x}u(x)
+    \]
+
+    Come prima si ottiene:
+
+    \[
+        a(e ^{\lambda x}u(x) )''+ b(e ^{\lambda x}u(x))' + c e ^{\lambda x}u(x)=0
+    \]
+
+    \[
+        \overbrace{e ^{\lambda x}}^{>0}(a u''(x) + \underbrace{(a \lambda^{2}+b \lambda +c )}_\text{=0} u(x) + (2a \lambda+b)u'(x))=0
+    \]
+
+    estraggo la parte che impongo a zero:
+
+    \[
+        au''(x) + (2a \lambda+b)u'(x) = 0
+    \]
+
+    divido per a:
+
+    \[
+        u''(x) + \left( 2 \lambda + \frac{b}{a} \right)u'(x) = 0
+    \]
+
+    sapendo che \(-\frac{b}{a} = 2 \lambda \):
+
+    \[
+        u''(x) + \left( \cancel{2 \lambda} + \cancel{\frac{b}{a}} \right)u'(x) = 0
+    \]
+
+
+    \[
+        u'(x) = c_1
+    \]
+
+    \[
+        u(x) = c_1 x +c_2
+    \]
+
+    e quindi ho la soluzione:
+
+    \[
+        y(x) = e ^{\lambda x}(c_1x+c_2) = c_1x e^{\lambda x}+ c_2 e ^{\lambda x}
+    \]
+\end{proof}
+
+\filbreak{}
+
+\subsubsection*{Caso \(\Delta < 0\)}
+
+TODO
+
+\filbreak{}
+\subsubsection{Soluzione particolare}
+
+Una volta aver trovato l'integrale generale dell'omogenea dobbiamo vedere come si determina la soluzione particolare di:
+
+\[
+    ay''+by'+cy = f(x)\ \in I=[a,b]
+\]
+
+Indicheremo con \(\bar{y}\) la soluzione particolare. Per calcolarla ci sono 3 modi:
+
+\begin{itemize}
+    \item Caso elementare: \(b =c = 0\) \\
+          \(\implies y'' = f(x)\) \\
+          In questo caso trovare la soluzione è immediato, basta integrare due volte \(y''(x)\)
+    \item Per similitudine: \\
+          Si guarda il termine noto \(f(x)\) e si controlla se è in alcune forme particolari di cui sappiamo dire che la \(y(x)\) avrà una forma simile.
+          In questo caso si procede usando la tabella apposita (vedi \underline{\nameref{sec:cheatsheet-edo-2-ordine-soluzione-particolare}}).
+    \item Metodo di variazione delle costanti: \\
+          Impongo che \(\bar{y}\) sia della seguente forma:
+          \[
+              \bar{y} = c_1(x) y_1(x) + c_2(x) y_2(x)
+          \]
+          dove \({y_1(x),y_2(x)}\) sono soluzioni linearmente indipendenti di (2), e \(c_1(x),c_2(x)\) sono funzioni di classe \(C^{2}(I)\) da determinare.
+\end{itemize}
+
+\subsubsection*{Metodo di variazione delle costanti}
+
+L'obiettivo di questo metodo, è quello di trovare dei valori per \(c_1(x), c_2(x)\) avendo solamente conoscenza di \(y_1(x), y_2(x), f(x)\).
+
+Mentre gli altri metodi sono sicuramente più facili e veloci, sono applicabili solo in casi particolari. Quando non è possibile utilizzarli bisogna procedere con il seguente metodo che è più complesso, ma è sempre applicabile.
+
+Iniziamo; poiché \(\bar{y} (x)\) è soluzione di (1), possiamo dire che:
+\begin{align*}
+    \intertext{ \qquad \qquad \(a\bar{y}''(x) + b\bar{y}'(x) + c\bar{y}(x) = f(x) \quad \text{con} \quad \bar{y} (x) = c_1(x) y_1(x) + c_2(x) y_2(x)\) }
+    \intertext{deriviamo \(\bar{y}\):}
+    \bar{y} (x)   & = c_1(x) y_1(x) + c_2(x) y_2(x)                                         \\
+    \bar{y} '(x)  & = c_1'(x) y_1(x) + c_1 y_1'(x) + c_2'(x) y_2(x) + c_2(x) y_2'(x)        \\
+    \intertext{impongo che \(c_1'(x) y_1(x) + c_2'(x) y_2(x) = 0\) (prima condizione)}
+    \bar{y} '(x)  & = c_1(x) y_1'(x) +c_2(x) y_2'(x)
+    \intertext{deriviamo nuovamente:}
+    \bar{y} ''(x) & = c_1'(x) y_1'(x) + c_1(x) y_1''(x) + c_2'(x) y_2'(x) + c_2(x) y_2''(x) \\
+\end{align*}
+Sostituisco le derivate nell'espressione iniziale:
+\begin{align*}
+    f(x) = & \ \ \textbf{a}\left[c_1'(x) y_1'(x) + c_1(x) y_1''(x) + c_2'(x) y_2'(x) +c_2(x) y_2''(x)\right] \\
+           & + \textbf{b}\left[c_1(x) y_1'(x) + c_2(x) y_2'(x)\right]                                        \\
+           & + \textbf{c}\left[c_1(x) y_1(x) + c_2(x) y_2(x)\right]
+\end{align*}
+
+Adesso raccolgo a fattore comune le \(c_i\):
+
+\[
+    c_1(x) [ \underbrace{a y_1''(x) +b y_1'(x) + c y_1(x)}_\text{=0}] + c_2(x) [\underbrace{a y_2''(x) + b y_2'(x) + c y_2(x)}_\text{=0}]+ a [c_1'(x) y_1'(x)+ c_2'(x) y_2'(x)] = f(x)
+\]
+
+quindi mi rimane:
+
+\[
+    c_1'(x) y_1'(x) + c_2'(x) y_2'(x) = \frac{f(x)}{a}
+\]
+
+Ottengo il sistema di 2 equazioni nelle due incognite (\(c_1'(x),c_2'(x)\)) non omogeneo:
+
+\begin{equation*}
+    \begin{cases}
+        c_1'(x)y_1(x) + c_2'(x) y_2(x) = 0 \\
+        c_1'(x) y_1'(x) + c_2'(x) y_2'(x)  = \frac{f(x)}{a}
+    \end{cases}
+\end{equation*}
+
+La matrice dei coefficienti del sistema è:
+
+\[
+    \begin{bmatrix}
+        y_1(x)  & y_2(x)  \\
+        y_1'(x) & y_2'(x) \\
+    \end{bmatrix}
+    \neq 0
+\]
+
+È la matrice Wronskiana.
+
+Uso il metodo di Cramer per risolvere il sistema:
+
+\[
+    A = \begin{pmatrix}
+        a_{11} & a_{12} \\
+        a_{21} & a_{22} \\
+    \end{pmatrix}
+\]
+
+\(\det A = a_{11} a_{22} - a_{12} a_{21}\)
+
+Il metodo:
+
+\[
+    c_1'(x) =
+    \frac{
+        \begin{vmatrix}
+            0              & y_2(x)  \\
+            \frac{f(x)}{a} & y_2'(x) \\
+        \end{vmatrix}
+    }{
+        \begin{vmatrix}
+            y_1(x)  & y_2(x)  \\
+            y_1'(x) & y_2'(x) \\
+        \end{vmatrix}
+    } = \frac{- y_2(x) \frac{f(x)}{a}}{y_1(x) y_2'(x) - y_2(x) y_1'(x)}
+\]
+
+\[
+    c_2'(x) =
+    \frac{
+        \begin{vmatrix}
+            y_1(x)  & 0              \\
+            y_1'(x) & \frac{f(x)}{a} \\
+        \end{vmatrix}
+    }{
+        \begin{vmatrix}
+            y_1(x)  & y_2(x)  \\
+            y_1'(x) & y_2'(x) \\
+        \end{vmatrix}
+    } = \frac{- y_1(x) \frac{f(x)}{a}}{y_1(x) y_2'(x) - y_2(x) y_1'(x)}
+\]
+
+\filbreak{}
+
+Ora dobbiamo integrare
+
+\[
+    c_1(x) = \int c_1'(x) \diff x
+\]
+\[
+    c_2(x) = \int c_2'(x) \diff x
+\]
+
+Quindi alla fine abbiamo un modo per trovare questi \(c_1(x), c_2(x)\), e possiamo scrivere la soluzione particolare come:
+
+\[ \bar{y} = c_1(x)y_1(x) + c_2(x)y_2(x)\]
+
+\filbreak{}
+
+\subsubsection{Forma dell'integrale generale}
+
+Alla fine si ha quindi che \underline{l'integrale generale} di (1) è nella seguente forma:
+
+\[
+    y(t)  = \underbrace{c_1 y_1(x) + c_2 y_2(x)}_\text{generale} + \underbrace{c_3(x) y_1(x) + c_4(x) y_2(x)}_{\text{particolare}\ =\ \bar{y}(x)}
+\]
+
+\subsubsection{Problema di Cauchy}
+
+Assegnando le condizioni iniziali:
+
+\[
+    y(x_0) = y_0
+\]
+\[
+    y'(x_0) = y_1
+\]
+
+Quindi il problema di Cauchy mi viene:
+
+\begin{equation*}
+    \begin{cases*}
+        ay''+ by'+cy= f(x) \\
+        y(x_0)=y_0         \\
+        y'(x_0) = y_1
+    \end{cases*}
+\end{equation*}
+
+\pagebreak{}
+
+\subsubsection{Esercizi}
+
+Trovare le soluzioni dei seguenti problemi di Cauchy
+
+\subsubsection*{Esempio 1 (a occhio)}
+
+\begin{equation*}
+    \begin{cases*}
+        3y'' + 5y' + 2y=3e ^{2x} \\
+        y(0) = 0                 \\
+        y'(0) = 1
+    \end{cases*}
+\end{equation*}
+
+Scriviamo (1) e (2):
+
+\begin{align*}
+    \circled{1} & \qquad 3y''+5y'+2y = 3 e^{2x} \\
+    \circled{2} & \qquad 3y''+5y'+2y = 0
+\end{align*}
+
+Risolvo:
+
+\[
+    3 \lambda ^{2} + 5 \lambda + 2 = 0
+\]
+
+\[
+    3 \lambda^{2} + 3 \lambda + 2 \lambda + 2 =0
+\]
+
+\[
+    3 \lambda ( \lambda+1) + 2( \lambda + 1) =0
+\]
+
+\[
+    (3 \lambda +2 ) ( \lambda +1 ) =0
+\]
+
+\[
+    \lambda= -\frac{2}{3}, \lambda=-1
+\]
+
+quindi ho soluzioni linearmente indipendenti di (2):
+
+\[
+    y_1(x) = e ^{-\frac{2}{3}x}, y_2(x) = e ^{-x}
+\]
+
+Integrale generale di (2):
+
+\[
+    y_0(x) = c_1 e^{-\frac{2}{3}x} + c_2 e ^{-x} \quad c_1,c_2 \in \R
+\]
+
+
+Una soluzione particolare di (1) è dunque:
+
+\[
+    \bar{y} (x) = A e ^{2x}
+\]
+
+Ora derivo due volte:
+
+\[
+    \bar{y} '(x) = 2A e ^{2x}
+\]
+
+\[
+    \bar{y} ''(x) = 4A e ^{2x}
+\]
+
+sostituendo poi in (1):
+
+\[
+    12Ae ^{2x} + 10 A e ^{2x} + 2 A e ^{2x} = 3 e^{2x}
+\]
+
+\[
+    24A e ^{2x} = 3 e ^{2x}
+\]
+
+\[
+    A = \frac{1}{8}
+\]
+
+Adesso devo imporre le condizioni iniziali a queste due:
+
+\[
+    y(x) = c_1 e ^{-\frac{2}{3}x} + c_2 e ^{-x}+ \frac{1}{8}e ^{2x}
+\]
+
+\[
+    y'(x) = -\frac{2}{3}c_1 e ^{-\frac{2}{3}x} - c_2 e ^{-x}+ \frac{1}{4} e ^{2x}
+\]
+
+
+\begin{equation*}
+    \begin{cases*}
+        c_1+c_2+\frac{1}{8}=0 \\
+        -\frac{2}{3}c_1-c_2+\frac{1}{4}=1
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        c_1=c_2-\frac{1}{8} \\
+        \frac{2}{3}c_2+\frac{1}{12}-c_2+\frac{1}{4}=1
+    \end{cases*}
+\end{equation*}
+
+
+\begin{equation*}
+    \begin{cases*}
+        c_1=c_2-\frac{1}{8} \\
+        -\frac{1}{3}c_2= 1- \frac{1}{3}
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        c_1=c_2-\frac{1}{8} \\
+        -\frac{1}{3}c_2=\frac{2}{3}
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        c_1=\frac{15}{8} \\
+        c_2=-2
+    \end{cases*}
+\end{equation*}
+
+La soluzione del problema è quindi:
+
+\[
+    y(x) = \frac{15}{8}e ^{-\frac{2}{3}x}- 2 e ^{-x}+ \frac{1}{8}e ^{2x}
+\]
+
+\filbreak{}
+\subsubsection*{Esempio 2}
+
+\begin{equation*}
+    \begin{cases*}
+        y''(x) -2y'(x)+ y(x) = 5\sin(x) \\
+        y(0) = 0                        \\
+        y'(0) = 1
+    \end{cases*}
+\end{equation*}
+
+Risolvo l'equazione caratteristica associata:
+\begin{align*}
+    \lambda^{2}-2 \lambda + 1 & = 0 \\
+    {(\lambda-1)}^{2}         & = 0
+\end{align*}
+
+quindi \(\lambda_1=\lambda_2=1\). Dunque il nostro integrale generale di (2) è:
+
+\[
+    z(x) = c_1 e ^{x} + c_2 x e ^{x} \quad c_1,c_2 \in \R
+\]
+
+Per trovare la soluzione particolare usiamo il metodo di somiglianza per il termine noto:
+
+\[
+    \bar{y} (x) = A \cos(x) + B \sin(x)
+\]
+
+le derivate:
+
+\[
+    \bar{y} '(x)  = -A \sin(x) + B \cos(x)
+\]
+\[
+    \bar{y} ''(x)  = -A \cos(x) - B \sin(x)
+\]
+
+Sostituiamo a quella iniziale:
+
+\[
+    \cancel{-A \cos(x)} \cancel{- B\sin(x)} + 2A \sin(x) - 2B \cos(x)+ \cancel{A \cos(x)} + \cancel{B\sin(x)} = 5\sin(x)
+\]
+
+e quindi \(2A = 5\) e \(B=0\):
+
+\[
+    \bar{y} (x) = \frac{5}{2} \cos(x)
+\]
+
+adesso devo trovare:
+\begin{align*}
+    y(x)  & = c_1 e ^{x}+ c_2 x e ^{x} + \frac{5}{2} \cos(x)             \\
+    y'(x) & = c_1 e ^{x} + c_2 e ^{x} + c_2x e ^{x} - \frac{5}{2}\sin(x)
+\end{align*}
+
+Adesso impongo le condizioni iniziali:
+
+\begin{equation*}
+    \begin{cases*}
+        c_1 +\frac{5}{2}=0 \\
+        c_1+c_2= 1
+    \end{cases*}
+    \implies
+    \begin{cases*}
+        c_1 = -\frac{5}{2} \\
+        c_2 = \frac{7}{2}
+    \end{cases*}
+\end{equation*}
+
+La soluzione del problema è quindi:
+
+\[
+    y(x) = -\frac{5}{2}e ^{x}+ \frac{7}{2} x e ^{x} + \frac{5}{2} \cos(x)
+\]
+
+\filbreak{}
+\subsubsection*{Esempio 3}
+
+\begin{equation*}
+    \begin{cases*}
+        y''+ 2y'+ 2y= 3x^{2} \\
+        y(0) = 0             \\
+        y'(0) = 1
+    \end{cases*}
+\end{equation*}
+
+
+risolvo:
+
+\[
+    \lambda^{2}+2 \lambda+2 =0
+\]
+
+\[
+    \lambda= \frac{-1 \pm \sqrt{1-2}}{1}= -1 \pm i
+\]
+
+le soluzioni sono complesse:
+
+\[
+    \alpha \pm  i \beta
+\]
+
+con \(\alpha = -1\) e \(\beta = 1\) quindi sostituisco:
+
+\[
+    y_0(x) = y_0(c_1,c_2) = e ^{-x}(c_1\cos(x) + c_2 \sin(x))
+\]
+
+la soluzione particolare:
+
+\[
+    \bar{y} (x) = A x^{2}+Bx+C
+\]
+
+derivo due volte:
+
+\[
+    \bar{y} '(x) = 2Ax + B
+\]
+
+\[
+    \bar{y} ''(x) = 2A
+\]
+
+sostituisco in (1):
+
+\[
+    2A + 4Ax + 2B + 2Ax^{2}+2Bx + 2C = 3x^{2}
+\]
+
+\[
+    2Ax^{2} + 2(2A+B) x + 2(A+B+C) = 3x^{2}
+\]
+
+risolvo un sistema per le incognite \(A,B,C\) e quindi trovo che:
+
+\begin{equation*}
+    \begin{cases*}
+        2A = 3     \\
+        2A + B = 0 \\
+        A+B+C= 0
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        A=\frac{3}{2} \\
+        B=-3          \\
+        \frac{3}{2}-3+C=0
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        A=\frac{3}{2} \\
+        B=-3          \\
+        C=\frac{3}{2}
+    \end{cases*}
+\end{equation*}
+
+
+La soluzione particolare sarà dunque:
+
+\[
+    \bar{y} (x) = \frac{3}{2}x^{2}-3x+\frac{3}{2}
+\]
+
+
+mentre l'insieme delle soluzioni è:
+
+\[
+    y(x) = e ^{-x}(c_1 \cos(x) + c_2 \sin(x) ) + \frac{3}{2}x^{2}-3x+\frac{3}{2}
+\]
+
+Ora, derivo:
+
+\[
+    y'(x) = e ^{-x}(c_1 \cos(x)+ c_2 \sin(x)) + e ^{-x}(-c_1\sin(x)+c_2 \cos(x)) +3x -3
+\]
+
+e impongo le condizioni iniziali:
+
+\begin{equation*}
+    \begin{cases*}
+        c_1 + \frac{3}{2} = 0 \\
+        c_1 + c_2 -3 = 1
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        c_1 = -\frac{3}{2} \\
+        c_2 = \frac{11}{2}
+    \end{cases*}
+\end{equation*}
+
+L'insieme delle soluzioni finale è quindi:
+
+\[
+    y(x) = e ^{-x}\left(-\frac{3}{2}\cos(x) + \frac{11}{2} \sin(x)\right) + \frac{3}{2}x^{2}-3x + \frac{3}{2}
+\]
+
+\filbreak{}
+\subsubsection*{Esempio 4}
+
+\begin{equation*}
+    \begin{cases*}
+        y''-6y' + 9y = e ^{3x} \\
+        y(0) = 1               \\
+        y'(0) = 0
+    \end{cases*}
+\end{equation*}
+
+\[
+    \lambda^{2} -6 \lambda + 9 = 0
+\]
+
+\[
+    \lambda_1=\lambda_2=3
+\]
+
+La soluzione generale dell'omogenea associata è:
+\[
+    z(x)  = c_1 e ^{3x}+ c_2 x e ^{3x}
+\]
+
+Per la soluzione particolare usiamo il metodo di somiglianza per il termine noto esponenziale. Notiamo che nel termine noto abbiamo nell'esponente \(\lambda=3\) che è anche soluzione dell'equazione caratteristica. La soluzione particolare è quindi:
+
+\[
+    \bar{y} (x) = Ax^{2}e^{3x}
+\]
+
+dove il grado della \(x\) viene dalla molteplicità di lambda come soluzione del polinomio caratteristico. Procediamo a trovare \(A\):
+
+\[
+    \bar{y}'(x) = 2Axe^{3x} + 3Ax^{2}e^{3x}
+\]
+\[
+    \bar{y}''(x) = 2Ae^{3x} + 6Axe^{3x} + 6Axe^{3x} + 9Ax^2e^{3x} = 2Ae^{3x} + 12Axe^{3x} + 9Ax^2e^{3x}
+\]
+Sostituiamo nella EDO e troviamo \(A\):
+\begin{align*}
+    \left[ 2Ae^{3x} + 12Axe^{3x} + 9Ax^2e^{3x} \right] -6\left[ 2Axe^{3x} + 3Ax^{2}e^{3x} \right] + 9 \left[ Ax^{2}e^{3x} \right] & = e^{3x}      \\
+    2Ae^{3x}                                                                                                                      & = e^{3x}      \\
+    A                                                                                                                             & = \frac{1}{2}
+\end{align*}
+
+La soluzione generale della EDO è quindi:
+
+\[
+    y(x) = c_1 e ^{3x}+ c_2 x e ^{3x} + \frac{1}{2} x^{2}e ^{3x}
+\]
+
+Impongo ora le condizioni iniziali:
+\begin{align*}
+     & y'(x) = 3c_1 e ^{3x}+ \left( c_2 e ^{3x} + 3c_2 x e ^{3x} \right) + \left( xe ^{3x} + \frac{3}{2} x^{2}e ^{3x} \right) \\
+     & y(0) = c_1 = 1                                                                                                         \\
+     & y'(0) = 3c_1 + c_2 = 0
+\end{align*}
+Quindi, \(c_1 = 1\) e \(c_2 = -3\). Dunque, la soluzione al problema di Cauchy è:
+
+\[
+    y(x) = e^{3x} -3xe^{3x} +\frac{1}{2}x^{2}e^{3x}
+\]
+
+\filbreak{}
+\subsubsection*{Esempio 5}
+
+\begin{equation*}
+    \begin{cases*}
+        y'= \frac{\sin(x)}{\cos(y)} \\
+        y\left( \frac{\pi}{2} \right) = \frac{\pi}{6}
+    \end{cases*}
+\end{equation*}
+
+questa è a variabili separabili:
+
+\[
+    y'(x)\cdot\cos(y) = \sin(x)
+\]
+
+\[
+    \int y'(x)\cdot\cos(y) \diff x = \int \sin(x) \diff x
+\]
+
+\[
+    \int \cos(y) \diff y = \int \sin(x) \diff x
+\]
+
+\[
+    \sin(y) = -\cos(x) +c
+\]
+
+impongo adesso la condizione iniziale (\(x=\frac{\pi}{2}\)):
+
+\begin{align*}
+    \sin\left(\frac{\pi}{6}\right) & = -\cos\left(\frac{\pi}{2}\right) + c \\ \\
+    \sin\left(\frac{\pi}{6}\right) & = -0 +c                               \\ \\
+    \frac{1}{2}                    & = c
+\end{align*}
+
+quindi sostituisco la c:
+
+\[
+    \sin\left(y\right) = - \cos(x) + \frac{1}{2}
+\]
+
+Per ottenere \(y\) dovrò fare l'arcoseno, quindi guardo dove è definita l'espressione:
+
+\[
+    -1 \le \sin\left(y\right) \le 1
+\]
+
+ovvero:
+
+\[
+    -1 \le \cos(x) + \frac{1}{2} \le 1
+\]
+
+impongo il sistema:
+
+\begin{equation*}
+    \begin{cases*}
+        -\cos(x) +\frac{1}{2}\ge -1 \\
+        -\cos(x) + \frac{1}{2} \le 1
+    \end{cases*}
+\end{equation*}
+
+\begin{equation*}
+    \begin{cases*}
+        \cos(x) \le \frac{3}{2} \\
+        \cos(x) \ge -\frac{1}{2}
+    \end{cases*}
+\end{equation*}
+
+Prendo la soluzione nell'intervallo:
+
+\[
+    -\frac{2}{3}\pi \le  x \le \frac{2}{3}\pi
+\]
+
+la soluzione del problema è quindi:
+
+\[
+    y(x) = \arcsin \left( -\cos(x) +\frac{1}{2} \right)
+\]
+
+con la \(x\) presa nell'intervallo appena definito.
+
+\pagebreak
+\subsubsection{Cheatsheet {-} Soluzione generale dell'omogenea associata}
+
+Cheatsheet su come trovare la soluzione generale dell'omogenea associata a una EDO lineare del 2 ordine non omogenea a coefficienti costanti.
+
+Ovvero, le soluzioni di una EDO della forma \(ay''+by'+cy=0\) con \(a,b,c \in \R \) e \(a \ne 0\).
+
+\begin{itemize}
+    \item \(b=c=0\):
+
+          \(y(x) = c_{2}x + c_{1}\)
+
+    \item \(b \ne c\):
+
+          Si guarda l'equazione caratteristica associata \(a\lambda^2 + b\lambda + c =0\):
+          \begin{itemize}
+              \item \(\Delta > 0\) due soluzioni distinte \(\lambda_1 \ne \lambda_2\):
+
+                    \smallskip
+                    \(y(x) = c_{1}e^{\lambda_{1}x} + c_{2}e^{\lambda_{2}x}\)
+                    \medskip
+              \item \(\Delta = 0\) due soluzioni coincidenti \(\lambda_1=\lambda_2\):
+
+                    \smallskip
+                    \(y(x) = c_{1}e^{\lambda_{1}x} + xc_{2}e^{\lambda_{2}x}\)
+                    \medskip
+              \item \(\Delta < 0\) due soluzioni complesse coniugate \(\alpha \pm i\beta \):
+
+                    \smallskip
+                    \(y(x) = c_{1}e^{\alpha x}\cos(\beta x) + c_{2}e^{\alpha x}\sin(\beta x)\)
+                    \medskip
+          \end{itemize}
+\end{itemize}
+
+\pagebreak
+\subsubsection{Cheatsheet {-} Metodo di somiglianza per la soluzione particolare}\label{sec:cheatsheet-edo-2-ordine-soluzione-particolare}
+
+Cheatsheet sul \textbf{metodo di somiglianza} utile per trovare la soluzione particolare di EDO lineari del 2 ordine non omogenee a coefficienti costanti in dei casi noti.
+
+Ovvero, per trovare la \(\bar{y}(x)\) di EDO nella forma \(ay''+by'+cy=f(x)\) con \(a,b,c \in \R \) e \(a \ne 0\), in cui \(f(x)\) assume delle forme note.
+
+\begin{itemize}
+    \item \(ay''+by'+cy = P_n[x]\)
+          \(\quad \implies \) trovare \(A_{i} \in \R \) con:
+          \begin{itemize}
+              \item \(c \ne 0\)
+
+                    \smallskip
+                    \(\bar{y}(x) = A_0 + A_{1}x + \cdots + A_{n}x^{n}\)
+                    \medskip
+              \item \(c = 0, b \ne 0\)
+
+                    \smallskip
+                    \(\bar{y}(x) = x (A_0 + A_{1}x + \cdots + A_{n}x^{n})\)
+                    \medskip
+              \item \(c = 0, b = 0\)
+
+                    \smallskip
+                    \(\bar{y}(x) = x^{2} (A_0 + A_{1}x + \cdots + A_{n}x^{n})\)
+                    \medskip
+          \end{itemize}
+    \item \(ay''+by'+cy = Ae^{\lambda x}\)
+          \(\quad \implies \) trovare \(c_{1} \in \R \) con:
+          \begin{itemize}
+              \item \(\lambda = y\) non è soluzione dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = c_{1}e^{\lambda x}\)
+                    \medskip
+              \item \(\lambda = y\) è soluzione dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = c_{1}xe^{\lambda x}\)
+                    \medskip
+              \item \(\lambda = y\) è una soluzione di molteplicità \(m\) dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = c_{1}x^{m}e^{\lambda x}\)
+                    \medskip
+          \end{itemize}
+    \item \(ay''+by'+cy = A_{1}\cos(\omega x) + A_{2}\sin(\omega x)\)
+          \(\quad \implies \) trovare \(c_1,c_2 \in \R \) con:
+          \begin{itemize}
+              \item \(b \ne 0\)
+
+                    \smallskip
+                    \(\bar{y}(x) = c_{1}\cos(\omega x) + c_{2}\sin(\omega x)\)
+                    \medskip
+              \item \(b = 0\ \text{ e }\ c_{1}\cos(\omega x) + c_{2}\sin(\omega x)\) è soluzione dell'omogenea associata alla EDO iniziale
+
+                    \smallskip
+                    \(\bar{y}(x) = x[c_{1}\cos(\omega x) + c_{2}\sin(\omega x)]\)
+                    \medskip
+          \end{itemize}
+    \item \(ay''+by'+cy = P_n[x] \cdot e^{\lambda x}\)
+          \(\quad \implies \) trovare \(A_{i} \in \R \) con:
+          \begin{itemize}
+              \item \(\lambda = y\) non è soluzione dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = e^{\lambda x} (A_0 + A_{1}x + \cdots + A_{n}x^{n})\)
+                    \medskip
+              \item \(\lambda = y\) è soluzione di molteplicità \(m\) dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = e^{\lambda x} x^{m} (A_0 + A_{1}x + \cdots + A_{n}x^{n})\)
+                    \medskip
+          \end{itemize}
+    \item \(ay''+by'+cy = e^{\lambda x} \cdot [A_{1}\cos(\omega x) + A_{2}\sin(\omega x)]\)
+          \(\quad \implies \) trovare \(c_1,c_2 \in \R \) con:
+          \begin{itemize}
+              \item \(z = \lambda + i\omega \) non è soluzione dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = e^{\lambda x} [c_{1}\cos(\omega x) + c_{2}\sin(\omega x)]\)
+                    \medskip
+              \item \(z = \lambda + i\omega \) è soluzione dell'equazione caratteristica
+
+                    \smallskip
+                    \(\bar{y}(x) = x e^{\lambda x} [c_{1}\cos(\omega x) + c_{2}\sin(\omega x)]\)
+          \end{itemize}
+\end{itemize}
+
+\filbreak{}
+\subsubsection*{Osservazioni}
+
+Se \(f(x) = f_1(x) + f_2(x)\) e le due funzioni \(f_1(x),f_2(x)\) sono forme note presenti nella tabella sopra, allora si cercano separatamente una soluzione particolare \(\bar{y}_1(x)\) dell'equazione \(ay''+by'+cy=f_1(x)\) e una soluzione particolare \(\bar{y}_2(x)\) dell'equazione \(ay''+by'+cy=f_2(x)\).
+
+Dopodiché, per la linearità dell'equazione differenziale, si ha che la funzione \(\bar{y}(x) = \bar{y}_1(x) + \bar{y}_2(x)\) è soluzione particolare di \(ay''+by'+cy=f_1(x) + f_2(x)\)
