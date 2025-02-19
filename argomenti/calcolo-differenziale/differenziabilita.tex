@@ -361,12 +361,10 @@ Data la funzione:
     \end{align*}
 
     Applico il teorema di Lagrange sulle due quadre, per cui:
-    \[
-        \exists x_0 \in (x,x+h) \giventhat f(x+h,y)-f(x,y) = f'(x_0) \cdot [(x+h)-(x)]
-    \]
-    \[
-        \exists y_0 \in (y,y+k) \giventhat f(x,y+k)-f(x,y) = f'(y_0) \cdot [(y+k)-(y)]
-    \]
+    \begin{align*}
+        \exists x_0 & \in (x,x+h) \giventhat f(x+h,y+k)-f(x,y+k) = f'(x_0) \cdot [(x+h)-(x)] \\
+        \exists y_0 & \in (y,y+k) \giventhat f(x,y+k)-f(x,y) = f'(y_0) \cdot [(y+k)-(y)]
+    \end{align*}
     Dunque:
     \begin{align*}
         f(x+h,y+k) - f(x,y) & = \frac{\partial f}{\partial x}(x_0,y+k) (x +h -x) + \frac{\partial f}{\partial y}(x,y_0) ( y + k -y) \\
@@ -389,8 +387,8 @@ Data la funzione:
     metto tutto in valore assoluto e maggioro:
     \begin{align*}
         [\ldots] & \le \left|\frac{[f_x(x_0,y+k) - f_x(x,y)] h + [f_y(x,y_0) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}\right|                      \\
-                 & \le |f_x(x_0,y+k) - f_x(x,y_0)| \frac{|h|}{\sqrt{h^{2}+k^{2}}} + | f_y(x,y_0) - f_y(x,y)| \frac{|k|}{\sqrt{h^{2}+k^{2}}} \\
-                 & \le  |f_x(x_0,y+k) - f_x(x,y_0) | + |f_y(x,y_0) - f_y(x,y) |
+                 & \le |f_x(x_0,y+k) - f_x(x,y)| \frac{|h|}{\sqrt{h^{2}+k^{2}}} + | f_y(x,y_0) - f_y(x,y)| \frac{|k|}{\sqrt{h^{2}+k^{2}}} \\
+                 & \le  |f_x(x_0,y+k) - f_x(x,y) | + |f_y(x,y_0) - f_y(x,y) |
     \end{align*}
 
     \filbreak{}
