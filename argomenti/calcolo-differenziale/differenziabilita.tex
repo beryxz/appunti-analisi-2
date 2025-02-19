@@ -386,16 +386,16 @@ Data la funzione:
 
     metto tutto in valore assoluto e maggioro:
     \begin{align*}
-        [\ldots] & \le \left|\frac{[f_x(x_0,y+k) - f_x(x,y)] h + [f_y(x,y_0) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}\right|                      \\
+        [\ldots] & \le \left|\frac{[f_x(x_0,y+k) - f_x(x,y)] h + [f_y(x,y_0) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}\right|                    \\
                  & \le |f_x(x_0,y+k) - f_x(x,y)| \frac{|h|}{\sqrt{h^{2}+k^{2}}} + | f_y(x,y_0) - f_y(x,y)| \frac{|k|}{\sqrt{h^{2}+k^{2}}} \\
-                 & \le  |f_x(x_0,y+k) - f_x(x,y) | + |f_y(x,y_0) - f_y(x,y) |
+                 & \le |f_x(x_0,y+k) - f_x(x,y)| + |f_y(x,y_0) - f_y(x,y)|
     \end{align*}
 
     \filbreak{}
     Quando \((h,k) \rightarrow (0,0)\) succede che \((x_0,y_0) \rightarrow (x,y)\). Inoltre, essendo \(f_x\) e \(f_y\) continue in \((x,y)\):
 
     \[
-        |\underbrace{f_x(x,y+k) - f_x(x,y)}_\text{\(\rightarrow 0\)} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{\(\rightarrow 0\)} | \xrightarrow[\uh \to 0]{} 0
+        |\underbrace{f_x(x,y+k) - f_x(x,y)}_\text{\(\rightarrow 0\)}| + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{\(\rightarrow 0\)}| \xrightarrow[\uh \to 0]{} 0
     \]
 
     Quindi \(f(\ux,\uy)\) è differenziabile in \(\ux_0\).
