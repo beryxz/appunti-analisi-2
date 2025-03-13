@@ -773,27 +773,39 @@ La matrice Hessiana di \(f(x,y)\) è dunque:
 \subsubsection{Teorema di Schwarz}
 
 \teorema{Schwarz}{
-    Sia \(f: A \subseteq \Rn \rightarrow \R \), \(A\) aperto
+    Sia \(f: A \subseteq \Rn \rightarrow \R \), \(A\) aperto;
 
-    Sia, inoltre, \(f\) derivabile due volte su \(A\) in \(\ux_0\), con \(\ux_0 \in A\).
+    Sia, inoltre, \(f\) derivabile due volte su \(A\);
 
-    Se le \(f_{x_i x_j}\), e le \(f_{x_j x_i}\) con \(i \neq j\) sono \textbf{continue} in \(\ux_0\), allora:
+    Con \(\ux_0 \in A\), se le \(f_{x_i x_j}\) e le \(f_{x_j x_i}\) con \(i \neq j\) sono \textbf{continue} in \(\ux_0\), allora vale l'uguaglianza:
 
     \[
         f_{x_i x_j}(\ux_0) = f_{x_j x_i}(\ux_0)
     \]
 }
 
-Quindi, se \(f \in C^{2} (A) \xrightarrow[]{\text{Schwarz}} f_{xy}(x,y) = f_{yx}(x,y) \quad \forall (x,y) \in A\). Inoltre, \(H f(x,y)\) è simmetrica \(\forall (x,y) \in A\), ovvero, \({(Hf(x,y))}^{T}=Hf(x,y)\).
+Nota: Il teorema richiede solo che \(f\) sia continua in \(\ux_0\) non richiede che sia continua su tutto \(A\).
 
-Più in generale, se \(f \in C^{k}(A)\) allora l'ordine di derivazione non conta per le derivate parziali fino all'ordine \(k\).
+\;
+
+Supponiamo però di essere nel caso di n=2 dove abbiamo anche che \(f\) è continua su tutto \(A\):
+\[
+    f \in C^{2} (A) \xrightarrow[]{\text{Schwarz}} f_{xy}(x,y) = f_{yx}(x,y) \quad \forall (x,y) \in A
+\]
+
+Inoltre, \(H f(x,y)\) è simmetrica \(\forall (x,y) \in A\), ovvero:
+\[
+    {(Hf(x,y))}^{T}=Hf(x,y)
+\]
+
+Più in generale, se abbiamo \(f \in C^{k}(A)\) allora l'ordine di derivazione non conta per le derivate parziali fino all'ordine \(k\).
 
 Vediamo più nel dettaglio cosa succede nel caso di funzioni a due variabili.
 
 \filbreak{}
 \subsubsection*{Caso n=2}
 
-Sia \(f: A \subseteq \R^{2} \rightarrow \R \), \(P_0=(x_0,y_0) \in A\);
+Sia \(f: A \subseteq \R^{2} \rightarrow \R \), \(P_0=(x_0,y_0) \in A\), \(A\) aperto;
 
 Sia \(f\) derivabile due volte su \(A\) (quindi esiste la matrice Hessiana);
 
