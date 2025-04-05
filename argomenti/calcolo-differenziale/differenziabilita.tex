@@ -460,6 +460,63 @@ Dunque, la crescita di \(f\) in \(\ux_0\) lungo una qualsiasi curva \(g \) regol
 Ha dunque senso interpretare la derivata direzionale come la pendenza di \(f\) in \(\ux_0\) nella direzione \(\vec{v} \) con \(\norm{\vec{v}}=1\)
 
 \pagebreak
+\subsubsection{Derivazione di funzioni composte}
+
+\teorema{Derivazione della funzione composta}{
+
+Sia \(I \subset \R \) intervallo; sia \(A \subseteq \Rn \);
+
+Supponiamo \(\gamma(t): I  \rightarrow A \) derivabile \(\forall t \in I\),
+ovvero, \(\gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t)) \quad \forall t \in I\).
+
+Supponiamo inoltre che, data \(f: A \rightarrow \R \), \(f\) sia differenziabile in \(\gamma(t)\).
+
+Allora, la funzione composta \(F: I \rightarrow \R \) che associa \(t \mapsto (f \circ \gamma)(t) = f(\gamma(t)) \), è derivabile in \(t\).
+
+Inoltre vale:
+\[
+F'(t) = \prods{\nabla f(\gamma(t))}{\gamma'(t)} = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(\gamma(t)) \cdot \gamma_i'(t)
+\]
+
+}
+
+\begin{proof}
+    \( \)
+
+    \textit{Nota: nella seguente dimostrazione, tutte le variabili come \(h\) e \(t\), sono dei vettori.}
+
+    Dimostriamo che \(F\) è derivabile, ovvero che esiste finito il limite del rapporto incrementale:
+
+    \[
+        \frac{F(t+h) - F(t)}{\norm{h}}  = \frac{f(\gamma(t+h)) - f(\gamma(t))}{\norm{h}} = \frac{\prods{\nabla f(\gamma(t+h))}{\gamma(t+h) - \gamma(t)} + o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{h}}
+    \]
+
+    L'ultimo passaggio deriva dal fatto che, per ipotesi, \(f\) è differenziabile in \(\gamma(t)\), e inoltre stiamo ragionando per \(h \to 0\)
+
+    Vediamo cosa succede per \(h \rightarrow 0\) alle singole parti:
+    \begin{enumerate}
+        \item
+              \[\lim_{ h \to 0 } \frac{\gamma(t+h) - \gamma(t)}{\norm{h}} = \gamma'(t) \hspace{19em}\]
+
+        \item
+              \[
+                  \lim_{ h \to 0 } \frac{o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{h}} = \lim_{ h \to 0 } {\frac{o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{h}}} \cdot {\frac{\norm{\gamma(t+h) - \gamma(t)}}{\norm{\gamma(t+h) - \gamma(t)}}} =
+              \]
+              \[
+                  = \lim_{ h \to 0 } \underbrace{\frac{o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{\gamma(t+h) - \gamma(t)}}}_\text{\(0\) per definizione di o-piccolo} \cdot \underbrace{\frac{\norm{\gamma(t+h) - \gamma(t)}}{\norm{h}}}_\text{quantità finita} = 0
+              \]
+              Quantità finita perché:
+              \[
+                  \lim_{ h \to 0 } \frac{\norm{\gamma(t+h) - \gamma(t)}}{\norm{h}} = \lim_{ h \to 0 } \sqrt{ \sum^{n}_{i=1} {\left(\frac{\gamma_i(t+h) - \gamma_i(t)}{\norm{h}}\right)}^{2} } = \lim_{ h \to 0 } \sqrt{\sum^{n}_{i=1} {( \gamma_i'(t))}^{2}} = \norm{\gamma'(t)} > 0
+              \]
+    \end{enumerate}
+    Dunque:
+    \[
+        \lim_{ h \to 0 } \frac{F(t+h) - F(t)}{\norm{h}} = \prods{\nabla f(\gamma(t))}{\gamma'(t)} \impliedby \text{tesi}
+    \]
+\end{proof}
+
+\pagebreak
 \subsubsection{Proprietà del differenziale}
 
 Sia \(f: A \subseteq \Rn \rightarrow \R \), \(A\) aperto, \(\ux_0 \in A\).
@@ -572,59 +629,6 @@ Analizzando il grafico della funzione dovrebbe essere più chiaro cosa si intend
 \begin{center}
     \includegraphics[width=0.95\textwidth]{gradiente-massima-pendenza.png}
 \end{center}
-
-\pagebreak
-\subsubsection{Derivazione di funzioni composte}
-
-\teorema{Derivazione della funzione composta}{
-Supponiamo \(\gamma(t)\) derivabile \(\forall t \in I\), ovvero, \(\gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t)) \quad \forall t \in I\).
-
-Supponiamo inoltre che, data \(f: A \subseteq \Rn \rightarrow \R \), \(f\) sia differenziabile in \(\gamma(t)\).
-
-Allora, la funzione composta \(F: I \rightarrow \R \) che associa \(t \mapsto (f \circ \gamma)(t) = f(\gamma(t)) \), è derivabile in \(t\).
-
-Inoltre vale:
-\[
-F'(t) = \prods{\nabla f(\gamma(t))}{\gamma'(t)} = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(\gamma(t)) \cdot \gamma_i'(t)
-\]
-
-}
-
-\begin{proof}
-    \( \)
-
-    \textit{Nota: nella seguente dimostrazione, tutte le variabili come \(h\) e \(t\), sono dei vettori.}
-
-    Dimostriamo che \(F\) è derivabile, ovvero che esiste finito il limite del rapporto incrementale:
-
-    \[
-        \frac{F(t+h) - F(t)}{\norm{h}}  = \frac{f(\gamma(t+h)) - f(\gamma(t))}{\norm{h}} = \frac{\prods{\nabla f(\gamma(t+h))}{\gamma(t+h) - \gamma(t)} + o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{h}}
-    \]
-
-    L'ultimo passaggio deriva dal fatto che, per ipotesi, \(f\) è differenziabile in \(\gamma(t)\), e inoltre stiamo ragionando per \(h \to 0\)
-
-    Vediamo cosa succede per \(h \rightarrow 0\) alle singole parti:
-    \begin{enumerate}
-        \item
-              \[\lim_{ h \to 0 } \frac{\gamma(t+h) - \gamma(t)}{\norm{h}} = \gamma'(t) \hspace{19em}\]
-
-        \item
-              \[
-                  \lim_{ h \to 0 } \frac{o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{h}} = \lim_{ h \to 0 } {\frac{o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{h}}} \cdot {\frac{\norm{\gamma(t+h) - \gamma(t)}}{\norm{\gamma(t+h) - \gamma(t)}}} =
-              \]
-              \[
-                  = \lim_{ h \to 0 } \underbrace{\frac{o(\norm{\gamma(t+h) - \gamma(t)})}{\norm{\gamma(t+h) - \gamma(t)}}}_\text{\(0\) per definizione di o-piccolo} \cdot \underbrace{\frac{\norm{\gamma(t+h) - \gamma(t)}}{\norm{h}}}_\text{quantità finita} = 0
-              \]
-              Quantità finita perché:
-              \[
-                  \lim_{ h \to 0 } \frac{\norm{\gamma(t+h) - \gamma(t)}}{\norm{h}} = \lim_{ h \to 0 } \sqrt{ \sum^{n}_{i=1} {\left(\frac{\gamma_i(t+h) - \gamma_i(t)}{\norm{h}}\right)}^{2} } = \lim_{ h \to 0 } \sqrt{\sum^{n}_{i=1} {( \gamma_i'(t))}^{2}} = \norm{\gamma'(t)} > 0
-              \]
-    \end{enumerate}
-    Dunque:
-    \[
-        \lim_{ h \to 0 } \frac{F(t+h) - F(t)}{\norm{h}} = \prods{\nabla f(\gamma(t))}{\gamma'(t)} \impliedby \text{tesi}
-    \]
-\end{proof}
 
 \filbreak{}
 \subsubsection*{Esercizio}
