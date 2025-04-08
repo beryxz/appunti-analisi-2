@@ -125,46 +125,35 @@ Vediamo come si determina l'insieme di tutte le soluzioni di (2), ovvero l'integ
     y'(x)+a(x)y(x) = 0 \qquad x \in [a,b]
 \]
 
-Sia \(A(x)\) una \textbf{primitiva} di \(a(x)\) sempre su \([a,b]\).
+Siccome \(a(x)\) è continua sull'intervallo \([a,b]\), allora, per il teorema fondamentale del calcolo integrale, la funzione integrale \(A(x)\) è derivabile in ogni punto in cui \(a(x)\) è continua.
 
-Sappiamo che (2) è continua su \([a,b]\), quindi è anche derivabile su \([a,b]\):
+Data \(A(x)\), una \textbf{primitiva} di \(a(x)\) su \([a,b]\), abbiamo che:
 \medskip
 \begin{align*}
     A'(x) & = a(x)              & \forall x \in [a,b] \\
     A(x)  & = \int a(x) \diff x & \forall x \in [a,b]
 \end{align*}
 
-Moltiplichiamo i due membri della (2) per la quantità sempre positiva \(e^{A(x)}\):
+Moltiplichiamo i due membri della (2) per la quantità sempre positiva, \(e^{A(x)}\), dopodiché applichiamo la regola di Leibniz:
 \medskip
 \begin{align*}
     e^{A(x)} y'(x) + e ^{A(x)}a(x) y(x) & = 0\ \ \ \forall x \in [a,b] \\
     \bigl(e^{A(x)} y(x)\bigr)'          & = 0
 \end{align*}
 
-Questo, per la caratterizzazione delle funzioni costanti, ci dice che:
+Per la caratterizzazione delle funzioni costanti, questo ci dice che:
+\medskip
+\begin{align*}
+    e ^{A(x)}y(x) & = costante = c \in \R      \\
+    y(x)          & = c e ^{-A(x)}             \\
+    y(x)          & = ce^{- \int a(x) \diff x} \\
+    y(x)          & = c z_0(x)
+\end{align*}
 
-\[
-    e ^{A(x)}y(x) = costante = c \in \R
-\]
-
-porto dall'altra parte:
-\[
-    y(x) = c e ^{-A(x)}
-\]
-
-espandendo \(A(x)\):
-\[
-    y(x) = ce^{- \int a(x) \diff x}
-\]
-
-Abbiamo quindi la struttura delle soluzioni, ovvero, l'integrale generale di (2):
-\[
-    y(x) = c z_0(x)
-\]
-
-dove \(z_0(x)\) è una soluzione particolare di (2) e \(c\) è il parametro reale che ci permette di ottenere tutte le soluzioni.
+Abbiamo quindi la struttura delle soluzioni, ovvero, l'integrale generale di (2) dove \(z_0(x)\) è una soluzione particolare di (2) e \(c\) è il parametro reale che ci permette di ottenere tutte le soluzioni.
 
 Mostriamo che \(e ^{-A(x)}\) è effettivamente soluzione di (2). Ovvero, controlliamo che \(f'(x) = y'(x)\):
+\medskip
 \begin{spreadlines}{3mm}
     \begin{align*}
         y'(x) + a(x)y(x) = 0             \\
