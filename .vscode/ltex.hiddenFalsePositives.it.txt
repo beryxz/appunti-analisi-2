@@ -3,6 +3,7 @@
 {"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/calcolo-infinitesimale\\E$"}
 {"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/calcolo-differenziale\\E$"}
 {"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/calcolo-integrale\\E$"}
+{"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qargomenti/esercizi-esami\\E$"}
 {"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\QOra, partendo dall'equazione iniziale: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q moltiplico per \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q con \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q integro rispetto a x in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q teo.\\E$"}
 {"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\Qfond.\\E$"}
 {"rule":"MORFOLOGIK_RULE_IT_IT","sentence":"^\\QSoluzione particolare della EDO = ȳ(x).\\E$"}

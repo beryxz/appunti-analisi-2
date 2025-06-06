@@ -3,7 +3,7 @@
     // Misc settings
     // ==================================
     // required to prevent latex-workshop from building continously
-    "files.autoSave": "off",
+    "files.autoSave": "afterDelay",
     "[latex]": {
         "editor.formatOnPaste": false,
         "editor.suggestSelection": "recentlyUsedByPrefix",
